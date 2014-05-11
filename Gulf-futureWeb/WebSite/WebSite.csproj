@@ -1029,6 +1029,7 @@
     <Content Include="WebSiteControlPanal\assets\DT_bootstrap.js" />
     <Content Include="WebSiteControlPanal\assets\scripts.js" />
     <Content Include="WebSiteControlPanal\assets\styles.css" />
+    <Content Include="WebSiteControlPanal\bestDealsControl.aspx" />
     <Content Include="WebSiteControlPanal\bootstrap\css\bootstrap-responsive.css" />
     <Content Include="WebSiteControlPanal\bootstrap\css\bootstrap-responsive.min.css" />
     <Content Include="WebSiteControlPanal\bootstrap\css\bootstrap.css" />
@@ -1046,6 +1047,7 @@
     <Content Include="WebSiteControlPanal\PhotoGellaryControl.aspx" />
     <Content Include="WebSiteControlPanal\SildeControl.aspx" />
     <Content Include="WebSiteControlPanal\TagsControl.aspx" />
+    <Content Include="WebSiteControlPanal\UserManageControl.aspx" />
     <Content Include="WebSiteControlPanal\vendors\bootstrap-datepicker.js" />
     <Content Include="WebSiteControlPanal\vendors\bootstrap-wysihtml5\dist\bootstrap-wysihtml5-0.0.2.css" />
     <Content Include="WebSiteControlPanal\vendors\bootstrap-wysihtml5\dist\bootstrap-wysihtml5-0.0.2.js" />
@@ -1993,72 +1995,98 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebSiteControlPanal\AboutUsControl.aspx.cs">
       <DependentUpon>AboutUsControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebSiteControlPanal\AboutUsControl.aspx.designer.cs">
       <DependentUpon>AboutUsControl.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebSiteControlPanal\bestDealsControl.aspx.cs">
+      <DependentUpon>bestDealsControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSiteControlPanal\bestDealsControl.aspx.designer.cs">
+      <DependentUpon>bestDealsControl.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebSiteControlPanal\ContactUsControl.aspx.cs">
       <DependentUpon>ContactUsControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebSiteControlPanal\ContactUsControl.aspx.designer.cs">
       <DependentUpon>ContactUsControl.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebSiteControlPanal\ControlPanalMasterPage.Master.cs">
       <DependentUpon>ControlPanalMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebSiteControlPanal\ControlPanalMasterPage.Master.designer.cs">
       <DependentUpon>ControlPanalMasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="WebSiteControlPanal\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebSiteControlPanal\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebSiteControlPanal\DefualtLanguge.aspx.cs">
       <DependentUpon>DefualtLanguge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebSiteControlPanal\DefualtLanguge.aspx.designer.cs">
       <DependentUpon>DefualtLanguge.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebSiteControlPanal\DescriptionControl.aspx.cs">
       <DependentUpon>DescriptionControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebSiteControlPanal\DescriptionControl.aspx.designer.cs">
       <DependentUpon>DescriptionControl.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebSiteControlPanal\MainControlPanal.aspx.cs">
       <DependentUpon>MainControlPanal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebSiteControlPanal\MainControlPanal.aspx.designer.cs">
       <DependentUpon>MainControlPanal.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebSiteControlPanal\NewsControl.aspx.cs">
       <DependentUpon>NewsControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebSiteControlPanal\NewsControl.aspx.designer.cs">
       <DependentUpon>NewsControl.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebSiteControlPanal\PhotoGellaryControl.aspx.cs">
       <DependentUpon>PhotoGellaryControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebSiteControlPanal\PhotoGellaryControl.aspx.designer.cs">
       <DependentUpon>PhotoGellaryControl.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebSiteControlPanal\SildeControl.aspx.cs">
       <DependentUpon>SildeControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebSiteControlPanal\SildeControl.aspx.designer.cs">
       <DependentUpon>SildeControl.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebSiteControlPanal\TagsControl.aspx.cs">
       <DependentUpon>TagsControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebSiteControlPanal\TagsControl.aspx.designer.cs">
       <DependentUpon>TagsControl.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebSiteControlPanal\UserManageControl.aspx.cs">
+      <DependentUpon>UserManageControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSiteControlPanal\UserManageControl.aspx.designer.cs">
+      <DependentUpon>UserManageControl.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebSiteControlPanal\WebSiteName.aspx.cs">
       <DependentUpon>WebSiteName.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebSiteControlPanal\WebSiteName.aspx.designer.cs">
       <DependentUpon>WebSiteName.aspx</DependentUpon>

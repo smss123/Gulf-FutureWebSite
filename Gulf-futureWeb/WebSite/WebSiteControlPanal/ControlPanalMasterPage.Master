@@ -56,18 +56,18 @@
                                     </a>
                                     <ul class="dropdown-menu" id="menu1">
                                         <li>
-                                            <a href="#">Slides <i class="icon-arrow-right"></i>
+                                            <a href="SildeControl.aspx">Slides <i class="icon-arrow-right"></i>
 
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#"> Name</a>
+                                            <a href="WebSiteName.aspx"> Name</a>
                                         </li>
                                         <li>
-                                            <a href="#">Description</a>
+                                            <a href="DescriptionControl.aspx">Description</a>
                                         </li>
                                         <li>
-                                            <a href="#">Tags</a>
+                                            <a href="TagsControl.aspx">Tags</a>
                                         </li>
                                         <li class="divider"></li>
                                         <li>
@@ -82,23 +82,23 @@
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a tabindex="-1" href="#">About Us</a>
+                                            <a tabindex="-1" href="AboutUsControl.aspx">About Us</a>
                                         </li>
                                         <li>
-                                            <a tabindex="-1" href="#">Contact Us</a>
+                                            <a tabindex="-1" href="ContactUsControl.aspx">Contact Us</a>
                                         </li>
                                         <li>
-                                            <a tabindex="-1" href="#">Photo Gallery</a>
+                                            <a tabindex="-1" href="PhotoGellaryControl.aspx">Photo Gallery</a>
                                         </li>
                                         <li>
-                                            <a tabindex="-1" href="#">News </a>
+                                            <a tabindex="-1" href="NewsControl.aspx">News </a>
                                         </li>
                                         <li class="divider"></li>
                                         <li>
-                                            <a tabindex="-1" href="#">Best Deals</a>
+                                            <a tabindex="-1" href="bestDealsControl.aspx">Best Deals</a>
                                         </li>
                                          <li>
-                                            <a tabindex="-1" href="#">social Networks</a>
+                                            <a tabindex="-1" href="ContactUsControl.aspx">social Networks</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -108,10 +108,10 @@
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a tabindex="-1" href="#">Add User</a>
+                                            <a tabindex="-1" href="UserManageControl.aspx">Add User</a>
                                         </li>
                                         <li>
-                                            <a tabindex="-1" href="#">Manage Users</a>
+                                            <a tabindex="-1" href="UserManageControl.aspx">Manage Users</a>
                                         </li>
                                         
                                     </ul>
