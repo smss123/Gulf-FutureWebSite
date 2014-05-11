@@ -213,3 +213,9 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+/Gulf-futureWeb/packages/EntityFramework.6.1.0/lib/net40/EntityFramework.SqlServer.dll
+/Gulf-futureWeb/packages/EntityFramework.6.1.0/lib/net45/EntityFramework.dll
+/Gulf-futureWeb/packages/EntityFramework.6.1.0/lib/net45/EntityFramework.SqlServer.dll
+/Gulf-futureWeb/packages/EntityFramework.6.1.0/tools/EntityFramework.PowerShell.dll
+/Gulf-futureWeb/packages/EntityFramework.6.1.0/tools/EntityFramework.PowerShell.Utility.dll
+/Gulf-futureWeb/DataController/db.edmx.diagram

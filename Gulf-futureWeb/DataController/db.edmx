@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="db.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="dbStoreContainer">
+    <EntitySet Name="Users" EntityType="db.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WebSiteInfoes" EntityType="db.Store.WebSiteInfoes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SlideConfigs" EntityType="db.Store.SlideConfigs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AboutUs" EntityType="db.Store.AboutUs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OurServices" EntityType="db.Store.OurServices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Conturies" EntityType="db.Store.Conturies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cities" EntityType="db.Store.Cities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Locations" EntityType="db.Store.Locations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RealStatProfiles" EntityType="db.Store.RealStatProfiles" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ConturyCity" Association="db.Store.ConturyCity">
+      <End Role="Contury" EntitySet="Conturies" />
+      <End Role="City" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="CityLocation" Association="db.Store.CityLocation">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="LocationRealStatProfile" Association="db.Store.LocationRealStatProfile">
+      <End Role="Location" EntitySet="Locations" />
+      <End Role="RealStatProfile" EntitySet="RealStatProfiles" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="FullName" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="WebSiteInfoes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WebSiteName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="WebSitDescription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="WebsiteTags" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DefaultLanguge" Type="nvarchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="SlideConfigs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ArSlide" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EnSlide" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AboutUs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ArAboutUs" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EnAboutUs" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OurServices">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ArOurService" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EnOurService" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Conturies">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContryName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ConturyId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Locations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descrition" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CityId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RealStatProfiles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="price" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="image1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="image2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="image3" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LocationId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="ConturyCity">
+    <End Role="Contury" Type="db.Store.Conturies" Multiplicity="1" />
+    <End Role="City" Type="db.Store.Cities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contury">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="ConturyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CityLocation">
+    <End Role="City" Type="db.Store.Cities" Multiplicity="1" />
+    <End Role="Location" Type="db.Store.Locations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LocationRealStatProfile">
+    <End Role="Location" Type="db.Store.Locations" Multiplicity="1" />
+    <End Role="RealStatProfile" Type="db.Store.RealStatProfiles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RealStatProfile">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="db" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="dbContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="db.User" />
+          <EntitySet Name="WebSiteInfoes" EntityType="db.WebSiteInfo" />
+          <EntitySet Name="SlideConfigs" EntityType="db.SlideConfig" />
+          <EntitySet Name="AboutUs" EntityType="db.AboutUs" />
+          <EntitySet Name="OurServices" EntityType="db.OurService" />
+          <EntitySet Name="Conturies" EntityType="db.Contury" />
+          <EntitySet Name="Cities" EntityType="db.City" />
+          <AssociationSet Name="ConturyCity" Association="db.ConturyCity">
+            <End Role="Contury" EntitySet="Conturies" />
+            <End Role="City" EntitySet="Cities" />
+          </AssociationSet>
+          <EntitySet Name="Locations" EntityType="db.Location" />
+          <AssociationSet Name="CityLocation" Association="db.CityLocation">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="Location" EntitySet="Locations" />
+          </AssociationSet>
+          <EntitySet Name="RealStatProfiles" EntityType="db.RealStatProfile" />
+          <AssociationSet Name="LocationRealStatProfile" Association="db.LocationRealStatProfile">
+            <End Role="Location" EntitySet="Locations" />
+            <End Role="RealStatProfile" EntitySet="RealStatProfiles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="WebSiteInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WebSiteName" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="WebSitDescription" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="WebsiteTags" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="DefaultLanguge" Type="String" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="SlideConfig">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ArSlide" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="EnSlide" Type="String" Nullable="false" MaxLength="Max" />
+        </EntityType>
+        <EntityType Name="AboutUs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ArAboutUs" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="EnAboutUs" Type="String" Nullable="false" MaxLength="Max" />
+        </EntityType>
+        <EntityType Name="OurService">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ArOurService" Type="String" Nullable="false" />
+          <Property Name="EnOurService" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contury">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContryName" Type="String" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" />
+          <NavigationProperty Name="Cities" Relationship="db.ConturyCity" FromRole="Contury" ToRole="City" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityName" Type="String" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" />
+          <NavigationProperty Name="Contury" Relationship="db.ConturyCity" FromRole="City" ToRole="Contury" />
+          <Property Name="ConturyId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Locations" Relationship="db.CityLocation" FromRole="City" ToRole="Location" />
+        </EntityType>
+        <Association Name="ConturyCity">
+          <End Type="db.Contury" Role="Contury" Multiplicity="1" />
+          <End Type="db.City" Role="City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contury">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="ConturyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LocationName" Type="String" Nullable="false" />
+          <Property Name="Descrition" Type="String" Nullable="false" />
+          <NavigationProperty Name="City" Relationship="db.CityLocation" FromRole="Location" ToRole="City" />
+          <Property Name="CityId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="RealStatProfiles" Relationship="db.LocationRealStatProfile" FromRole="Location" ToRole="RealStatProfile" />
+        </EntityType>
+        <Association Name="CityLocation">
+          <End Type="db.City" Role="City" Multiplicity="1" />
+          <End Type="db.Location" Role="Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RealStatProfile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" />
+          <Property Name="price" Type="String" Nullable="false" />
+          <Property Name="image1" Type="String" Nullable="false" />
+          <Property Name="image2" Type="String" Nullable="false" />
+          <Property Name="image3" Type="String" Nullable="false" />
+          <NavigationProperty Name="Location" Relationship="db.LocationRealStatProfile" FromRole="RealStatProfile" ToRole="Location" />
+          <Property Name="LocationId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="LocationRealStatProfile">
+          <End Type="db.Location" Role="Location" Multiplicity="1" />
+          <End Type="db.RealStatProfile" Role="RealStatProfile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RealStatProfile">
+              <PropertyRef Name="LocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbStoreContainer" CdmEntityContainer="dbContainer">
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(db.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WebSiteInfoes">
+      <EntityTypeMapping TypeName="IsTypeOf(db.WebSiteInfo)">
+        <MappingFragment StoreEntitySet="WebSiteInfoes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="WebSiteName" ColumnName="WebSiteName" />
+          <ScalarProperty Name="WebSitDescription" ColumnName="WebSitDescription" />
+          <ScalarProperty Name="WebsiteTags" ColumnName="WebsiteTags" />
+          <ScalarProperty Name="DefaultLanguge" ColumnName="DefaultLanguge" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SlideConfigs">
+      <EntityTypeMapping TypeName="IsTypeOf(db.SlideConfig)">
+        <MappingFragment StoreEntitySet="SlideConfigs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ArSlide" ColumnName="ArSlide" />
+          <ScalarProperty Name="EnSlide" ColumnName="EnSlide" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AboutUs">
+      <EntityTypeMapping TypeName="IsTypeOf(db.AboutUs)">
+        <MappingFragment StoreEntitySet="AboutUs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ArAboutUs" ColumnName="ArAboutUs" />
+          <ScalarProperty Name="EnAboutUs" ColumnName="EnAboutUs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OurServices">
+      <EntityTypeMapping TypeName="IsTypeOf(db.OurService)">
+        <MappingFragment StoreEntitySet="OurServices">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ArOurService" ColumnName="ArOurService" />
+          <ScalarProperty Name="EnOurService" ColumnName="EnOurService" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conturies">
+      <EntityTypeMapping TypeName="IsTypeOf(db.Contury)">
+        <MappingFragment StoreEntitySet="Conturies">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ContryName" ColumnName="ContryName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="IsTypeOf(db.City)">
+        <MappingFragment StoreEntitySet="Cities">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ConturyId" ColumnName="ConturyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="IsTypeOf(db.Location)">
+        <MappingFragment StoreEntitySet="Locations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="Descrition" ColumnName="Descrition" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RealStatProfiles">
+      <EntityTypeMapping TypeName="IsTypeOf(db.RealStatProfile)">
+        <MappingFragment StoreEntitySet="RealStatProfiles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="image1" ColumnName="image1" />
+          <ScalarProperty Name="image2" ColumnName="image2" />
+          <ScalarProperty Name="image3" ColumnName="image3" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
