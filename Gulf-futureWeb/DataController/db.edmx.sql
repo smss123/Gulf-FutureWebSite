@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/11/2014 18:54:24
--- Generated from EDMX file: C:\Users\user\Documents\GitHub\Gulf-FutureWebSite\Gulf-futureWeb\DataController\db.edmx
+-- Date Created: 05/12/2014 07:39:08
+-- Generated from EDMX file: C:\Users\Sezer\Documents\GitHub\Gulf-FutureWebSite\Gulf-futureWeb\DataController\db.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,6 +17,15 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_ConturyCity]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Cities] DROP CONSTRAINT [FK_ConturyCity];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CityLocation]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Locations] DROP CONSTRAINT [FK_CityLocation];
+GO
+IF OBJECT_ID(N'[dbo].[FK_LocationRealStatProfile]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RealStatProfiles] DROP CONSTRAINT [FK_LocationRealStatProfile];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -33,6 +42,21 @@ IF OBJECT_ID(N'[dbo].[SlideConfigs]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[AboutUs]', 'U') IS NOT NULL
     DROP TABLE [dbo].[AboutUs];
+GO
+IF OBJECT_ID(N'[dbo].[OurServices]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[OurServices];
+GO
+IF OBJECT_ID(N'[dbo].[Conturies]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Conturies];
+GO
+IF OBJECT_ID(N'[dbo].[Cities]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Cities];
+GO
+IF OBJECT_ID(N'[dbo].[Locations]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Locations];
+GO
+IF OBJECT_ID(N'[dbo].[RealStatProfiles]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RealStatProfiles];
 GO
 
 -- --------------------------------------------------
