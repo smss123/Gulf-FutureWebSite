@@ -38,6 +38,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -55,6 +56,10 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Telerik.Web.UI, Version=2013.3.1015.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Telerik\RadControls for ASP.NET AJAX Q3 2013\Bin40\Telerik.Web.UI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="ControlPanalSource\assets\DT_bootstrap.css" />
@@ -2249,7 +2254,20 @@
     <Content Include="WebSiteControlPanal\vendors\tinymce\js\tinymce\skins\lightgray\fonts\icomoon.woff" />
     <Content Include="WebSiteControlPanal\vendors\tinymce\js\tinymce\skins\lightgray\fonts\readme.md" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\Temp\" />
+    <Folder Include="Resources\Uploads\Documents\" />
+    <Folder Include="Resources\Uploads\Editos\" />
+    <Folder Include="Resources\Uploads\Images\" />
+    <Folder Include="Resources\Uploads\Media\" />
+    <Folder Include="Service\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataController\DataController.csproj">
+      <Project>{9aab9e46-572d-44d9-b3a1-b694c1e944ec}</Project>
+      <Name>DataController</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
