@@ -34,5 +34,6 @@ namespace DataController
         public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<RealStatProfile> RealStatProfiles { get; set; }
+        public virtual DbSet<ContactUs> ContactUs { get; set; }
     }
 }

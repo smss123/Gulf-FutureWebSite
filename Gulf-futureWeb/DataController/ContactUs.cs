@@ -12,12 +12,14 @@ namespace DataController
     using System;
     using System.Collections.Generic;
     
-    public partial class OurService
+    public partial class ContactUs
     {
         public int Id { get; set; }
-        public string ArOurService { get; set; }
-        public string EnOurService { get; set; }
-        public string ArOurServiceDescription { get; set; }
-        public string EnOurServiceDescription { get; set; }
+        public string phoneNumber { get; set; }
+        public string Email { get; set; }
+        public string ArAddress { get; set; }
+        public string EnAddress { get; set; }
+        public string ArExplain { get; set; }
+        public string EnExplain { get; set; }
     }
 }

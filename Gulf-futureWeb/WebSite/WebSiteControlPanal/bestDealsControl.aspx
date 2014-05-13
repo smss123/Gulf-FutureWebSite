@@ -22,9 +22,9 @@
      <div class="row-fluid">
           <div class="block">
             <div class="navbar navbar-inner block-header">
-                <div class="muted pull-left">About Us-Arabic</div>
+                <div class="muted pull-left">Best Deals</div>
             </div>
-     Best Deals Control 
+    
               <telerik:RadGrid ID="RadGrid1" runat="server" AllowFilteringByColumn="True" AllowPaging="True" AllowSorting="True" CellSpacing="0" GridLines="None" ShowGroupPanel="True">
                   <ClientSettings AllowColumnsReorder="True" AllowDragToGroup="True" ReorderColumnsOnClient="True">
                       <Selecting AllowRowSelect="True" />
