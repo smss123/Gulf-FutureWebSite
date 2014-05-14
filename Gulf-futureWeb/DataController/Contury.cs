@@ -16,15 +16,15 @@ namespace DataController
     {
         public Contury()
         {
-            this.Cities = new HashSet<City>();
+            this.Cities = new List<City>();
         }
     
         public int Id { get; set; }
-        public string ContryName { get; set; }
+        public string EnContryName { get; set; }
         public string ArDecription { get; set; }
         public string ArContryName { get; set; }
         public string EnDescription { get; set; }
-    
-        public virtual ICollection<City> Cities { get; set; }
+
+        public virtual List<City> Cities { get; set; }
     }
 }

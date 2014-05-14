@@ -16,7 +16,7 @@ namespace DataController
     {
         public Location()
         {
-            this.RealStatProfiles = new HashSet<RealStatProfile>();
+            this.RealStatProfiles = new List<RealStatProfile>();
         }
     
         public int Id { get; set; }
@@ -25,6 +25,6 @@ namespace DataController
         public int CityId { get; set; }
     
         public virtual City City { get; set; }
-        public virtual ICollection<RealStatProfile> RealStatProfiles { get; set; }
+        public virtual List<RealStatProfile> RealStatProfiles { get; set; }
     }
 }

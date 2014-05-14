@@ -50,7 +50,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ContryName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EnContryName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ArDecription" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ArContryName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="EnDescription" Type="nvarchar(max)" Nullable="false" />
@@ -179,7 +179,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ContryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EnContryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ArDecription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Cities" Relationship="Self.FK_ConturyCity" FromRole="Conturies" ToRole="Cities" />
           <Property Name="ArContryName" Type="String" Nullable="false" />
@@ -336,7 +336,7 @@
       <EntityTypeMapping TypeName="IsTypeOf(Model.Contury)">
         <MappingFragment StoreEntitySet="Conturies">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="ContryName" ColumnName="ContryName" />
+          <ScalarProperty Name="EnContryName" ColumnName="EnContryName" />
           <ScalarProperty Name="ArDecription" ColumnName="ArDecription" />
           <ScalarProperty Name="ArContryName" ColumnName="ArContryName" />
           <ScalarProperty Name="EnDescription" ColumnName="EnDescription" />

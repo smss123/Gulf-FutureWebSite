@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/13/2014 09:06:31
--- Generated from EDMX file: C:\Users\Sezer\Documents\GitHub\Gulf-FutureWebSite\Gulf-futureWeb\DataController\db.edmx
+-- Date Created: 05/14/2014 19:32:46
+-- Generated from EDMX file: C:\Users\user\Documents\GitHub\Gulf-FutureWebSite\Gulf-futureWeb\DataController\db.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -83,7 +83,7 @@ GO
 -- Creating table 'Conturies'
 CREATE TABLE [dbo].[Conturies] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [ContryName] nvarchar(max)  NOT NULL,
+    [EnContryName] nvarchar(max)  NOT NULL,
     [ArDecription] nvarchar(max)  NOT NULL,
     [ArContryName] nvarchar(max)  NOT NULL,
     [EnDescription] nvarchar(max)  NOT NULL

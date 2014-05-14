@@ -83,7 +83,7 @@ namespace WebSite.Service
             {
                 ArContryName = Arname,
                 ArDecription = ArDescription,
-                ContryName = EnName,
+                EnContryName = EnName,
                 EnDescription = EnDescription
             };
 
@@ -98,7 +98,7 @@ namespace WebSite.Service
             var q = db.Conturies.Where(p => p.Id == id).SingleOrDefault();
             q.ArContryName = Arname;
             q.ArDecription = ArDescription;
-            q.ContryName = EnName;
+            q.EnContryName = EnName;
             q.EnDescription = EnDescription;
             db.SaveChanges();
             return true;
