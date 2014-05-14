@@ -29,9 +29,9 @@
             <!-- Begin Body-->
             <div class="block-content collapse in">
 
-                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                <asp:UpdatePanel ID="UpdatePanel2" runat="server" >
                     <ContentTemplate>
-                        <telerik:RadEditor runat="server" ID="RadEditor2" SkinID="DefaultSetOfTools" Height="675px" Width="99%">
+                        <telerik:RadEditor runat="server" ID="RadEditor2" SkinID="DefaultSetOfTools" Height="675px" Width="99%" CssClass="container-fluid">
                             <ImageManager ViewPaths="~/Resources/Uploads/Editos,~/Resources/Uploads/Editos"
                                 UploadPaths="~/Resources/Uploads/Editos,~/Resources/Uploads/Editos"
                                 DeletePaths="~/Resources/Uploads/Editos,~/Resources/Uploads/Editos"

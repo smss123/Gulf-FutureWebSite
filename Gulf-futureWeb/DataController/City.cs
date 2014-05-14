@@ -24,7 +24,7 @@ namespace DataController
         public string Description { get; set; }
         public int ConturyId { get; set; }
     
-        public virtual Contury Contury { get; set; }
         public virtual ICollection<Location> Locations { get; set; }
+        public virtual Contury Contury { get; set; }
     }
 }

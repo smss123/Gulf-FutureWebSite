@@ -21,7 +21,9 @@ namespace DataController
     
         public int Id { get; set; }
         public string ContryName { get; set; }
-        public string Description { get; set; }
+        public string ArDecription { get; set; }
+        public string ArContryName { get; set; }
+        public string EnDescription { get; set; }
     
         public virtual ICollection<City> Cities { get; set; }
     }

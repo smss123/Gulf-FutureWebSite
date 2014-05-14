@@ -13,10 +13,10 @@ namespace DataController
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class dbContainer : DbContext
+    public partial class dbContext : DbContext
     {
-        public dbContainer()
-            : base("name=dbContainer")
+        public dbContext()
+            : base("name=dbContext")
         {
         }
     
@@ -25,15 +25,14 @@ namespace DataController
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<AboutU> AboutUs { get; set; }
+        public virtual DbSet<City> Cities { get; set; }
+        public virtual DbSet<Contury> Conturies { get; set; }
+        public virtual DbSet<Location> Locations { get; set; }
+        public virtual DbSet<OurService> OurServices { get; set; }
+        public virtual DbSet<RealStatProfile> RealStatProfiles { get; set; }
+        public virtual DbSet<SlideConfig> SlideConfigs { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<WebSiteInfo> WebSiteInfoes { get; set; }
-        public virtual DbSet<SlideConfig> SlideConfigs { get; set; }
-        public virtual DbSet<AboutUs> AboutUs { get; set; }
-        public virtual DbSet<OurService> OurServices { get; set; }
-        public virtual DbSet<Contury> Conturies { get; set; }
-        public virtual DbSet<City> Cities { get; set; }
-        public virtual DbSet<Location> Locations { get; set; }
-        public virtual DbSet<RealStatProfile> RealStatProfiles { get; set; }
-        public virtual DbSet<ContactUs> ContactUs { get; set; }
     }
 }
