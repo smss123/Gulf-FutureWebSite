@@ -13,7 +13,7 @@
         <EntityTypeShape EntityType="Model.RealStatProfile" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" FillColor="192, 192, 0" />
         <EntityTypeShape EntityType="Model.SlideConfig" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.WebSiteInfo" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WebSiteInfo" Width="1.5" PointX="9.125" PointY="4.5" IsExpanded="true" />
         <AssociationConnector Association="Model.FK_CityLocation" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_ConturyCity" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_LocationRealStatProfile" ManuallyRouted="false" />

@@ -14,6 +14,9 @@ namespace DataController
     
     public partial class Contury
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public Contury()
         {
             this.Cities = new List<City>();
@@ -25,6 +28,7 @@ namespace DataController
         public string ArContryName { get; set; }
         public string EnDescription { get; set; }
 
+       
         public virtual List<City> Cities { get; set; }
     }
 }

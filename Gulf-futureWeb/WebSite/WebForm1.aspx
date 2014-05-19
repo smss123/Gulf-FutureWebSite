@@ -9,7 +9,10 @@
     <link href="styles/kendo.metro.min.css" rel="stylesheet" />
     <script src="Scripts/jquery-2.1.0.min.js"></script>
     <script src="Scripts/js/kendo.web.min.js"></script>
-   
+
+    <script src="Scripts/js/kendo.data.odata.min.js"></script>
+    <script src="Scripts/js/kendo.data.min.js"></script>
+
     <script type="text/javascript">
 
         $(document).ready(function () {
@@ -35,6 +38,26 @@
     <form id="form1" runat="server">
     <div id="Grid">
     
+
+
+        <script>
+            $(document).ready(function () {
+                $("#grid").kendoGrid({
+                    dataSource: {
+                        type: "odata",
+                        transport: {
+                            read: "http://localhost:3787/Service/testWeb.asmx/GetAll"
+                        },
+                        pageSize: 10
+                    },
+                    height: 280,
+                    columns: ["Id"]
+                });
+            });
+            </script>
+            <div id="grid">
+            </div>
+
     </div>
         <div id="x">samer abd ulla</div>
     </form>
