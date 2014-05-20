@@ -61,5 +61,13 @@
     </div>
         <div id="x">samer abd ulla</div>
     </form>
+
+      <div id="dialog"></div>
+    <script>
+        $("#dialog").kendoWindow({
+            actions: ["Minimize", "Maximize"]
+            , content: "/details"
+        });
+    </script>
 </body>
 </html>

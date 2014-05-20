@@ -2918,6 +2918,7 @@
     <Content Include="WebSiteControlPanal\vendors\tinymce\js\tinymce\skins\lightgray\fonts\readme.md" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Resources\RemovedSource\" />
     <Folder Include="Resources\Temp\" />
     <Folder Include="Resources\Uploads\Documents\" />
     <Folder Include="Resources\Uploads\Editos\" />

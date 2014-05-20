@@ -7,7 +7,7 @@
            <!------------------- Kendo Ui----------------------->
     <link href="../styles/kendo.common.min.css" rel="stylesheet" />
     <link href="../styles/kendo.default.min.css" rel="stylesheet" />
-    <script src="../Scripts/js/jquery.min.js"></script>
+    <%--<script src="../Scripts/js/jquery.min.js"></script>--%>
     <script src="../Scripts/js/kendo.web.min.js"></script>
 </asp:Content>
 
