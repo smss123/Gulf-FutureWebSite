@@ -21,7 +21,11 @@ namespace WebSite.WebSiteControlPanal
                 {
                     q.WebSitDescription = txtDescription.Text;
                     db.SaveChanges();
-                    BtnSave.Text = "Saved";
+                  
+                    lblmsg.Text = "<div class='alert alert-success'>" +
+                                        "<button class='close data-dismiss=alert'>&times;</button>" +
+                                        "<strong>Success!</strong> Your Data Has Been Saved" +
+                                        "</div>";
 
                 }
 
@@ -40,7 +44,10 @@ namespace WebSite.WebSiteControlPanal
                 };
                 db.WebSiteInfoes.Add(x);
                 db.SaveChanges();
-                BtnSave.Text = " Saved";
+                lblmsg.Text = "<div class='alert alert-success'>" +
+                                      "<button class='close data-dismiss=alert'>&times;</button>" +
+                                      "<strong>Success!</strong> Your Data Has Been Saved" +
+                                      "</div>";
             }
  
         }

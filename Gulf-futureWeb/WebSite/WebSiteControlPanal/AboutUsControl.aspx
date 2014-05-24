@@ -21,7 +21,7 @@
 <telerik:RadAjaxManager ID="RadAjaxManager1" runat="server">
 </telerik:RadAjaxManager>
     <div class="row-fluid">
-
+          <asp:Label runat="server" ID="lblmsg"></asp:Label>
         <div class="block">
             <div class="navbar navbar-inner block-header">
                 <div class="muted pull-left">About Us-Arabic</div>
@@ -78,6 +78,7 @@
                  <asp:Button runat="server" ID="btnSave" Text="Save" CssClass="btn btn-primary " Width="300px" OnClick="btnSave_Click" />
 
              </div>
+             
             
             </div>
     </div>
