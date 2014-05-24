@@ -12,10 +12,10 @@
                 <div class="controls">
                     <div class="controls-row">
                         <!-- Tags Editor-->
-                        <asp:TextBox ID="TextBox1" runat="server" TextMode="MultiLine" Columns="100" Rows="10" Width="60%" placeHolder="Type Tags Here .."></asp:TextBox>
+                        <asp:TextBox ID="txtTags" runat="server" TextMode="MultiLine" Columns="100" Rows="10" Width="60%" placeHolder="Type Tags Here .."></asp:TextBox>
                     </div>
                     <div class="controls-row">
-                        <asp:Button ID="Button1" runat="server" Text="save" CssClass="btn btn-primary" />
+                        <asp:Button ID="BtnSave" runat="server" Text="save" CssClass="btn btn-primary" OnClick="BtnSave_Click" />
 
                     </div>
                 </div>

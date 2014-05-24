@@ -24,7 +24,7 @@
 </head>
 <body>
    
-    <form id="form1" runat="server">
+    <form id="form1" runat="server"> 
         <div>
             <div class="navbar navbar-fixed-top">
                 <div class="navbar-inner">

@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/16/2014 23:07:39
--- Generated from EDMX file: C:\Users\Sezer\Documents\GitHub\Gulf-FutureWebSite\Gulf-futureWeb\DataController\db.edmx
+-- Date Created: 05/24/2014 12:06:24
+-- Generated from EDMX file: C:\Users\user\Documents\GitHub\Gulf-FutureWebSite\Gulf-futureWeb\DataController\db.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -143,10 +143,11 @@ GO
 -- Creating table 'WebSiteInfoes'
 CREATE TABLE [dbo].[WebSiteInfoes] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [WebSiteName] nvarchar(max)  NOT NULL,
+    [ArWebSiteName] nvarchar(max)  NOT NULL,
     [WebSitDescription] nvarchar(max)  NOT NULL,
     [WebsiteTags] nvarchar(max)  NOT NULL,
-    [DefaultLanguge] nvarchar(10)  NOT NULL
+    [DefaultLanguge] nvarchar(10)  NOT NULL,
+    [EnWebSiteName] nvarchar(max)  NOT NULL
 );
 GO
 

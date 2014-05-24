@@ -110,10 +110,11 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="WebSiteName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ArWebSiteName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="WebSitDescription" Type="nvarchar(max)" Nullable="false" />
     <Property Name="WebsiteTags" Type="nvarchar(max)" Nullable="false" />
     <Property Name="DefaultLanguge" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="EnWebSiteName" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <Association Name="FK_CityLocation">
     <End Role="Cities" Type="Model.Store.Cities" Multiplicity="1" />
@@ -243,10 +244,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="WebSiteName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ArWebSiteName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="WebSitDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="WebsiteTags" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DefaultLanguge" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EnWebSiteName" Type="String" Nullable="false" />
         </EntityType>
         <Association Name="FK_CityLocation">
           <End Role="Cities" Type="Self.City" Multiplicity="1" />
@@ -402,10 +404,11 @@
       <EntityTypeMapping TypeName="IsTypeOf(Model.WebSiteInfo)">
         <MappingFragment StoreEntitySet="WebSiteInfoes">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="WebSiteName" ColumnName="WebSiteName" />
+          <ScalarProperty Name="ArWebSiteName" ColumnName="ArWebSiteName" />
           <ScalarProperty Name="WebSitDescription" ColumnName="WebSitDescription" />
           <ScalarProperty Name="WebsiteTags" ColumnName="WebsiteTags" />
           <ScalarProperty Name="DefaultLanguge" ColumnName="DefaultLanguge" />
+          <ScalarProperty Name="EnWebSiteName" ColumnName="EnWebSiteName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

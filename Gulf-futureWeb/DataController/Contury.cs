@@ -14,12 +14,9 @@ namespace DataController
     
     public partial class Contury
     {
-        /// <summary>
-        /// 
-        /// </summary>
         public Contury()
         {
-            this.Cities = new List<City>();
+            this.Cities = new HashSet<City>();
         }
     
         public int Id { get; set; }
@@ -27,8 +24,7 @@ namespace DataController
         public string ArDecription { get; set; }
         public string ArContryName { get; set; }
         public string EnDescription { get; set; }
-
-       
-        public virtual List<City> Cities { get; set; }
+    
+        public virtual ICollection<City> Cities { get; set; }
     }
 }

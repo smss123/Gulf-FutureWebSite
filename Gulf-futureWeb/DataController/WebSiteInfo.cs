@@ -15,9 +15,10 @@ namespace DataController
     public partial class WebSiteInfo
     {
         public int Id { get; set; }
-        public string WebSiteName { get; set; }
+        public string ArWebSiteName { get; set; }
         public string WebSitDescription { get; set; }
         public string WebsiteTags { get; set; }
         public string DefaultLanguge { get; set; }
+        public string EnWebSiteName { get; set; }
     }
 }
