@@ -18,6 +18,9 @@
                         <asp:Button ID="BtnSave" runat="server" Text="save" CssClass="btn btn-primary" OnClick="BtnSave_Click" />
 
                     </div>
+                    <div class="controls-row">
+                        <asp:Label runat ="server" ID="lblmsg"></asp:Label>
+                    </div>
                 </div>
             </div>
 

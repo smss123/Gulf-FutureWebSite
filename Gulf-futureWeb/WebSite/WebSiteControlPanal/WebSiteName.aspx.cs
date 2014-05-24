@@ -9,6 +9,7 @@ namespace WebSite.WebSiteControlPanal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblmsg.Visible = false;
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
@@ -23,8 +24,11 @@ namespace WebSite.WebSiteControlPanal
                     q.ArWebSiteName = txtArName.Text;
                     q.EnWebSiteName = txtEnName.Text;
                     db.SaveChanges();
-                    btnSave.Text = " you Data has Been Saved";
-
+                    lblmsg.Visible = true;
+                    lblmsg.Text = "<div class='alert alert-success'> " +
+                        "<button class='close' data-dismiss='alert'>&times;</button>" +
+                        "<strong>Success!</strong> You Data Has been Saved" +
+                        "</div>";
                 }
                 else
                 {

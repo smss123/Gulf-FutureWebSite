@@ -49,13 +49,13 @@ namespace WebSite.WebSiteControlPanal {
         protected global::System.Web.UI.UpdatePanel UpdatePanel2;
         
         /// <summary>
-        /// RadEditor2 control.
+        /// ArEdior control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadEditor RadEditor2;
+        protected global::Telerik.Web.UI.RadEditor ArEdior;
         
         /// <summary>
         /// UpdatePanel1 control.
@@ -67,13 +67,13 @@ namespace WebSite.WebSiteControlPanal {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// RadEditor1 control.
+        /// EnEditor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadEditor RadEditor1;
+        protected global::Telerik.Web.UI.RadEditor EnEditor;
         
         /// <summary>
         /// btnSave control.

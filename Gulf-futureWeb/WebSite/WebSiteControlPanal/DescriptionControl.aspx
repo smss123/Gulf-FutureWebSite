@@ -9,7 +9,7 @@
          <!--Begin Block-->
           <div  class="block">
            <div class="navbar navbar-inner block-header">
-                <div class="muted pull-left">Web Site Tags</div>
+                <div class="muted pull-left">Web Site Description</div>
             </div>
             <!-- Begin Body-->
             <div class="block-content collapse in">

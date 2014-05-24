@@ -9,6 +9,7 @@ namespace WebSite.WebSiteControlPanal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblmsg.Visible = true;
         }
 
         protected void BtnSave_Click(object sender, EventArgs e)
@@ -21,7 +22,11 @@ namespace WebSite.WebSiteControlPanal
                 {
                     q.WebsiteTags = txtTags.Text;
                     db.SaveChanges();
-                    BtnSave.Text = "Saved";
+                    lblmsg.Visible = true;
+                    lblmsg.Text = "<div class='alert alert-success'> " +
+                       "<button class='close' data-dismiss='alert'>&times;</button>" +
+                       "<strong>Success!</strong> You Data Has been Saved" +
+                       "</div>";
                     
                 }
 
@@ -40,7 +45,11 @@ namespace WebSite.WebSiteControlPanal
                 };
                 db.WebSiteInfoes.Add(x);
                 db.SaveChanges();
-                BtnSave.Text = " Saved";
+                lblmsg.Visible = true;
+                lblmsg.Text = "<div class='alert alert-success'> " +
+                         "<button class='close' data-dismiss='alert'>&times;</button>" +
+                         "<strong>Success!</strong> You Data Has been Saved" +
+                         "</div>";
             }
  
         }

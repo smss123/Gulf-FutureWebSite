@@ -31,7 +31,7 @@
 
                 <asp:UpdatePanel ID="UpdatePanel2" runat="server" >
                     <ContentTemplate>
-                        <telerik:RadEditor runat="server" ID="RadEditor2" SkinID="DefaultSetOfTools" Height="675px" Width="99%" CssClass="container-fluid">
+                        <telerik:RadEditor runat="server" ID="ArEdior" SkinID="DefaultSetOfTools" Height="675px" Width="99%" CssClass="container-fluid">
                             <ImageManager ViewPaths="~/Resources/Uploads/Editos,~/Resources/Uploads/Editos"
                                 UploadPaths="~/Resources/Uploads/Editos,~/Resources/Uploads/Editos"
                                 DeletePaths="~/Resources/Uploads/Editos,~/Resources/Uploads/Editos"
@@ -55,11 +55,15 @@
 
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>
-                        <telerik:RadEditor runat="server" ID="RadEditor1" SkinID="DefaultSetOfTools" Height="675px" Width="99%">
+                        <telerik:RadEditor runat="server" ID="EnEditor" SkinID="DefaultSetOfTools" Height="675px" Width="99%">
+                            <Content>
+</Content>
                             <ImageManager ViewPaths="~/Resources/Uploads/Editos,~/Resources/Uploads/Editos"
                                 UploadPaths="~/Resources/Uploads/Editos,~/Resources/Uploads/Editos"
                                 DeletePaths="~/Resources/Uploads/Editos,~/Resources/Uploads/Editos"
                                 EnableAsyncUpload="true"></ImageManager>
+                            <TemplateManager AllowMultipleSelection="True" EnableAsyncUpload="True" />
+                            <TrackChangesSettings CanAcceptTrackChanges="False" />
                         </telerik:RadEditor>
                     </ContentTemplate>
 
@@ -71,7 +75,7 @@
          <div class="navbar navbar-inner block-header">
                 <div class="muted pull-left"></div>
              <div id="BtnDiv" style="margin-left: 40%; margin-right: 70%">
-                 <asp:Button runat="server" ID="btnSave" Text="Save" CssClass="btn btn-primary " Width="300px" />
+                 <asp:Button runat="server" ID="btnSave" Text="Save" CssClass="btn btn-primary " Width="300px" OnClick="btnSave_Click" />
 
              </div>
             
