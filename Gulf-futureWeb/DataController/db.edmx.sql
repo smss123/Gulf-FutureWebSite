@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/25/2014 14:03:59
--- Generated from EDMX file: C:\Users\user\Documents\GitHub\Gulf-FutureWebSite\Gulf-futureWeb\DataController\db.edmx
+-- Date Created: 05/25/2014 23:25:15
+-- Generated from EDMX file: C:\Users\Sezer\Documents\GitHub\Gulf-FutureWebSite\Gulf-futureWeb\DataController\db.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -60,6 +60,9 @@ IF OBJECT_ID(N'[dbo].[WebSiteInfoes]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Contacts]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Contacts];
+GO
+IF OBJECT_ID(N'[dbo].[PhotoGellaries]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PhotoGellaries];
 GO
 
 -- --------------------------------------------------
@@ -168,6 +171,15 @@ CREATE TABLE [dbo].[Contacts] (
 );
 GO
 
+-- Creating table 'PhotoGellaries'
+CREATE TABLE [dbo].[PhotoGellaries] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [img] nvarchar(max)  NOT NULL,
+    [arDescription] nvarchar(max)  NOT NULL,
+    [EnDescription] nvarchar(max)  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -232,6 +244,12 @@ ADD CONSTRAINT [PK_Contacts]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
+-- Creating primary key on [Id] in table 'PhotoGellaries'
+ALTER TABLE [dbo].[PhotoGellaries]
+ADD CONSTRAINT [PK_PhotoGellaries]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
@@ -243,6 +261,7 @@ ADD CONSTRAINT [FK_CityLocation]
     REFERENCES [dbo].[Cities]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_CityLocation'
 CREATE INDEX [IX_FK_CityLocation]
@@ -257,6 +276,7 @@ ADD CONSTRAINT [FK_ConturyCity]
     REFERENCES [dbo].[Conturies]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ConturyCity'
 CREATE INDEX [IX_FK_ConturyCity]
@@ -271,6 +291,7 @@ ADD CONSTRAINT [FK_LocationRealStatProfile]
     REFERENCES [dbo].[Locations]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_LocationRealStatProfile'
 CREATE INDEX [IX_FK_LocationRealStatProfile]

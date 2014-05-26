@@ -35,5 +35,6 @@ namespace DataController
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<WebSiteInfo> WebSiteInfoes { get; set; }
         public virtual DbSet<Contacts> Contacts { get; set; }
+        public virtual DbSet<PhotoGellary> PhotoGellaries { get; set; }
     }
 }

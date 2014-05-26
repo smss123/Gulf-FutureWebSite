@@ -16,6 +16,7 @@
     <EntitySet Name="Users" EntityType="Model.Store.Users" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="WebSiteInfoes" EntityType="Model.Store.WebSiteInfoes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Contacts" EntityType="Model.Store.Contacts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PhotoGellaries" EntityType="Model.Store.PhotoGellaries" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_CityLocation" Association="Model.Store.FK_CityLocation">
       <End Role="Cities" EntitySet="Cities" />
       <End Role="Locations" EntitySet="Locations" />
@@ -130,6 +131,15 @@
     <Property Name="googleplus" Type="nvarchar(max)" Nullable="true" />
     <Property Name="linkedIn" Type="nvarchar(max)" Nullable="true" />
     <Property Name="instegram" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="PhotoGellaries">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="img" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="arDescription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EnDescription" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <Association Name="FK_CityLocation">
     <End Role="Cities" Type="Model.Store.Cities" Multiplicity="1" />
@@ -324,6 +334,7 @@
             <End Role="RealStatProfiles" EntitySet="RealStatProfiles" />
           </AssociationSet>
           <EntitySet Name="Contacts" EntityType="Model.Contacts" />
+          <EntitySet Name="PhotoGellaries" EntityType="Model.PhotoGellary" />
         </EntityContainer>
         <EntityType Name="Contacts">
           <Key>
@@ -338,6 +349,15 @@
           <Property Name="googleplus" Type="String" />
           <Property Name="linkedIn" Type="String" />
           <Property Name="instegram" Type="String" />
+        </EntityType>
+        <EntityType Name="PhotoGellary">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="img" Type="String" Nullable="false" />
+          <Property Name="arDescription" Type="String" Nullable="false" />
+          <Property Name="EnDescription" Type="String" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -454,6 +474,16 @@
           <ScalarProperty Name="googleplus" ColumnName="googleplus" />
           <ScalarProperty Name="linkedIn" ColumnName="linkedIn" />
           <ScalarProperty Name="instegram" ColumnName="instegram" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhotoGellaries">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.PhotoGellary)">
+        <MappingFragment StoreEntitySet="PhotoGellaries">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="arDescription" ColumnName="arDescription" />
+          <ScalarProperty Name="EnDescription" ColumnName="EnDescription" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -31,15 +31,61 @@
                <div id="windowx">
 
                    <div class="k-content-frame">
+                       <asp:Label ID="lblmsg" runat="server" ></asp:Label>
                        <div class="k-controls">
-                           <telerik:RadAsyncUpload ID="RadAsyncUpload1" runat="server" ChunkSize="0" MultipleFileSelection="Automatic" TemporaryFolder="../Resources/Temp" TargetFolder="../Resources/Uploads/Images" OnFileUploaded="RadAsyncUpload1_FileUploaded"></telerik:RadAsyncUpload>
-                           <asp:Button runat="server" ID="Button2" Text="Upload" CssClass="k-button" />
-                       </div>
+                           <div class="k-row-break">
 
+                               <div class="k-label">Upload Image</div>
+                               <telerik:RadAsyncUpload ID="RadAsyncUpload1" runat="server" ChunkSize="0" MultipleFileSelection="Automatic" TemporaryFolder="../Resources/Temp" TargetFolder="../Resources/Uploads/Images" OnFileUploaded="RadAsyncUpload1_FileUploaded"></telerik:RadAsyncUpload>
+                              
+                           </div>
+                           <hr />
+                           <div class="k-row-break">
+                               <asp:TextBox runat="server" ID="txtArDectiption" placeholder="Description Here Arabic.." TextMode="MultiLine" Rows="10" Columns="50" Width="60%" Height="40%"></asp:TextBox>
+
+                           </div>
+                            <div class="k-row-break">
+                               <asp:TextBox runat="server" ID="txtEnDescription" placeholder="Description Here Engilsh.." TextMode="MultiLine" Rows="10" Columns="50" Width="60%" Height="40%"></asp:TextBox>
+
+                           </div>
+                           <div class="k-row-break">
+                               <asp:Button runat="server" ID="btnSave" Text="save" CssClass="k-button" Width="10%" OnClick="btnSave_Click"  />
+                           </div>
+                       </div>
+                       
                    </div>
+                   <hr />
 
                </div>
                
+                 <div class="navbar navbar-inner block-header">
+                <div class="muted pull-left">Photos</div>
+                     <telerik:RadGrid ID="grdPhoto" runat="server" AutoGenerateColumns="False" CellSpacing="0" DataSourceID="PhotoDataSource" GridLines="None" ShowGroupPanel="True">
+                         <ClientSettings AllowDragToGroup="True">
+                             <Scrolling AllowScroll="True" UseStaticHeaders="True" />
+                         </ClientSettings>
+                         <MasterTableView DataKeyNames="Id" DataSourceID="PhotoDataSource">
+                             <Columns>
+                                 <telerik:GridBoundColumn DataField="Id" DataType="System.Int32" FilterControlAltText="Filter Id column" HeaderText="Id" ReadOnly="True" SortExpression="Id" UniqueName="Id">
+                                 </telerik:GridBoundColumn>
+                                 <telerik:GridTemplateColumn DataField="img" FilterControlAltText="Filter img column" HeaderText="Photo" SortExpression="img" UniqueName="img">
+                                     <EditItemTemplate>
+                                         <asp:TextBox ID="imgTextBox" runat="server" Text='<%# Bind("img") %>'></asp:TextBox>
+                                     </EditItemTemplate>
+                                     <ItemTemplate>
+                                         <asp:Image ID="Image1" runat="server" Height="181px" ImageUrl='<%# Eval("img") %>' Width="193px" />
+                                     </ItemTemplate>
+                                 </telerik:GridTemplateColumn>
+                                 <telerik:GridBoundColumn DataField="arDescription" FilterControlAltText="Filter arDescription column" HeaderText="Description-Arabic" SortExpression="arDescription" UniqueName="arDescription">
+                                 </telerik:GridBoundColumn>
+                                 <telerik:GridBoundColumn DataField="EnDescription" FilterControlAltText="Filter EnDescription column" HeaderText="Description-English" SortExpression="EnDescription" UniqueName="EnDescription">
+                                 </telerik:GridBoundColumn>
+                             </Columns>
+                         </MasterTableView>
+                     </telerik:RadGrid>
+                     <asp:EntityDataSource ID="PhotoDataSource" runat="server" ConnectionString="name=dbContext" DefaultContainerName="dbContext" EnableDelete="True" EnableFlattening="False" EnableInsert="True" EnableUpdate="True" EntitySetName="PhotoGellaries" EntityTypeFilter="PhotoGellary">
+                     </asp:EntityDataSource>
+            </div>
               
             </div>
         </div>
