@@ -15,6 +15,7 @@
     <EntitySet Name="SlideConfigs" EntityType="Model.Store.SlideConfigs" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Users" EntityType="Model.Store.Users" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="WebSiteInfoes" EntityType="Model.Store.WebSiteInfoes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Contacts" EntityType="Model.Store.Contacts" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_CityLocation" Association="Model.Store.FK_CityLocation">
       <End Role="Cities" EntitySet="Cities" />
       <End Role="Locations" EntitySet="Locations" />
@@ -115,6 +116,20 @@
     <Property Name="WebsiteTags" Type="nvarchar(max)" Nullable="false" />
     <Property Name="DefaultLanguge" Type="nvarchar" Nullable="false" MaxLength="10" />
     <Property Name="EnWebSiteName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contacts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ArContact" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EnContact" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Fb" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="youtube" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="tweeter" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="googleplus" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="linkedIn" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="instegram" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
   <Association Name="FK_CityLocation">
     <End Role="Cities" Type="Model.Store.Cities" Multiplicity="1" />
@@ -308,7 +323,22 @@
             <End Role="Locations" EntitySet="Locations" />
             <End Role="RealStatProfiles" EntitySet="RealStatProfiles" />
           </AssociationSet>
+          <EntitySet Name="Contacts" EntityType="Model.Contacts" />
         </EntityContainer>
+        <EntityType Name="Contacts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ArContact" Type="String" Nullable="false" Unicode="true" />
+          <Property Name="EnContact" Type="String" Nullable="false" Unicode="true" />
+          <Property Name="Fb" Type="String" />
+          <Property Name="youtube" Type="String" />
+          <Property Name="tweeter" Type="String" />
+          <Property Name="googleplus" Type="String" />
+          <Property Name="linkedIn" Type="String" />
+          <Property Name="instegram" Type="String" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -409,6 +439,21 @@
           <ScalarProperty Name="WebsiteTags" ColumnName="WebsiteTags" />
           <ScalarProperty Name="DefaultLanguge" ColumnName="DefaultLanguge" />
           <ScalarProperty Name="EnWebSiteName" ColumnName="EnWebSiteName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Contacts)">
+        <MappingFragment StoreEntitySet="Contacts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ArContact" ColumnName="ArContact" />
+          <ScalarProperty Name="EnContact" ColumnName="EnContact" />
+          <ScalarProperty Name="Fb" ColumnName="Fb" />
+          <ScalarProperty Name="youtube" ColumnName="youtube" />
+          <ScalarProperty Name="tweeter" ColumnName="tweeter" />
+          <ScalarProperty Name="googleplus" ColumnName="googleplus" />
+          <ScalarProperty Name="linkedIn" ColumnName="linkedIn" />
+          <ScalarProperty Name="instegram" ColumnName="instegram" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

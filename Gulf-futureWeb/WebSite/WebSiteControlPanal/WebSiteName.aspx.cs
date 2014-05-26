@@ -43,7 +43,11 @@ namespace WebSite.WebSiteControlPanal
                     };
                     db.WebSiteInfoes.Add(x);
                     db.SaveChanges();
-                    btnSave.Text = " you Data has Been Saved";
+                    lblmsg.Visible = true;
+                    lblmsg.Text = "<div class='alert alert-success'> " +
+                        "<button class='close' data-dismiss='alert'>&times;</button>" +
+                        "<strong>Success!</strong> You Data Has been Saved" +
+                        "</div>";
                 }
  
             }
@@ -61,7 +65,11 @@ namespace WebSite.WebSiteControlPanal
                 };
                 db.WebSiteInfoes.Add(x);
                 db.SaveChanges();
-                btnSave.Text = " you Data has Been Saved";
+                lblmsg.Visible = true;
+                lblmsg.Text = "<div class='alert alert-success'> " +
+                    "<button class='close' data-dismiss='alert'>&times;</button>" +
+                    "<strong>Success!</strong> You Data Has been Saved" +
+                    "</div>";
             }
            
         }

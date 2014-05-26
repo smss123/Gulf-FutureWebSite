@@ -34,5 +34,6 @@ namespace DataController
         public virtual DbSet<SlideConfig> SlideConfigs { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<WebSiteInfo> WebSiteInfoes { get; set; }
+        public virtual DbSet<Contacts> Contacts { get; set; }
     }
 }

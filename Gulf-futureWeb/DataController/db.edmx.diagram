@@ -17,6 +17,7 @@
         <AssociationConnector Association="Model.FK_CityLocation" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_ConturyCity" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_LocationRealStatProfile" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.Contacts" Width="1.5" PointX="12.375" PointY="4.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

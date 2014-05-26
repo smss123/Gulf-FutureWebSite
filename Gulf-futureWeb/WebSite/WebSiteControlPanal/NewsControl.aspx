@@ -3,6 +3,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="row-fluid">
-     News Here    
+     <div class="block">
+         <div class="navbar navbar-inner block-header">
+             <div class="muted pull-left">News</div>
+         </div>
+         
+     </div>    
      </div>
 </asp:Content>

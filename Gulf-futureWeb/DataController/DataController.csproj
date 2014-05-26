@@ -57,6 +57,9 @@
     <Compile Include="City.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
+    <Compile Include="Contacts.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
     <Compile Include="Contury.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
