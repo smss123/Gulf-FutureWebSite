@@ -8,6 +8,13 @@ namespace WebSite.WebSiteControlPanal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+           
+        }
+
+        void Page_Init(object sender, EventArgs e)
+        {
+            PhotoDataSource.DataBind();
+            GridView1.DataBind();
         }
 
         protected void RadAsyncUpload1_FileUploaded(object sender, Telerik.Web.UI.FileUploadedEventArgs e)
@@ -31,12 +38,15 @@ namespace WebSite.WebSiteControlPanal
                                     "<button class='close data-dismiss=alert'>&times;</button>" +
                                     "<strong>Success!</strong> Your Data Has Been Saved" +
                                     "</div>";
+                PhotoDataSource.DataBind();
+                GridView1.DataBind();
+               
             }
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-         
+            
             
         }
 

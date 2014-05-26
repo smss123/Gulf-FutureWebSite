@@ -21,6 +21,7 @@
     <telerik:RadAjaxManager ID="RadAjaxManager1" runat="server">
     </telerik:RadAjaxManager>
     <div class="row-fluid">
+        
         <div class="block">
             <div class="navbar navbar-inner block-header">
                 <div class="muted pull-left">Photo Gelary</div>
@@ -55,38 +56,50 @@
                        
                    </div>
                    <hr />
+                   <div class="navbar navbar-inner block-header">
+                       <div class="muted pull-left">Photos</div>
+
+                       <asp:EntityDataSource ID="PhotoDataSource" runat="server" ConnectionString="name=dbContext" DefaultContainerName="dbContext" EnableDelete="True" EnableFlattening="False" EnableInsert="True" EnableUpdate="True" EntitySetName="PhotoGellaries" EntityTypeFilter="PhotoGellary">
+                       </asp:EntityDataSource>
+                   </div>
+                   <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="PhotoDataSource" Width="80%" CssClass="table table-hover" >
+                       <Columns>
+                           <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                           <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
+                           <asp:TemplateField HeaderText="img" SortExpression="img" >
+                               <EditItemTemplate>
+                                   <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("img") %>'></asp:TextBox>
+                               </EditItemTemplate>
+                               <ItemTemplate>
+                                   <asp:Image ID="Image1" runat="server" Height="137px" ImageUrl='<%# Eval("img") %>' Width="189px" />
+                               </ItemTemplate>
+                           </asp:TemplateField>
+                           <asp:TemplateField HeaderText="arDescription" SortExpression="arDescription"  >
+                               <EditItemTemplate>
+                                   <div class="info">
+                                       <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("arDescription") %>' Rows="10" Columns="50" Width="200px" Height="200px"></asp:TextBox>
+
+                                   </div>
+                               </EditItemTemplate>
+                               <ItemTemplate>
+                                   <asp:Label ID="Label1" runat="server" Text='<%# Bind("arDescription") %>' ></asp:Label>
+                               </ItemTemplate>
+                           </asp:TemplateField>
+                           <asp:TemplateField HeaderText="EnDescription" SortExpression="EnDescription">
+                               <EditItemTemplate>
+                                   <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("EnDescription") %>' Rows="10" Columns="50" Width="200px" Height="200px"></asp:TextBox>
+                               </EditItemTemplate>
+                               <ItemTemplate>
+                                   <asp:Label ID="Label2" runat="server" Text='<%# Bind("EnDescription") %>'  Width="200px" Height="200px"></asp:Label>
+                               </ItemTemplate>
+                           </asp:TemplateField>
+                       </Columns>
+                   </asp:GridView>
 
                </div>
                
-                 <div class="navbar navbar-inner block-header">
-                <div class="muted pull-left">Photos</div>
-                     <telerik:RadGrid ID="grdPhoto" runat="server" AutoGenerateColumns="False" CellSpacing="0" DataSourceID="PhotoDataSource" GridLines="None" ShowGroupPanel="True">
-                         <ClientSettings AllowDragToGroup="True">
-                             <Scrolling AllowScroll="True" UseStaticHeaders="True" />
-                         </ClientSettings>
-                         <MasterTableView DataKeyNames="Id" DataSourceID="PhotoDataSource">
-                             <Columns>
-                                 <telerik:GridBoundColumn DataField="Id" DataType="System.Int32" FilterControlAltText="Filter Id column" HeaderText="Id" ReadOnly="True" SortExpression="Id" UniqueName="Id">
-                                 </telerik:GridBoundColumn>
-                                 <telerik:GridTemplateColumn DataField="img" FilterControlAltText="Filter img column" HeaderText="Photo" SortExpression="img" UniqueName="img">
-                                     <EditItemTemplate>
-                                         <asp:TextBox ID="imgTextBox" runat="server" Text='<%# Bind("img") %>'></asp:TextBox>
-                                     </EditItemTemplate>
-                                     <ItemTemplate>
-                                         <asp:Image ID="Image1" runat="server" Height="181px" ImageUrl='<%# Eval("img") %>' Width="193px" />
-                                     </ItemTemplate>
-                                 </telerik:GridTemplateColumn>
-                                 <telerik:GridBoundColumn DataField="arDescription" FilterControlAltText="Filter arDescription column" HeaderText="Description-Arabic" SortExpression="arDescription" UniqueName="arDescription">
-                                 </telerik:GridBoundColumn>
-                                 <telerik:GridBoundColumn DataField="EnDescription" FilterControlAltText="Filter EnDescription column" HeaderText="Description-English" SortExpression="EnDescription" UniqueName="EnDescription">
-                                 </telerik:GridBoundColumn>
-                             </Columns>
-                         </MasterTableView>
-                     </telerik:RadGrid>
-                     <asp:EntityDataSource ID="PhotoDataSource" runat="server" ConnectionString="name=dbContext" DefaultContainerName="dbContext" EnableDelete="True" EnableFlattening="False" EnableInsert="True" EnableUpdate="True" EntitySetName="PhotoGellaries" EntityTypeFilter="PhotoGellary">
-                     </asp:EntityDataSource>
-            </div>
-              
+                
+                
             </div>
         </div>
     </div>

@@ -335,6 +335,7 @@
           </AssociationSet>
           <EntitySet Name="Contacts" EntityType="Model.Contacts" />
           <EntitySet Name="PhotoGellaries" EntityType="Model.PhotoGellary" />
+          <EntitySet Name="OurNews" EntityType="Model.OurNews" />
         </EntityContainer>
         <EntityType Name="Contacts">
           <Key>
@@ -358,6 +359,17 @@
           <Property Name="img" Type="String" Nullable="false" />
           <Property Name="arDescription" Type="String" Nullable="false" />
           <Property Name="EnDescription" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OurNews">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateOf" Type="String" Nullable="false" />
+          <Property Name="Caption" Type="String" Nullable="false" />
+          <Property Name="Summary" Type="String" Nullable="false" />
+          <Property Name="Details" Type="String" Nullable="false" />
+          <Property Name="Photo" Type="String" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>

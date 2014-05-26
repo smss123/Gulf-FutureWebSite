@@ -19,6 +19,7 @@
         <AssociationConnector Association="Model.FK_LocationRealStatProfile" ManuallyRouted="false" />
         <EntityTypeShape EntityType="Model.Contacts" Width="1.5" PointX="12.375" PointY="4.625" />
         <EntityTypeShape EntityType="Model.PhotoGellary" Width="1.5" PointX="3.75" PointY="8.375" />
+        <EntityTypeShape EntityType="Model.OurNews" Width="1.5" PointX="7.125" PointY="9.125" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
