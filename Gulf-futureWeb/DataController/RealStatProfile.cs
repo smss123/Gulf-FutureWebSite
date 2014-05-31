@@ -24,6 +24,7 @@ namespace DataController
         public int LocationId { get; set; }
         public string EnTitle { get; set; }
         public string EnDescription { get; set; }
+        public string Image4 { get; set; }
     
         public virtual Location Location { get; set; }
     }

@@ -95,6 +95,7 @@
     <Property Name="LocationId" Type="int" Nullable="false" />
     <Property Name="EnTitle" Type="nvarchar(max)" Nullable="false" />
     <Property Name="EnDescription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Image4" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="SlideConfigs">
     <Key>
@@ -272,6 +273,7 @@
           <NavigationProperty Name="Location" Relationship="Self.FK_LocationRealStatProfile" FromRole="RealStatProfiles" ToRole="Locations" />
           <Property Name="EnTitle" Type="String" Nullable="false" />
           <Property Name="EnDescription" Type="String" Nullable="false" />
+          <Property Name="Image4" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="SlideConfig">
           <Key>
@@ -475,6 +477,7 @@
           <ScalarProperty Name="LocationId" ColumnName="LocationId" />
           <ScalarProperty Name="EnTitle" ColumnName="EnTitle" />
           <ScalarProperty Name="EnDescription" ColumnName="EnDescription" />
+          <ScalarProperty Name="Image4" ColumnName="Image4" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

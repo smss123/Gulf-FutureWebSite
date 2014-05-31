@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/31/2014 03:16:57
+-- Date Created: 05/31/2014 07:44:58
 -- Generated from EDMX file: C:\Users\Sezer\Documents\GitHub\Gulf-FutureWebSite\Gulf-futureWeb\DataController\db.edmx
 -- --------------------------------------------------
 
@@ -133,7 +133,8 @@ CREATE TABLE [dbo].[RealStatProfiles] (
     [image3] nvarchar(max)  NOT NULL,
     [LocationId] int  NOT NULL,
     [EnTitle] nvarchar(max)  NOT NULL,
-    [EnDescription] nvarchar(max)  NOT NULL
+    [EnDescription] nvarchar(max)  NOT NULL,
+    [Image4] nvarchar(max)  NOT NULL
 );
 GO
 
