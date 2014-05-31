@@ -20,9 +20,11 @@ namespace DataController
         }
     
         public int Id { get; set; }
-        public string CityName { get; set; }
-        public string Description { get; set; }
+        public string ArCityName { get; set; }
+        public string ArDecription { get; set; }
         public int ConturyId { get; set; }
+        public string EnCityName { get; set; }
+        public string EnDescription { get; set; }
     
         public virtual ICollection<Location> Locations { get; set; }
         public virtual Contury Contury { get; set; }

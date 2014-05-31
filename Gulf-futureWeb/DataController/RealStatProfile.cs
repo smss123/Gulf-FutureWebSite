@@ -15,13 +15,15 @@ namespace DataController
     public partial class RealStatProfile
     {
         public int Id { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
+        public string ArTitle { get; set; }
+        public string ArDescription { get; set; }
         public string price { get; set; }
         public string image1 { get; set; }
         public string image2 { get; set; }
         public string image3 { get; set; }
         public int LocationId { get; set; }
+        public string EnTitle { get; set; }
+        public string EnDescription { get; set; }
     
         public virtual Location Location { get; set; }
     }

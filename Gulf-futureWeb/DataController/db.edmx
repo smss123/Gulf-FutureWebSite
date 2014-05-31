@@ -17,6 +17,7 @@
     <EntitySet Name="WebSiteInfoes" EntityType="Model.Store.WebSiteInfoes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Contacts" EntityType="Model.Store.Contacts" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="PhotoGellaries" EntityType="Model.Store.PhotoGellaries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OurNews" EntityType="Model.Store.OurNews" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_CityLocation" Association="Model.Store.FK_CityLocation">
       <End Role="Cities" EntitySet="Cities" />
       <End Role="Locations" EntitySet="Locations" />
@@ -43,9 +44,11 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CityName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ArCityName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ArDecription" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ConturyId" Type="int" Nullable="false" />
+    <Property Name="EnCityName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EnDescription" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Conturies">
     <Key>
@@ -62,9 +65,11 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="LocationName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Descrition" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ArLocationName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ArLocationDescrition" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CityId" Type="int" Nullable="false" />
+    <Property Name="EnLocationName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EnDescription" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="OurServices">
     <Key>
@@ -81,13 +86,15 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ArTitle" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ArDescription" Type="nvarchar(max)" Nullable="false" />
     <Property Name="price" Type="nvarchar(max)" Nullable="false" />
     <Property Name="image1" Type="nvarchar(max)" Nullable="false" />
     <Property Name="image2" Type="nvarchar(max)" Nullable="false" />
     <Property Name="image3" Type="nvarchar(max)" Nullable="false" />
     <Property Name="LocationId" Type="int" Nullable="false" />
+    <Property Name="EnTitle" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EnDescription" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="SlideConfigs">
     <Key>
@@ -140,6 +147,20 @@
     <Property Name="img" Type="nvarchar(max)" Nullable="false" />
     <Property Name="arDescription" Type="nvarchar(max)" Nullable="false" />
     <Property Name="EnDescription" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OurNews">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateOf" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ArCaption" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ArSummary" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ArDetails" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EnCaption" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EnSummary" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EnDetails" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <Association Name="FK_CityLocation">
     <End Role="Cities" Type="Model.Store.Cities" Multiplicity="1" />
@@ -194,11 +215,13 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CityName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ArCityName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ArDecription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ConturyId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Locations" Relationship="Self.FK_CityLocation" FromRole="Cities" ToRole="Locations" />
           <NavigationProperty Name="Contury" Relationship="Self.FK_ConturyCity" FromRole="Cities" ToRole="Conturies" />
+          <Property Name="EnCityName" Type="String" Nullable="false" />
+          <Property Name="EnDescription" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Contury">
           <Key>
@@ -216,11 +239,13 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="LocationName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Descrition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ArLocationName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ArLocationDescrition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="CityId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="City" Relationship="Self.FK_CityLocation" FromRole="Locations" ToRole="Cities" />
           <NavigationProperty Name="RealStatProfiles" Relationship="Self.FK_LocationRealStatProfile" FromRole="Locations" ToRole="RealStatProfiles" />
+          <Property Name="EnLocationName" Type="String" Nullable="false" />
+          <Property Name="EnDescription" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="OurService">
           <Key>
@@ -237,14 +262,16 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ArTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ArDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="price" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="image1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="image2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="image3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="LocationId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Location" Relationship="Self.FK_LocationRealStatProfile" FromRole="RealStatProfiles" ToRole="Locations" />
+          <Property Name="EnTitle" Type="String" Nullable="false" />
+          <Property Name="EnDescription" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="SlideConfig">
           <Key>
@@ -366,10 +393,13 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DateOf" Type="String" Nullable="false" />
-          <Property Name="Caption" Type="String" Nullable="false" />
-          <Property Name="Summary" Type="String" Nullable="false" />
-          <Property Name="Details" Type="String" Nullable="false" />
+          <Property Name="ArCaption" Type="String" Nullable="false" />
+          <Property Name="ArSummary" Type="String" Nullable="false" />
+          <Property Name="ArDetails" Type="String" Nullable="false" />
           <Property Name="Photo" Type="String" Nullable="false" />
+          <Property Name="EnCaption" Type="String" Nullable="false" />
+          <Property Name="EnSummary" Type="String" Nullable="false" />
+          <Property Name="EnDetails" Type="String" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -390,9 +420,11 @@
       <EntityTypeMapping TypeName="IsTypeOf(Model.City)">
         <MappingFragment StoreEntitySet="Cities">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="CityName" ColumnName="CityName" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ArCityName" ColumnName="ArCityName" />
+          <ScalarProperty Name="ArDecription" ColumnName="ArDecription" />
           <ScalarProperty Name="ConturyId" ColumnName="ConturyId" />
+          <ScalarProperty Name="EnCityName" ColumnName="EnCityName" />
+          <ScalarProperty Name="EnDescription" ColumnName="EnDescription" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -411,9 +443,11 @@
       <EntityTypeMapping TypeName="IsTypeOf(Model.Location)">
         <MappingFragment StoreEntitySet="Locations">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
-          <ScalarProperty Name="Descrition" ColumnName="Descrition" />
+          <ScalarProperty Name="ArLocationName" ColumnName="ArLocationName" />
+          <ScalarProperty Name="ArLocationDescrition" ColumnName="ArLocationDescrition" />
           <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="EnLocationName" ColumnName="EnLocationName" />
+          <ScalarProperty Name="EnDescription" ColumnName="EnDescription" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -432,13 +466,15 @@
       <EntityTypeMapping TypeName="IsTypeOf(Model.RealStatProfile)">
         <MappingFragment StoreEntitySet="RealStatProfiles">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ArTitle" ColumnName="ArTitle" />
+          <ScalarProperty Name="ArDescription" ColumnName="ArDescription" />
           <ScalarProperty Name="price" ColumnName="price" />
           <ScalarProperty Name="image1" ColumnName="image1" />
           <ScalarProperty Name="image2" ColumnName="image2" />
           <ScalarProperty Name="image3" ColumnName="image3" />
           <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="EnTitle" ColumnName="EnTitle" />
+          <ScalarProperty Name="EnDescription" ColumnName="EnDescription" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -496,6 +532,21 @@
           <ScalarProperty Name="img" ColumnName="img" />
           <ScalarProperty Name="arDescription" ColumnName="arDescription" />
           <ScalarProperty Name="EnDescription" ColumnName="EnDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OurNews">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.OurNews)">
+        <MappingFragment StoreEntitySet="OurNews">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateOf" ColumnName="DateOf" />
+          <ScalarProperty Name="ArCaption" ColumnName="ArCaption" />
+          <ScalarProperty Name="ArSummary" ColumnName="ArSummary" />
+          <ScalarProperty Name="ArDetails" ColumnName="ArDetails" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="EnCaption" ColumnName="EnCaption" />
+          <ScalarProperty Name="EnSummary" ColumnName="EnSummary" />
+          <ScalarProperty Name="EnDetails" ColumnName="EnDetails" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

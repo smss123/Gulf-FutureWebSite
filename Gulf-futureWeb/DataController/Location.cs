@@ -20,9 +20,11 @@ namespace DataController
         }
     
         public int Id { get; set; }
-        public string LocationName { get; set; }
-        public string Descrition { get; set; }
+        public string ArLocationName { get; set; }
+        public string ArLocationDescrition { get; set; }
         public int CityId { get; set; }
+        public string EnLocationName { get; set; }
+        public string EnDescription { get; set; }
     
         public virtual City City { get; set; }
         public virtual ICollection<RealStatProfile> RealStatProfiles { get; set; }

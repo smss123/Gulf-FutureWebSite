@@ -16,9 +16,12 @@ namespace DataController
     {
         public int Id { get; set; }
         public string DateOf { get; set; }
-        public string Caption { get; set; }
-        public string Summary { get; set; }
-        public string Details { get; set; }
+        public string ArCaption { get; set; }
+        public string ArSummary { get; set; }
+        public string ArDetails { get; set; }
         public string Photo { get; set; }
+        public string EnCaption { get; set; }
+        public string EnSummary { get; set; }
+        public string EnDetails { get; set; }
     }
 }
