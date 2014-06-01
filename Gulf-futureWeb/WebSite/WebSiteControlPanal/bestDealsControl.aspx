@@ -175,20 +175,28 @@
                          
                      </asp:FormView>
                  </div>
-                   <asp:EntityDataSource runat="server" ID="EntityDataSource1" DefaultContainerName="dbContext" ConnectionString="name=dbContext" EnableFlattening="False" EntitySetName="Conturies" EntityTypeFilter="Contury" Select="it.[Id], it.[EnContryName]"></asp:EntityDataSource>
+                   <asp:EntityDataSource runat="server" ID="EntityDataSource1" DefaultContainerName="dbContext" ConnectionString="name=dbContext" EnableFlattening="False" EntitySetName="Conturies" EntityTypeFilter="Contury" Select="it.[Id], it.[EnContryName]" ></asp:EntityDataSource>
                  <hr />
                  <asp:GridView ID="GrdCities" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="CityDataSource" CssClass="table table-hover" AllowPaging="True" AllowSorting="True">
                      <Columns>
                          <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                          <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
-                         <asp:BoundField DataField="ArCityName" HeaderText="ArCityName" SortExpression="ArCityName" />
-                         <asp:BoundField DataField="ArDecription" HeaderText="ArDecription" SortExpression="ArDecription" />
-                         <asp:BoundField DataField="ConturyId" HeaderText="ConturyId" SortExpression="ConturyId" />
-                         <asp:BoundField DataField="EnCityName" HeaderText="EnCityName" SortExpression="EnCityName" />
-                         <asp:BoundField DataField="EnDescription" HeaderText="EnDescription" SortExpression="EnDescription" />
+                         <asp:BoundField DataField="ArCityName" HeaderText="City Name-Arabic" SortExpression="ArCityName" />
+                         <asp:BoundField DataField="ArDecription" HeaderText="Decription-Arabic" SortExpression="ArDecription" />
+                         <asp:TemplateField HeaderText="Country" SortExpression="ConturyId">
+                             <EditItemTemplate>
+                                 <%--<asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("ConturyId") %>'></asp:TextBox>--%>
+                                 <asp:DropDownList runat="server" ID="CountryDropdown" DataSourceID="CountrySourceForDropDownlist" DataTextField="EnContryName" DataValueField="Id" selectedValue='<%# Bind("ConturyId") %>'></asp:DropDownList>
+                                  </EditItemTemplate>
+                             <ItemTemplate>
+                                 <asp:Label ID="Label1" runat="server" Text='<%# Bind("Contury.EnContryName") %>'></asp:Label>
+                             </ItemTemplate>
+                         </asp:TemplateField>
+                         <asp:BoundField DataField="EnCityName" HeaderText="City Name-English" SortExpression="EnCityName" />
+                         <asp:BoundField DataField="EnDescription" HeaderText="Description-English" SortExpression="EnDescription" />
                      </Columns>
                  </asp:GridView>
-                 <asp:EntityDataSource ID="CityDataSource" runat="server" ConnectionString="name=dbContext" DefaultContainerName="dbContext" EnableDelete="True" EnableFlattening="False" EnableInsert="True" EnableUpdate="True" EntitySetName="Cities" EntityTypeFilter="City">
+                 <asp:EntityDataSource ID="CityDataSource" runat="server" ConnectionString="name=dbContext" DefaultContainerName="dbContext" EnableDelete="True" EnableFlattening="False" EnableInsert="True" EnableUpdate="True" EntitySetName="Cities" EntityTypeFilter="City" Include="Contury">
                  </asp:EntityDataSource>
              </div>
 
@@ -262,6 +270,12 @@
 
          </div>
 
+
+         <!------DataSources Area---->
+         <asp:EntityDataSource runat="server" ID="CountrySourceForDropDownlist" DefaultContainerName="dbContext" ConnectionString="name=dbContext" EnableFlattening="False" EntitySetName="Conturies" EntityTypeFilter="Contury"></asp:EntityDataSource>
+                            
+
+         <!--------------------------->
 
          <div class="block">
              <div class="navbar navbar-inner block-header">

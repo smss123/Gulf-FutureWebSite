@@ -59,6 +59,9 @@ namespace WebSite.WebSiteControlPanal
             EntityDataSource1.DataBind();
             FormView1.DataBind();
             FormView2.DataBind();
+            GrdCountry.DataBind();
+            GrdCities.DataBind();
+            GridView1.DataBind();
         }
 
         protected void FormView1_ItemInserted(object sender, System.Web.UI.WebControls.FormViewInsertedEventArgs e)
