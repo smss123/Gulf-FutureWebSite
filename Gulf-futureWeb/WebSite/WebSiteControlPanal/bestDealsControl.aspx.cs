@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.UI.WebControls;
 using DataController;
 namespace WebSite.WebSiteControlPanal
 {
@@ -40,21 +41,34 @@ namespace WebSite.WebSiteControlPanal
                                   "<strong>Error!</strong> " + ex.Message +
                                   "</div>";
             }
-        
-            EntityDataSource1.DataBind();
+
+            ReBind();
+            //DropDownList drop = FormView1.FindControl("txtcounties") as DropDownList;
+            //drop.DataSource = EntityDataSource1;
+            //drop.DataBind();
+           
+            
+            
+        }
+
+        private void ReBind()
+        {
+            CountryDataSource.DataBind();
             CityDataSource.DataBind();
-            GrdCities.DataBind();
+            LocalizeDataSource.DataBind();
+            EntityDataSource1.DataBind();
+            FormView1.DataBind();
+            FormView2.DataBind();
         }
 
         protected void FormView1_ItemInserted(object sender, System.Web.UI.WebControls.FormViewInsertedEventArgs e)
         {
-            EntityDataSource1.DataBind();
-            CityDataSource.DataBind();
-            GrdCities.DataBind();
+           
             lblmsg.Text = "<div class='alert alert-success'>" +
                                 "<button class='close data-dismiss=alert'>&times;</button>" +
                                 "<strong>Success!</strong> Your City Has Been Saved" +
                                 "</div>";
+            ReBind();
         }
     }
 }

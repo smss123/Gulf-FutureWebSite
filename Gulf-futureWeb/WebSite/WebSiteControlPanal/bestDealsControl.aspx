@@ -200,49 +200,52 @@
               </div>
 
                 <div class="controls">
-                    <asp:FormView ID="FormView2" runat="server" DataKeyNames="Id" DataSourceID="LocalizeDataSource" DefaultMode="Insert">
-                       
-                        <InsertItemTemplate>
-                           
-                            <br />
-                            Location Name- Arabic:
-                            <div class="controls-row">
-                                  <asp:TextBox ID="ArLocationNameTextBox" runat="server" Text='<%# Bind("ArLocationName") %>' />
-                            </div>
-                            
-                          
-                            <br />
+                    <div style="margin-left: 3%">
 
-                            Location Descrition-Arabic:
+                        <asp:FormView ID="FormView2" runat="server" DataKeyNames="Id" DataSourceID="LocalizeDataSource" DefaultMode="Insert">
+
+                            <InsertItemTemplate>
+
+                                <br />
+                                Location Name- Arabic:
                             <div class="controls-row">
-                                   <asp:TextBox ID="ArLocationDescritionTextBox" runat="server" Text='<%# Bind("ArLocationDescrition") %>' />
+                                <asp:TextBox ID="ArLocationNameTextBox" runat="server" Text='<%# Bind("ArLocationName") %>' />
                             </div>
-                              <br />
-                            City:
+
+
+                                <br />
+
+                                Location Descrition-Arabic:
+                            <div class="controls-row">
+                                <asp:TextBox ID="ArLocationDescritionTextBox" runat="server" Text='<%# Bind("ArLocationDescrition") %>' />
+                            </div>
+                                <br />
+                                City:
                             
                             <div class="controls-row">
                                 <asp:DropDownList runat="server" ID="txtCity" DataSourceID="SqlDataSource1" DataTextField="EnCityName" DataValueField="Id" SelectedValue='<%# Bind("CityId") %>'></asp:DropDownList>
                                 <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:Web_Gulf-FutureConnectionString %>' SelectCommand="SELECT [Id], [EnCityName] FROM [Cities]"></asp:SqlDataSource>
                             </div>
-                            <br />
-                            Location Name-Engilsh:
+                                <br />
+                                Location Name-Engilsh:
                             <div class="controls-row">
-                                  <asp:TextBox ID="EnLocationNameTextBox" runat="server" Text='<%# Bind("EnLocationName") %>' />
+                                <asp:TextBox ID="EnLocationNameTextBox" runat="server" Text='<%# Bind("EnLocationName") %>' />
                             </div>
-                           
-                            <br />
-                            Location Description-English:
+
+                                <br />
+                                Location Description-English:
                             <div class="controls-row">
-                                 <asp:TextBox ID="EnDescriptionTextBox" runat="server" Text='<%# Bind("EnDescription") %>' />
+                                <asp:TextBox ID="EnDescriptionTextBox" runat="server" Text='<%# Bind("EnDescription") %>' />
                             </div>
-                              <br />
-                            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" CssClass="btn btn-primary" />
-                            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" CssClass="btn" />
-                        </InsertItemTemplate>
-                        
-                    </asp:FormView>
-                    <asp:EntityDataSource ID="LocalizeDataSource" runat="server" ConnectionString="name=dbContext" DefaultContainerName="dbContext" EnableDelete="True" EnableFlattening="False" EnableInsert="True" EnableUpdate="True" EntitySetName="Locations" EntityTypeFilter="Location">
-                    </asp:EntityDataSource>
+                                <br />
+                                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" CssClass="btn btn-primary" />
+                                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" CssClass="btn" />
+                            </InsertItemTemplate>
+
+                        </asp:FormView>
+                        <asp:EntityDataSource ID="LocalizeDataSource" runat="server" ConnectionString="name=dbContext" DefaultContainerName="dbContext" EnableDelete="True" EnableFlattening="False" EnableInsert="True" EnableUpdate="True" EntitySetName="Locations" EntityTypeFilter="Location">
+                        </asp:EntityDataSource>
+                    </div>
                     <div class="controls-row">
                         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="LocalizeDataSource" CssClass="table table-hover">
                             <Columns>
@@ -262,7 +265,7 @@
 
          <div class="block">
              <div class="navbar navbar-inner block-header">
-                  <div class="muted pull-left">Best Deels Area</div>
+                  <div class="muted pull-left">Real State Area</div>
               </div>
 
 
