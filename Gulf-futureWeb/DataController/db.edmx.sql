@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/31/2014 07:44:58
--- Generated from EDMX file: C:\Users\Sezer\Documents\GitHub\Gulf-FutureWebSite\Gulf-futureWeb\DataController\db.edmx
+-- Date Created: 06/01/2014 12:34:17
+-- Generated from EDMX file: C:\Users\user\Documents\GitHub\Gulf-FutureWebSite\Gulf-futureWeb\DataController\db.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -291,7 +291,6 @@ ADD CONSTRAINT [FK_CityLocation]
     REFERENCES [dbo].[Cities]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_CityLocation'
 CREATE INDEX [IX_FK_CityLocation]
@@ -306,7 +305,6 @@ ADD CONSTRAINT [FK_ConturyCity]
     REFERENCES [dbo].[Conturies]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ConturyCity'
 CREATE INDEX [IX_FK_ConturyCity]
@@ -321,7 +319,6 @@ ADD CONSTRAINT [FK_LocationRealStatProfile]
     REFERENCES [dbo].[Locations]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_LocationRealStatProfile'
 CREATE INDEX [IX_FK_LocationRealStatProfile]
