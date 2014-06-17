@@ -93,6 +93,9 @@
                                             <a tabindex="-1" href="ContactUsControl.aspx">Contact Us</a>
                                         </li>
                                         <li>
+                                            <a tabindex="-1" href="ServiceMange.aspx">Our Service</a>
+                                        </li>
+                                        <li>
                                             <a tabindex="-1" href="PhotoGellaryControl.aspx">Photo Gallery</a>
                                         </li>
                                         <li>

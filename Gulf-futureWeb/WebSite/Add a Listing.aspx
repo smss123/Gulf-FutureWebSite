@@ -127,7 +127,7 @@
                                         <label>نوع الاستثمار   </label>
                                         <div class="select-wrapper">
 
-                                            <asp:DropDownList ID="DropDownList1" runat="server" class="form-control">
+                                            <asp:DropDownList ID="txtinvsementType" runat="server" class="form-control">
                                                 <asp:ListItem Text="بيع" Value="0" />
                                                 <asp:ListItem Text="ايجار" Value="1" />
                                             </asp:DropDownList>

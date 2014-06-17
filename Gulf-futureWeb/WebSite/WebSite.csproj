@@ -187,6 +187,7 @@
     <Content Include="bootstrapFrameWork\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="bootstrapFrameWork\js\bootstrap.js" />
     <Content Include="bootstrapFrameWork\js\bootstrap.min.js" />
+    <Content Include="Contact Us.aspx" />
     <Content Include="ControlPanalSource\assets\DT_bootstrap.css" />
     <Content Include="ControlPanalSource\assets\DT_bootstrap.js" />
     <Content Include="ControlPanalSource\assets\scripts.js" />
@@ -1157,6 +1158,7 @@
     <Content Include="DroidKufi\New Text Document.txt" />
     <Content Include="DroidKufi\Preview.png" />
     <Content Include="DroidKufi\style.css" />
+    <Content Include="HtmlPage1.html" />
     <Content Include="Image\1.jpg" />
     <Content Include="Image\1.png" />
     <Content Include="Image\10.jpg" />
@@ -1197,6 +1199,9 @@
     <Content Include="Image\images\Untitled-5_02.png" />
     <Content Include="Image\images\Untitled-5_04.png" />
     <Content Include="Image\images\Untitled-5_05.png" />
+    <Content Include="News.aspx" />
+    <Content Include="OurSerivcesX.aspx" />
+    <Content Include="Photo Gallery.aspx" />
     <Content Include="Scripts\js\jquery.min.map" />
     <Content Include="assets\img\patterns\small\cloth-alike.png.tmp" />
     <Content Include="assets\img\patterns\small\dust-dark.png.tmp" />
@@ -2126,8 +2131,11 @@
     <Content Include="Update\السبت 14-6\Services1.html" />
     <Content Include="Update\السبت 14-6\Services2 .html" />
     <Content Include="Update\السبت 14-6\Services3 .html" />
+    <Content Include="UserControls\UcNews.ascx" />
+    <Content Include="UserControls\UcShowPhotoGellary.ascx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm2.aspx" />
     <Content Include="WebSiteControlPanal\AboutUsControl.aspx" />
     <Content Include="WebSiteControlPanal\assets\DT_bootstrap.css" />
     <Content Include="WebSiteControlPanal\assets\DT_bootstrap.js" />
@@ -2149,6 +2157,7 @@
     <Content Include="WebSiteControlPanal\MainControlPanal.aspx" />
     <Content Include="WebSiteControlPanal\NewsControl.aspx" />
     <Content Include="WebSiteControlPanal\PhotoGellaryControl.aspx" />
+    <Content Include="WebSiteControlPanal\ServiceMange.aspx" />
     <Content Include="WebSiteControlPanal\SildeControl.aspx" />
     <Content Include="WebSiteControlPanal\TagsControl.aspx" />
     <Content Include="WebSiteControlPanal\UserManageControl.aspx" />
@@ -3110,6 +3119,34 @@
     <Compile Include="Add a Listing.aspx.designer.cs">
       <DependentUpon>Add a Listing.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Contact Us.aspx.cs">
+      <DependentUpon>Contact Us.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact Us.aspx.designer.cs">
+      <DependentUpon>Contact Us.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="News.aspx.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="News.aspx.designer.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OurSerivcesX.aspx.cs">
+      <DependentUpon>OurSerivcesX.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OurSerivcesX.aspx.designer.cs">
+      <DependentUpon>OurSerivcesX.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Photo Gallery.aspx.cs">
+      <DependentUpon>Photo Gallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Photo Gallery.aspx.designer.cs">
+      <DependentUpon>Photo Gallery.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\GulfService.asmx.cs">
       <DependentUpon>GulfService.asmx</DependentUpon>
@@ -3119,12 +3156,33 @@
       <DependentUpon>testWeb.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UserControls\UcNews.ascx.cs">
+      <DependentUpon>UcNews.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcNews.ascx.designer.cs">
+      <DependentUpon>UcNews.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UcShowPhotoGellary.ascx.cs">
+      <DependentUpon>UcShowPhotoGellary.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcShowPhotoGellary.ascx.designer.cs">
+      <DependentUpon>UcShowPhotoGellary.ascx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebSiteControlPanal\AboutUsControl.aspx.cs">
       <DependentUpon>AboutUsControl.aspx</DependentUpon>
@@ -3195,6 +3253,13 @@
     </Compile>
     <Compile Include="WebSiteControlPanal\PhotoGellaryControl.aspx.designer.cs">
       <DependentUpon>PhotoGellaryControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSiteControlPanal\ServiceMange.aspx.cs">
+      <DependentUpon>ServiceMange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSiteControlPanal\ServiceMange.aspx.designer.cs">
+      <DependentUpon>ServiceMange.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebSiteControlPanal\SildeControl.aspx.cs">
       <DependentUpon>SildeControl.aspx</DependentUpon>

@@ -49,13 +49,13 @@ namespace WebSite {
         protected global::System.Web.UI.WebControls.DropDownList txtEstatType;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// txtinvsementType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList txtinvsementType;
         
         /// <summary>
         /// txtPrice control.
