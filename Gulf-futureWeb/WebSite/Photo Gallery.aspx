@@ -57,21 +57,28 @@
             <div class="container">
                 <div class="row">
                     <ul class="header-nav nav nav-pills">
-                        <li > <a href="index.html"> الرئيسية </a>  </li>
-                        <li > <a href="About Us.html">  من نحن  </a>  </li>
+                        <li > <a href="Default.aspx"> الرئيسية </a>  </li>
+                        <li > <a href="About Us.aspx">  من نحن  </a>  </li>
                         <li class="menuparent">
                         <a href="#"> خدماتنا </a>
                             <ul class="sub-menu">
-                              <li><a href="Services1.html"> إدارة مباني </a></li>
-                              <li><a href="Services2 .html"> بيع وشراء العقارات </a></li>
-                              <li><a href="Services3 .html"> تثمين الممتلكات </a></li>
+                                <%
+                                                   string ser;
+                                                    //--------our service here 
+                                                    foreach (var item in this.Ourservice)
+                                                    {
+                                                        ser = "<li><a href='OurSerivcesX.aspx?SID="+item.Id+"'>"+item.ArOurService+" </a></li>";
+                                                        Response.Write(ser);
+                                                    }  
+                                                    
+                                %>
                             </ul>
                         </li>
-                        <li > <a href="Photo Gallery.html"> معرض الصور </a>  </li>
-                    <li > <a href="News.html">  جديد الاخبار </a>  </li>
-                    <li > <a href="Add a Listing.html">   أصف عقارك  </a>  </li>
-                        <li > <a href="Contact Us.html">  اتصل بنا  </a>  </li>
-                         <li > <a href="English/index.html">  English  </a>  </li>
+                        <li > <a href="Photo Gallery.aspx"> معرض الصور </a>  </li>
+                    <li > <a href="News.aspx">  جديد الاخبار </a>  </li>
+                    <li > <a href="Add a Listing.aspx">   أصف عقارك  </a>  </li>
+                        <li > <a href="Contact Us.aspx">  اتصل بنا  </a>  </li>
+                         <li > <a href="English/index.aspx">  English  </a>  </li>
                     </ul><!-- /.header-nav -->
                 </div>
             </div><!-- /.container -->

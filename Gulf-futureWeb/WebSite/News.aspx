@@ -53,21 +53,28 @@
                         <div class="container">
                             <div class="row">
                                 <ul class="header-nav nav nav-pills">
-                                    <li><a href="index.html">الرئيسية </a></li>
-                                    <li><a href="About Us.html">من نحن  </a></li>
+                                    <li><a href="Default.aspx">الرئيسية </a></li>
+                                    <li><a href="About Us.aspx">من نحن  </a></li>
                                     <li class="menuparent">
                                         <a href="#">خدماتنا </a>
                                         <ul class="sub-menu">
-                                            <li><a href="Services1.html">إدارة مباني </a></li>
-                                            <li><a href="Services2 .html">بيع وشراء العقارات </a></li>
-                                            <li><a href="Services3 .html">تثمين الممتلكات </a></li>
+                                           <%
+                                                   string ser;
+                                                    //--------our service here 
+                                                    foreach (var item in this.Ourservice)
+                                                    {
+                                                        ser = "<li><a href='OurSerivcesX.aspx?SID="+item.Id+"'>"+item.ArOurService+" </a></li>";
+                                                        Response.Write(ser);
+                                                    }  
+                                                    
+                                                %>
                                         </ul>
                                     </li>
-                                    <li><a href="Photo Gallery.html">معرض الصور </a></li>
-                                    <li><a href="News.html">جديد الاخبار </a></li>
-                                    <li><a href="Add a Listing.html">أصف عقارك  </a></li>
-                                    <li><a href="Contact Us.html">اتصل بنا  </a></li>
-                                    <li><a href="English/index.html">English  </a></li>
+                                    <li><a href="Photo Gallery.aspx">معرض الصور </a></li>
+                                    <li><a href="News.aspx">جديد الاخبار </a></li>
+                                    <li><a href="Add a Listing.aspx">أصف عقارك  </a></li>
+                                    <li><a href="Contact Us.aspx">اتصل بنا  </a></li>
+                                    <li><a href="English/index.aspx">English  </a></li>
                                 </ul>
                                 <!-- /.header-nav -->
                             </div>
@@ -113,48 +120,93 @@
 
 
                                                     <div class="widget-content" dir="rtl">
-                                                        <form method="post" action="http://html.realocation.byaviators.com/properties-rows.html?">
+                                                        <form runat="server" >
                                                             <div class="row">
                                                                 <div class="form-group col-sm-12">
                                                                     <label>البلد </label>
-                                                                    <input type="text" class="form-control" placeholder=" البلد ">
+                                                                    <DIV class="select-wrapper">
+                                                                        <asp:DropDownList runat="server" ID="txtcountry" DataSourceID="countryDataSource" DataTextField="ArContryName" DataValueField="Id" AutoPostBack="True" class="form-control">
+                                                                        </asp:DropDownList>
+                                                                        <asp:EntityDataSource runat="server" ID="countryDataSource" DefaultContainerName="dbContext" ConnectionString="name=dbContext" EnableFlattening="False" EntitySetName="Conturies" EntityTypeFilter="Contury"></asp:EntityDataSource>
+
+                                                                    </DIV>
                                                                 </div>
                                                                 <!-- /.form-group -->
 
                                                                 <div class="form-group col-sm-12">
                                                                     <label>المدينة  </label>
-                                                                    <input type="text" class="form-control" placeholder=" المدينة">
+                                                                    <DIV class="select-wrapper">
+                                                                        <asp:DropDownList runat="server" ID="txtCity" DataSourceID="CityDataSource" DataTextField="ArCityName" DataValueField="Id" class="form-control" AutoPostBack="true">
+                                                                        </asp:DropDownList>
+                                                                        <asp:EntityDataSource runat="server" ID="CityDataSource" DefaultContainerName="dbContext" ConnectionString="name=dbContext" EnableFlattening="false" EntitySetName="Cities" EntityTypeFilter="City" AutoGenerateWhereClause="true" Select="" Where="">
+
+                                                                            <WhereParameters>
+                                                                                <asp:ControlParameter ControlID="txtcountry" DefaultValue="-1" Name="ConturyId" Type="Int32" />
+                                                                            </WhereParameters>
+                                                                        </asp:EntityDataSource>
+
+                                                                    </DIV>
                                                                 </div>
                                                                 <!-- /.form-group -->
 
                                                                 <div class="form-group col-sm-12">
                                                                     <label>الحي </label>
-                                                                    <input type="text" class="form-control" placeholder=" الحي ">
+                                                                    <asp:DropDownList runat="server" DataSourceID="LocationDataSource" DataTextField="ArLocationName" DataValueField="Id" class="form-control" AutoPostBack="true" ID="txtLoc">
+                                                                    </asp:DropDownList>
+                                                                    <asp:EntityDataSource runat="server" ID="LocationDataSource" DefaultContainerName="dbContext" ConnectionString="name=dbContext" EnableFlattening="False" EntitySetName="Locations" EntityTypeFilter="Location" Select="" Where="" AutoGenerateWhereClause="true">
+                                                                        <WhereParameters>
+                                                                            <asp:ControlParameter ControlID="txtCity" DefaultValue="-1" Name="CityId" Type="Int32" />
+                                                                        </WhereParameters>
+                                                                    </asp:EntityDataSource>
                                                                 </div>
                                                                 <!-- /.form-group -->
 
                                                                 <div class="form-group col-sm-12">
                                                                     <label>نوع العقار </label>
-                                                                    <input type="text" class="form-control" placeholder=" نوع العقار">
+                                                                    <DIV class="select-wrapper">
+
+                                                                        <asp:DropDownList runat="server" ID="txtEstatType" class="form-control">
+                                                                            <asp:ListItem Text="Empty land" />
+                                                                            <asp:ListItem Text="Buildings" />
+                                                                            <asp:ListItem Text="Buildings" />
+                                                                            <asp:ListItem Text="Villas" />
+                                                                            <asp:ListItem Text="Offices" />
+                                                                        </asp:DropDownList>
+                                                                    </DIV>
+                                                        <!-- /.select-wrapper -->
                                                                 </div>
                                                                 <!-- /.form-group -->
+                                                                
+                                                                <div class="form-group col-sm-12">
+                                                                    <label>نوع الاستثمار</label>
+                                                                    <DIV class="select-wrapper">
+
+                                                                        <asp:DropDownList runat="server" ID="txtStatus" class="form-control">
+                                                                            <asp:ListItem Text="Distinctive" />
+                                                                            <asp:ListItem Text="Sale" />
+                                                                            <asp:ListItem Text="Rent" />
+                                                                        </asp:DropDownList>
+
+                                                                    </DIV>
+                                                        <!-- /.select-wrapper -->
+                                                                </div>
 
                                                                 <div class="form-group col-sm-6">
                                                                     <label>السعر من </label>
-                                                                    <input type="text" class="form-control" placeholder=" السعر من ">
+                                                                     <asp:TextBox runat="server" ID="txtfrom" class="form-control" placeholder="100 ر.ع " />
                                                                 </div>
                                                                 <!-- /.form-group -->
 
                                                                 <div class="form-group col-sm-6">
                                                                     <label>السعر إلى </label>
-                                                                    <input type="text" class="form-control" placeholder=" السعر إلى ">
+                                                                    <asp:TextBox runat="server" ID="txtTo" class="form-control" placeholder="90000 ر.ع " />
                                                                 </div>
                                                                 <!-- /.form-group -->
                                                             </div>
                                                             <!-- /.row -->
 
                                                             <div class="form-group">
-                                                                <input type="text" value=" بحث " class="btn btn-block btn-primary btn-inversed">
+                                                                  <asp:Button Text="بحث" runat="server"   class="btn btn-primary btn-inversed btn-block" id="btnSearch" OnClick="btnSearch_Click"/>
                                                             </div>
                                                             <!-- /.form-group -->
                                                         </form>
@@ -172,7 +224,32 @@
                                                     <div class="properties-small-list">
 
 
-                                                        <div class="property-small clearfix">
+
+                                                          <%
+                                                            
+                                                            string realstateX;
+                                                            foreach (var item in RealStatProfileList)
+                                                            {
+                                                                realstateX = " <div class='property-small clearfix'>"+
+                                                                              " <div class='property-small-picture col-sm-12 col-md-4'>"+
+                                                                               "<div class='property-small-picture-inner'>"+
+                                                                               "<a href='Property Specifications.aspx?Rst="+item.Id+"' class='property-small-picture-target'>" +
+                                                                                 "<img src='"+item.image1+"' alt=''>"+
+                                                                                 "</a>"+
+                                                                                 " </div></div>"+
+                                                                                 "<div class='property-small-content col-sm-12 col-md-8' dir='rtl'>"+
+                                                                                 " <h3 class='property-small-title'><a href='Property Specifications.aspx?Rst=" + item.Id + "'>" + item.ArTitle + " </a></h3>" +
+                                                                                  "<div class='property-small-price'>"+item.price+" ر .ع <span class='property-small-price-suffix'>/  السعر </span></div>"+
+                                                                                  " </div> </div>";
+                                                                Response.Write(realstateX);
+                                                            }
+                                                            
+                                                            
+                                                            
+                                                         %>
+
+
+<%--                                                        <div class="property-small clearfix">
                                                             <div class="property-small-picture col-sm-12 col-md-4">
                                                                 <div class="property-small-picture-inner">
                                                                     <a href="Property Specifications.html" class="property-small-picture-target">
@@ -300,7 +377,7 @@
                                                                 <!-- /.property-small-price -->
                                                             </div>
                                                             <!-- /.property-small-content -->
-                                                        </div>
+                                                        </div>--%>
                                                         <!-- /.property-small -->
                                                     </div>
                                                     <!-- /.properties-small-list -->
@@ -326,7 +403,7 @@
         </div>
         <hr>
 
-        <div class="btn-group" align="center">
+        <%--<div class="btn-group" align="center">
             <a href="#">
                 <button type="button" class="btn btn-default">1</button>
             </a>
@@ -358,7 +435,7 @@
                 <button type="button" class="btn btn-default">10</button>
             </a>
 
-        </div>
+        </div>--%>
 
         <br>
         <br>

@@ -96,6 +96,9 @@
     <Property Name="EnTitle" Type="nvarchar(max)" Nullable="false" />
     <Property Name="EnDescription" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Image4" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EstatType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="status" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="isInMasterPage" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="SlideConfigs">
     <Key>
@@ -125,6 +128,8 @@
     <Property Name="WebsiteTags" Type="nvarchar(max)" Nullable="false" />
     <Property Name="DefaultLanguge" Type="nvarchar" Nullable="false" MaxLength="10" />
     <Property Name="EnWebSiteName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ArAdminTalk" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EnAdminTalk" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Contacts">
     <Key>
@@ -274,6 +279,9 @@
           <Property Name="EnTitle" Type="String" Nullable="false" />
           <Property Name="EnDescription" Type="String" Nullable="false" />
           <Property Name="Image4" Type="String" Nullable="false" />
+          <Property Name="EstatType" Type="String" Nullable="false" />
+          <Property Name="status" Type="String" Nullable="false" />
+          <Property Name="isInMasterPage" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="SlideConfig">
           <Key>
@@ -303,6 +311,8 @@
           <Property Name="WebsiteTags" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DefaultLanguge" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="EnWebSiteName" Type="String" Nullable="false" />
+          <Property Name="ArAdminTalk" Type="String" Nullable="false" />
+          <Property Name="EnAdminTalk" Type="String" Nullable="false" />
         </EntityType>
         <Association Name="FK_CityLocation">
           <End Role="Cities" Type="Self.City" Multiplicity="1" />
@@ -478,6 +488,9 @@
           <ScalarProperty Name="EnTitle" ColumnName="EnTitle" />
           <ScalarProperty Name="EnDescription" ColumnName="EnDescription" />
           <ScalarProperty Name="Image4" ColumnName="Image4" />
+          <ScalarProperty Name="EstatType" ColumnName="EstatType" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="isInMasterPage" ColumnName="isInMasterPage" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -510,6 +523,8 @@
           <ScalarProperty Name="WebsiteTags" ColumnName="WebsiteTags" />
           <ScalarProperty Name="DefaultLanguge" ColumnName="DefaultLanguge" />
           <ScalarProperty Name="EnWebSiteName" ColumnName="EnWebSiteName" />
+          <ScalarProperty Name="ArAdminTalk" ColumnName="ArAdminTalk" />
+          <ScalarProperty Name="EnAdminTalk" ColumnName="EnAdminTalk" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

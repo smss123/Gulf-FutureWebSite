@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using DataController;
+
 namespace WebSite.WebSiteControlPanal
 {
     public partial class PhotoGellaryControl : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
         }
 
-        void Page_Init(object sender, EventArgs e)
+        private void Page_Init(object sender, EventArgs e)
         {
             PhotoDataSource.DataBind();
             GridView1.DataBind();
@@ -19,16 +19,14 @@ namespace WebSite.WebSiteControlPanal
 
         protected void RadAsyncUpload1_FileUploaded(object sender, Telerik.Web.UI.FileUploadedEventArgs e)
         {
-           // e.File.SaveAs(Server.MapPath(String.Format(@"~/Resources/Uploads/Images/{0}", e.File.GetName())));
-            dbContext db = new dbContext();
-            string path = @"../Resources/Uploads/Images/";// String.Format(@"~/Resources/Uploads/Images/{0}", Items.File.GetName())
+            var db = new dbContext();
+            var path = @"../Resources/Uploads/Images/";
             foreach (Telerik.Web.UI.UploadedFile item in RadAsyncUpload1.UploadedFiles)
             {
                 item.SaveAs(Server.MapPath(path + item.GetName()));
-                PhotoGellary ph = new PhotoGellary()
-                {
-                    arDescription = txtArDectiption.Text
-                    ,
+                var ph = new PhotoGellary()
+                { arDescription = txtArDectiption.Text
+                ,
                     EnDescription = txtEnDescription.Text,
                     img = path + item.GetName()
                 };
@@ -40,18 +38,11 @@ namespace WebSite.WebSiteControlPanal
                                     "</div>";
                 PhotoDataSource.DataBind();
                 GridView1.DataBind();
-               
             }
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            
-            
         }
-
-   
-
-     
     }
 }

@@ -9,10 +9,9 @@ namespace WebSite.WebSiteControlPanal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-          
         }
 
-        void Page_Init(object sender, EventArgs e)
+        private void Page_Init(object sender, EventArgs e)
         {
             var db = new dbContext();
             try
@@ -22,8 +21,6 @@ namespace WebSite.WebSiteControlPanal
             }
             catch (Exception)
             {
-                
-                
             }
         }
 
@@ -37,8 +34,7 @@ namespace WebSite.WebSiteControlPanal
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-           
-            dbContext db = new dbContext();
+            var db = new dbContext();
             try
             {
                 var q = (db.AboutUs.ToList()[0]);
@@ -55,8 +51,7 @@ namespace WebSite.WebSiteControlPanal
             }
             catch (Exception)
             {
-
-                AboutU about = new AboutU();
+                var about = new AboutU();
                 about.ArAboutUs = ArEdior.Content;
                 about.EnAboutUs = EnEditor.Content;
                 db.AboutUs.Add(about);

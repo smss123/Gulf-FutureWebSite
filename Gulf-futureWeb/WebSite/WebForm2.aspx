@@ -2,6 +2,8 @@
 
 <%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
 
+<%@ Register src="UserControls/UcResultSearch.ascx" tagname="UcResultSearch" tagprefix="uc1" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -96,7 +98,9 @@
         <asp:EntityDataSource ID="EntityDataSource2" runat="server" ConnectionString="name=dbContext" DefaultContainerName="dbContext" EnableFlattening="False" EntitySetName="OurNews" EntityTypeFilter="OurNews">
         </asp:EntityDataSource>
     
-    </div>
+    </div>  
+        dfgdfgdfgdfgdfg
+        <uc1:UcResultSearch ID="UcResultSearch1" runat="server" />
     </form>
 </body>
 </html>

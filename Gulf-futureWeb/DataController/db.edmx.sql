@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/01/2014 12:34:17
--- Generated from EDMX file: C:\Users\user\Documents\GitHub\Gulf-FutureWebSite\Gulf-futureWeb\DataController\db.edmx
+-- Date Created: 06/20/2014 22:16:11
+-- Generated from EDMX file: C:\Users\Sezer\Documents\GitHub\Gulf-FutureWebSite\Gulf-futureWeb\DataController\db.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -134,7 +134,10 @@ CREATE TABLE [dbo].[RealStatProfiles] (
     [LocationId] int  NOT NULL,
     [EnTitle] nvarchar(max)  NOT NULL,
     [EnDescription] nvarchar(max)  NOT NULL,
-    [Image4] nvarchar(max)  NOT NULL
+    [Image4] nvarchar(max)  NOT NULL,
+    [EstatType] nvarchar(max)  NOT NULL,
+    [status] nvarchar(max)  NOT NULL,
+    [isInMasterPage] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -163,7 +166,9 @@ CREATE TABLE [dbo].[WebSiteInfoes] (
     [WebSitDescription] nvarchar(max)  NOT NULL,
     [WebsiteTags] nvarchar(max)  NOT NULL,
     [DefaultLanguge] nvarchar(10)  NOT NULL,
-    [EnWebSiteName] nvarchar(max)  NOT NULL
+    [EnWebSiteName] nvarchar(max)  NOT NULL,
+    [ArAdminTalk] nvarchar(max)  NOT NULL,
+    [EnAdminTalk] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -291,6 +296,7 @@ ADD CONSTRAINT [FK_CityLocation]
     REFERENCES [dbo].[Cities]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_CityLocation'
 CREATE INDEX [IX_FK_CityLocation]
@@ -305,6 +311,7 @@ ADD CONSTRAINT [FK_ConturyCity]
     REFERENCES [dbo].[Conturies]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ConturyCity'
 CREATE INDEX [IX_FK_ConturyCity]
@@ -319,6 +326,7 @@ ADD CONSTRAINT [FK_LocationRealStatProfile]
     REFERENCES [dbo].[Locations]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_LocationRealStatProfile'
 CREATE INDEX [IX_FK_LocationRealStatProfile]

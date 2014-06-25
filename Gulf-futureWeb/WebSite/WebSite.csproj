@@ -1154,11 +1154,309 @@
     <Content Include="ControlPanalSource\vendors\wysiwyg\bootstrap-wysihtml5.css" />
     <Content Include="ControlPanalSource\vendors\wysiwyg\bootstrap-wysihtml5.js" />
     <Content Include="ControlPanalSource\vendors\wysiwyg\wysihtml5-0.3.0.js" />
+    <Content Include="Default.aspx" />
     <Content Include="DroidKufi\demo.html" />
     <Content Include="DroidKufi\New Text Document.txt" />
     <Content Include="DroidKufi\Preview.png" />
     <Content Include="DroidKufi\style.css" />
-    <Content Include="HtmlPage1.html" />
+    <Content Include="En\EnAbout Us.aspx" />
+    <Content Include="En\EnAdd a Listing.aspx" />
+    <Content Include="En\assets\css\realocation.css" />
+    <Content Include="En\assets\css\variants\blue.css" />
+    <Content Include="En\assets\css\variants\brown.css" />
+    <Content Include="En\assets\css\variants\cyan.css" />
+    <Content Include="En\assets\css\variants\green.css" />
+    <Content Include="En\assets\css\variants\orange.css" />
+    <Content Include="En\assets\css\variants\pink.css" />
+    <Content Include="En\assets\css\variants\purple.css" />
+    <Content Include="En\assets\css\variants\red.css" />
+    <Content Include="En\assets\img\banar.jpg" />
+    <Content Include="En\assets\img\bg.jpg" />
+    <Content Include="En\assets\img\flinkes\1398821926_80-google-plus.png" />
+    <Content Include="En\assets\img\flinkes\1398822003_51-linkedin.png" />
+    <Content Include="En\assets\img\flinkes\1398822006_58-youtube.png" />
+    <Content Include="En\assets\img\flinkes\1398822022_46-facebook.png" />
+    <Content Include="En\assets\img\flinkes\1398822034_43-twitter.png" />
+    <Content Include="En\assets\img\flinkes\1398822458_instagram_circle_black.png" />
+    <Content Include="En\assets\img\flinkes\New Text Document.txt" />
+    <Content Include="En\assets\img\hex.png" />
+    <Content Include="En\assets\img\map.png" />
+    <Content Include="En\assets\img\next.png" />
+    <Content Include="En\assets\img\pattern-dots.png" />
+    <Content Include="En\assets\img\patterns\small\cloth-alike-dark.png" />
+    <Content Include="En\assets\img\patterns\small\corrugation-dark.png" />
+    <Content Include="En\assets\img\patterns\small\corrugation.png" />
+    <Content Include="En\assets\img\patterns\small\diagonal-noise-dark.png" />
+    <Content Include="En\assets\img\patterns\small\diagonal-noise.png" />
+    <Content Include="En\assets\img\patterns\small\dust.png" />
+    <Content Include="En\assets\img\patterns\small\fabric-plaid-dark.png" />
+    <Content Include="En\assets\img\patterns\small\fabric-plaid.png" />
+    <Content Include="En\assets\img\patterns\small\farmer-dark.png" />
+    <Content Include="En\assets\img\patterns\small\farmer.png" />
+    <Content Include="En\assets\img\patterns\small\grid-noise-dark.png" />
+    <Content Include="En\assets\img\patterns\small\grid-noise.png" />
+    <Content Include="En\assets\img\patterns\small\lghtmesh-dark.png" />
+    <Content Include="En\assets\img\patterns\small\lghtmesh.png" />
+    <Content Include="En\assets\img\patterns\small\no-pattern-dark.png" />
+    <Content Include="En\assets\img\patterns\small\no-pattern.png" />
+    <Content Include="En\assets\img\patterns\small\pw-maze-white-dark.png" />
+    <Content Include="En\assets\img\patterns\small\pw-maze-white.png" />
+    <Content Include="En\assets\img\tmp\agents\medium\1.jpg" />
+    <Content Include="En\assets\img\tmp\agents\medium\2.jpg" />
+    <Content Include="En\assets\img\tmp\agents\medium\3.jpg" />
+    <Content Include="En\assets\img\tmp\agents\medium\4.jpg" />
+    <Content Include="En\assets\img\tmp\properties\large\12.jpg" />
+    <Content Include="En\assets\img\tmp\properties\large\3.jpg" />
+    <Content Include="En\assets\img\tmp\properties\large\5.jpg" />
+    <Content Include="En\assets\img\tmp\properties\large\5xxl.jpg" />
+    <Content Include="En\assets\img\tmp\properties\large\6.jpg" />
+    <Content Include="En\assets\img\tmp\properties\medium\1.jpg" />
+    <Content Include="En\assets\img\tmp\properties\medium\10.jpg" />
+    <Content Include="En\assets\img\tmp\properties\medium\11.jpg" />
+    <Content Include="En\assets\img\tmp\properties\medium\12.jpg" />
+    <Content Include="En\assets\img\tmp\properties\medium\2.jpg" />
+    <Content Include="En\assets\img\tmp\properties\medium\3.jpg" />
+    <Content Include="En\assets\img\tmp\properties\medium\4.jpg" />
+    <Content Include="En\assets\img\tmp\properties\medium\5.jpg" />
+    <Content Include="En\assets\img\tmp\properties\medium\6.jpg" />
+    <Content Include="En\assets\img\tmp\properties\medium\7.jpg" />
+    <Content Include="En\assets\img\tmp\properties\medium\8.jpg" />
+    <Content Include="En\assets\img\tmp\properties\medium\9.jpg" />
+    <Content Include="En\assets\img\tmp\properties\small\1.jpg" />
+    <Content Include="En\assets\img\tmp\properties\small\10.jpg" />
+    <Content Include="En\assets\img\tmp\properties\small\11.jpg" />
+    <Content Include="En\assets\img\tmp\properties\small\12.jpg" />
+    <Content Include="En\assets\img\tmp\properties\small\2.jpg" />
+    <Content Include="En\assets\img\tmp\properties\small\3.jpg" />
+    <Content Include="En\assets\img\tmp\properties\small\4.jpg" />
+    <Content Include="En\assets\img\tmp\properties\small\5.jpg" />
+    <Content Include="En\assets\img\tmp\properties\small\6.jpg" />
+    <Content Include="En\assets\img\tmp\properties\small\7.jpg" />
+    <Content Include="En\assets\img\tmp\properties\small\8.jpg" />
+    <Content Include="En\assets\js\gmap3.clusterer.js" />
+    <Content Include="En\assets\js\gmap3.infobox.js" />
+    <Content Include="En\assets\js\jquery.chained.min.js" />
+    <Content Include="En\assets\js\jquery.js" />
+    <Content Include="En\assets\js\map.js" />
+    <Content Include="En\assets\js\realocation.js" />
+    <Content Include="En\assets\libraries\bootstrap-sass\vendor\assets\javascripts\bootstrap\collapse.js" />
+    <Content Include="En\assets\libraries\bootstrap-sass\vendor\assets\javascripts\bootstrap\transition.js" />
+    <Content Include="En\assets\libraries\flexslider\flexslider.css" />
+    <Content Include="En\assets\libraries\flexslider\fonts\flexslider-icon.svg" />
+    <Content Include="En\assets\libraries\flexslider\jquery.flexslider.js" />
+    <Content Include="En\assets\libraries\font-awesome\css\font-awesome.css" />
+    <Content Include="En\assets\libraries\font-awesome\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="En\assets\libraries\isotope\jquery.isotope.min.js" />
+    <Content Include="En\assets\libraries\jquery-bxslider\jquery.bxslider.css" />
+    <Content Include="En\assets\libraries\jquery-bxslider\jquery.bxslider.min.js" />
+    <Content Include="En\bootstrapFrameWork\css\bootstrap-theme.css" />
+    <Content Include="En\bootstrapFrameWork\css\bootstrap-theme.min.css" />
+    <Content Include="En\bootstrapFrameWork\css\bootstrap.css" />
+    <Content Include="En\bootstrapFrameWork\css\bootstrap.min.css" />
+    <Content Include="En\bootstrapFrameWork\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="En\bootstrapFrameWork\js\bootstrap.js" />
+    <Content Include="En\bootstrapFrameWork\js\bootstrap.min.js" />
+    <Content Include="En\EnContact Us.aspx" />
+    <Content Include="En\EnDefault.aspx" />
+    <Content Include="En\DroidKufi\demo.html" />
+    <Content Include="En\DroidKufi\New Text Document.txt" />
+    <Content Include="En\DroidKufi\Preview.png" />
+    <Content Include="En\DroidKufi\style.css" />
+    <Content Include="En\English\About Us.html" />
+    <Content Include="En\English\Add a Listing.html" />
+    <Content Include="En\English\assets\css\realocation.css" />
+    <Content Include="En\English\assets\css\variants\blue.css" />
+    <Content Include="En\English\assets\css\variants\brown.css" />
+    <Content Include="En\English\assets\css\variants\cyan.css" />
+    <Content Include="En\English\assets\css\variants\green.css" />
+    <Content Include="En\English\assets\css\variants\orange.css" />
+    <Content Include="En\English\assets\css\variants\pink.css" />
+    <Content Include="En\English\assets\css\variants\purple.css" />
+    <Content Include="En\English\assets\css\variants\red.css" />
+    <Content Include="En\English\assets\img\banar.jpg" />
+    <Content Include="En\English\assets\img\bg.jpg" />
+    <Content Include="En\English\assets\img\flinkes\1398821926_80-google-plus.png" />
+    <Content Include="En\English\assets\img\flinkes\1398822003_51-linkedin.png" />
+    <Content Include="En\English\assets\img\flinkes\1398822006_58-youtube.png" />
+    <Content Include="En\English\assets\img\flinkes\1398822022_46-facebook.png" />
+    <Content Include="En\English\assets\img\flinkes\1398822034_43-twitter.png" />
+    <Content Include="En\English\assets\img\flinkes\1398822458_instagram_circle_black.png" />
+    <Content Include="En\English\assets\img\flinkes\New Text Document.txt" />
+    <Content Include="En\English\assets\img\hex.png" />
+    <Content Include="En\English\assets\img\map.png" />
+    <Content Include="En\English\assets\img\next.png" />
+    <Content Include="En\English\assets\img\pattern-dots.png" />
+    <Content Include="En\English\assets\img\patterns\small\cloth-alike-dark.png" />
+    <Content Include="En\English\assets\img\patterns\small\corrugation-dark.png" />
+    <Content Include="En\English\assets\img\patterns\small\corrugation.png" />
+    <Content Include="En\English\assets\img\patterns\small\diagonal-noise-dark.png" />
+    <Content Include="En\English\assets\img\patterns\small\diagonal-noise.png" />
+    <Content Include="En\English\assets\img\patterns\small\dust.png" />
+    <Content Include="En\English\assets\img\patterns\small\fabric-plaid-dark.png" />
+    <Content Include="En\English\assets\img\patterns\small\fabric-plaid.png" />
+    <Content Include="En\English\assets\img\patterns\small\farmer-dark.png" />
+    <Content Include="En\English\assets\img\patterns\small\farmer.png" />
+    <Content Include="En\English\assets\img\patterns\small\grid-noise-dark.png" />
+    <Content Include="En\English\assets\img\patterns\small\grid-noise.png" />
+    <Content Include="En\English\assets\img\patterns\small\lghtmesh-dark.png" />
+    <Content Include="En\English\assets\img\patterns\small\lghtmesh.png" />
+    <Content Include="En\English\assets\img\patterns\small\no-pattern-dark.png" />
+    <Content Include="En\English\assets\img\patterns\small\no-pattern.png" />
+    <Content Include="En\English\assets\img\patterns\small\pw-maze-white-dark.png" />
+    <Content Include="En\English\assets\img\patterns\small\pw-maze-white.png" />
+    <Content Include="En\English\assets\img\tmp\agents\medium\1.jpg" />
+    <Content Include="En\English\assets\img\tmp\agents\medium\2.jpg" />
+    <Content Include="En\English\assets\img\tmp\agents\medium\3.jpg" />
+    <Content Include="En\English\assets\img\tmp\agents\medium\4.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\large\12.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\large\3.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\large\5.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\large\5xxl.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\large\6.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\medium\1.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\medium\10.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\medium\11.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\medium\12.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\medium\2.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\medium\3.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\medium\4.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\medium\5.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\medium\6.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\medium\7.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\medium\8.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\medium\9.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\small\1.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\small\10.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\small\11.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\small\12.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\small\2.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\small\3.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\small\4.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\small\5.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\small\6.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\small\7.jpg" />
+    <Content Include="En\English\assets\img\tmp\properties\small\8.jpg" />
+    <Content Include="En\English\assets\js\gmap3.clusterer.js" />
+    <Content Include="En\English\assets\js\gmap3.infobox.js" />
+    <Content Include="En\English\assets\js\jquery.chained.min.js" />
+    <Content Include="En\English\assets\js\jquery.js" />
+    <Content Include="En\English\assets\js\map.js" />
+    <Content Include="En\English\assets\js\realocation.js" />
+    <Content Include="En\English\assets\libraries\bootstrap-sass\vendor\assets\javascripts\bootstrap\collapse.js" />
+    <Content Include="En\English\assets\libraries\bootstrap-sass\vendor\assets\javascripts\bootstrap\transition.js" />
+    <Content Include="En\English\assets\libraries\flexslider\flexslider.css" />
+    <Content Include="En\English\assets\libraries\flexslider\fonts\flexslider-icon.svg" />
+    <Content Include="En\English\assets\libraries\flexslider\jquery.flexslider.js" />
+    <Content Include="En\English\assets\libraries\font-awesome\css\font-awesome.css" />
+    <Content Include="En\English\assets\libraries\font-awesome\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="En\English\assets\libraries\isotope\jquery.isotope.min.js" />
+    <Content Include="En\English\assets\libraries\jquery-bxslider\jquery.bxslider.css" />
+    <Content Include="En\English\assets\libraries\jquery-bxslider\jquery.bxslider.min.js" />
+    <Content Include="En\English\bootstrapFrameWork\css\bootstrap-theme.css" />
+    <Content Include="En\English\bootstrapFrameWork\css\bootstrap-theme.min.css" />
+    <Content Include="En\English\bootstrapFrameWork\css\bootstrap.css" />
+    <Content Include="En\English\bootstrapFrameWork\css\bootstrap.min.css" />
+    <Content Include="En\English\bootstrapFrameWork\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="En\English\bootstrapFrameWork\js\bootstrap.js" />
+    <Content Include="En\English\bootstrapFrameWork\js\bootstrap.min.js" />
+    <Content Include="En\English\Contact Us.html" />
+    <Content Include="En\English\DroidKufi\demo.html" />
+    <Content Include="En\English\DroidKufi\New Text Document.txt" />
+    <Content Include="En\English\DroidKufi\Preview.png" />
+    <Content Include="En\English\DroidKufi\style.css" />
+    <Content Include="En\English\Image\1.png" />
+    <Content Include="En\English\Image\images\controls.png" />
+    <Content Include="En\English\Image\images\Untitled-5_01.png" />
+    <Content Include="En\English\Image\images\Untitled-5_02.png" />
+    <Content Include="En\English\Image\images\Untitled-5_04.png" />
+    <Content Include="En\English\Image\images\Untitled-5_05.png" />
+    <Content Include="En\English\Image\Photo Gallery\1.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\10.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\11.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\12.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\13.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\14.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\15.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\16.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\17.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\18.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\19.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\2.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\20.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\21.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\22.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\23.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\24.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\25.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\26.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\27.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\28.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\29.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\3.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\30.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\31.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\32.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\33.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\34.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\4.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\5.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\6.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\7.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\8.jpg" />
+    <Content Include="En\English\Image\Photo Gallery\9.jpg" />
+    <Content Include="En\English\index.html" />
+    <Content Include="En\English\News.html" />
+    <Content Include="En\English\Photo Gallery.html" />
+    <Content Include="En\English\Property Specifications.html" />
+    <Content Include="En\English\Search Results.html" />
+    <Content Include="En\English\Services1.html" />
+    <Content Include="En\English\Services2 .html" />
+    <Content Include="En\English\Services3 .html" />
+    <Content Include="En\Image\1.jpg" />
+    <Content Include="En\Image\1.png" />
+    <Content Include="En\Image\10.jpg" />
+    <Content Include="En\Image\11.jpg" />
+    <Content Include="En\Image\12.jpg" />
+    <Content Include="En\Image\13.jpg" />
+    <Content Include="En\Image\14.jpg" />
+    <Content Include="En\Image\15.jpg" />
+    <Content Include="En\Image\16.jpg" />
+    <Content Include="En\Image\17.jpg" />
+    <Content Include="En\Image\18.jpg" />
+    <Content Include="En\Image\19.jpg" />
+    <Content Include="En\Image\2.jpg" />
+    <Content Include="En\Image\20.jpg" />
+    <Content Include="En\Image\21.jpg" />
+    <Content Include="En\Image\22.jpg" />
+    <Content Include="En\Image\23.jpg" />
+    <Content Include="En\Image\24.jpg" />
+    <Content Include="En\Image\25.jpg" />
+    <Content Include="En\Image\26.jpg" />
+    <Content Include="En\Image\27.jpg" />
+    <Content Include="En\Image\28.jpg" />
+    <Content Include="En\Image\29.jpg" />
+    <Content Include="En\Image\3.jpg" />
+    <Content Include="En\Image\30.jpg" />
+    <Content Include="En\Image\31.jpg" />
+    <Content Include="En\Image\32.jpg" />
+    <Content Include="En\Image\33.jpg" />
+    <Content Include="En\Image\34.jpg" />
+    <Content Include="En\Image\4.jpg" />
+    <Content Include="En\Image\5.jpg" />
+    <Content Include="En\Image\6.jpg" />
+    <Content Include="En\Image\7.jpg" />
+    <Content Include="En\Image\8.jpg" />
+    <Content Include="En\Image\9.jpg" />
+    <Content Include="En\Image\images\controls.png" />
+    <Content Include="En\Image\images\Untitled-5_01.png" />
+    <Content Include="En\Image\images\Untitled-5_02.png" />
+    <Content Include="En\Image\images\Untitled-5_04.png" />
+    <Content Include="En\Image\images\Untitled-5_05.png" />
+    <Content Include="En\EnNews.aspx" />
+    <Content Include="En\EnOurSerivcesX.aspx" />
+    <Content Include="En\EnPhoto Gallery.aspx" />
+    <Content Include="En\EnProperty Specifications.aspx" />
+    <Content Include="En\EnSearch Results.aspx" />
     <Content Include="Image\1.jpg" />
     <Content Include="Image\1.png" />
     <Content Include="Image\10.jpg" />
@@ -1202,6 +1500,7 @@
     <Content Include="News.aspx" />
     <Content Include="OurSerivcesX.aspx" />
     <Content Include="Photo Gallery.aspx" />
+    <Content Include="Property Specifications.aspx" />
     <Content Include="Scripts\js\jquery.min.map" />
     <Content Include="assets\img\patterns\small\cloth-alike.png.tmp" />
     <Content Include="assets\img\patterns\small\dust-dark.png.tmp" />
@@ -1217,6 +1516,24 @@
     <Content Include="DroidKufi\DroidKufi-Regular.woff" />
     <Content Include="DroidKufi\DroidKufi-Regular.woff2" />
     <Content Include="App_Data\RadUploadTemp\RadUploadTestFile" />
+    <Content Include="En\bootstrapFrameWork\css\bootstrap-theme.css.map" />
+    <Content Include="En\bootstrapFrameWork\css\bootstrap.css.map" />
+    <Content Include="En\bootstrapFrameWork\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="En\bootstrapFrameWork\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="En\bootstrapFrameWork\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="En\DroidKufi\DroidKufi-Regular.eot" />
+    <Content Include="En\DroidKufi\DroidKufi-Regular.ttf" />
+    <Content Include="En\DroidKufi\DroidKufi-Regular.woff" />
+    <Content Include="En\DroidKufi\DroidKufi-Regular.woff2" />
+    <Content Include="En\English\bootstrapFrameWork\css\bootstrap-theme.css.map" />
+    <Content Include="En\English\bootstrapFrameWork\css\bootstrap.css.map" />
+    <Content Include="En\English\bootstrapFrameWork\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="En\English\bootstrapFrameWork\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="En\English\bootstrapFrameWork\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="En\English\DroidKufi\DroidKufi-Regular.eot" />
+    <Content Include="En\English\DroidKufi\DroidKufi-Regular.ttf" />
+    <Content Include="En\English\DroidKufi\DroidKufi-Regular.woff" />
+    <Content Include="En\English\DroidKufi\DroidKufi-Regular.woff2" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\js\cultures\kendo.culture.af-ZA.min.js" />
     <Content Include="Scripts\js\cultures\kendo.culture.af.min.js" />
@@ -1662,6 +1979,7 @@
     <Content Include="Scripts\js\kendo.window.min.js" />
     <Content Include="Scripts\jquery-2.1.0.js" />
     <Content Include="Scripts\jquery-2.1.0.min.js" />
+    <Content Include="Search Results.aspx" />
     <Content Include="Service\GulfService.asmx" />
     <Content Include="Service\testWeb.asmx" />
     <Content Include="styles\Black\editor.png" />
@@ -1831,8 +2149,6 @@
     <Content Include="styles\Uniform\slider-v.gif" />
     <Content Include="styles\Uniform\sprite.png" />
     <Content Include="styles\Uniform\sprite_2x.png" />
-    <Content Include="Update\السبت 14-6\About Us.html" />
-    <Content Include="Update\السبت 14-6\Add a Listing.html" />
     <Content Include="Update\السبت 14-6\assets\css\realocation.css" />
     <Content Include="Update\السبت 14-6\assets\css\variants\blue.css" />
     <Content Include="Update\السبت 14-6\assets\css\variants\brown.css" />
@@ -1928,7 +2244,6 @@
     <Content Include="Update\السبت 14-6\bootstrapFrameWork\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Update\السبت 14-6\bootstrapFrameWork\js\bootstrap.js" />
     <Content Include="Update\السبت 14-6\bootstrapFrameWork\js\bootstrap.min.js" />
-    <Content Include="Update\السبت 14-6\Contact Us.html" />
     <Content Include="Update\السبت 14-6\DroidKufi\demo.html" />
     <Content Include="Update\السبت 14-6\DroidKufi\New Text Document.txt" />
     <Content Include="Update\السبت 14-6\DroidKufi\Preview.png" />
@@ -2124,14 +2439,10 @@
     <Content Include="Update\السبت 14-6\Image\images\Untitled-5_04.png" />
     <Content Include="Update\السبت 14-6\Image\images\Untitled-5_05.png" />
     <Content Include="Update\السبت 14-6\index.html" />
-    <Content Include="Update\السبت 14-6\News.html" />
-    <Content Include="Update\السبت 14-6\Photo Gallery.html" />
     <Content Include="Update\السبت 14-6\Property Specifications.html" />
     <Content Include="Update\السبت 14-6\Search Results.html" />
-    <Content Include="Update\السبت 14-6\Services1.html" />
-    <Content Include="Update\السبت 14-6\Services2 .html" />
-    <Content Include="Update\السبت 14-6\Services3 .html" />
     <Content Include="UserControls\UcNews.ascx" />
+    <Content Include="UserControls\UcResultSearch.ascx" />
     <Content Include="UserControls\UcShowPhotoGellary.ascx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
@@ -3126,6 +3437,76 @@
     <Compile Include="Contact Us.aspx.designer.cs">
       <DependentUpon>Contact Us.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="En\EnAbout Us.aspx.cs">
+      <DependentUpon>EnAbout Us.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="En\EnAbout Us.aspx.designer.cs">
+      <DependentUpon>EnAbout Us.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="En\EnAdd a Listing.aspx.cs">
+      <DependentUpon>EnAdd a Listing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="En\EnAdd a Listing.aspx.designer.cs">
+      <DependentUpon>EnAdd a Listing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="En\EnContact Us.aspx.cs">
+      <DependentUpon>EnContact Us.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="En\EnContact Us.aspx.designer.cs">
+      <DependentUpon>EnContact Us.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="En\EnDefault.aspx.cs">
+      <DependentUpon>EnDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="En\EnDefault.aspx.designer.cs">
+      <DependentUpon>EnDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="En\EnNews.aspx.cs">
+      <DependentUpon>EnNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="En\EnNews.aspx.designer.cs">
+      <DependentUpon>EnNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="En\EnOurSerivcesX.aspx.cs">
+      <DependentUpon>EnOurSerivcesX.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="En\EnOurSerivcesX.aspx.designer.cs">
+      <DependentUpon>EnOurSerivcesX.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="En\EnPhoto Gallery.aspx.cs">
+      <DependentUpon>EnPhoto Gallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="En\EnPhoto Gallery.aspx.designer.cs">
+      <DependentUpon>EnPhoto Gallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="En\EnProperty Specifications.aspx.cs">
+      <DependentUpon>EnProperty Specifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="En\EnProperty Specifications.aspx.designer.cs">
+      <DependentUpon>EnProperty Specifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="En\EnSearch Results.aspx.cs">
+      <DependentUpon>EnSearch Results.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="En\EnSearch Results.aspx.designer.cs">
+      <DependentUpon>EnSearch Results.aspx</DependentUpon>
+    </Compile>
     <Compile Include="News.aspx.cs">
       <DependentUpon>News.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3148,6 +3529,20 @@
       <DependentUpon>Photo Gallery.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Property Specifications.aspx.cs">
+      <DependentUpon>Property Specifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Property Specifications.aspx.designer.cs">
+      <DependentUpon>Property Specifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Search Results.aspx.cs">
+      <DependentUpon>Search Results.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search Results.aspx.designer.cs">
+      <DependentUpon>Search Results.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Service\GulfService.asmx.cs">
       <DependentUpon>GulfService.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -3162,6 +3557,13 @@
     </Compile>
     <Compile Include="UserControls\UcNews.ascx.designer.cs">
       <DependentUpon>UcNews.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UcResultSearch.ascx.cs">
+      <DependentUpon>UcResultSearch.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcResultSearch.ascx.designer.cs">
+      <DependentUpon>UcResultSearch.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UcShowPhotoGellary.ascx.cs">
       <DependentUpon>UcShowPhotoGellary.ascx</DependentUpon>

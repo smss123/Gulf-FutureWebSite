@@ -13,7 +13,7 @@ namespace WebSite.WebSiteControlPanal
 
         protected void BtnSave_Click(object sender, EventArgs e)
         {
-            dbContext db = new dbContext();
+            var db = new dbContext();
             try
             {
                 var q = db.WebSiteInfoes.ToList()[0];
@@ -21,18 +21,14 @@ namespace WebSite.WebSiteControlPanal
                 {
                     q.WebSitDescription = txtDescription.Text;
                     db.SaveChanges();
-                  
                     lblmsg.Text = "<div class='alert alert-success'>" +
                                         "<button class='close data-dismiss=alert'>&times;</button>" +
                                         "<strong>Success!</strong> Your Data Has Been Saved" +
                                         "</div>";
-
                 }
-
             }
             catch (Exception)
             {
-
                 var x = new WebSiteInfo()
                 {
                     ArWebSiteName = "[New-Arabic]",
@@ -49,15 +45,13 @@ namespace WebSite.WebSiteControlPanal
                                       "<strong>Success!</strong> Your Data Has Been Saved" +
                                       "</div>";
             }
- 
         }
 
         protected override void OnInit(EventArgs e)
         {
-
             try
             {
-                dbContext db = new dbContext();
+                var db = new dbContext();
                 var q = db.WebSiteInfoes.ToList()[0];
                 if (q != null)
                 {
@@ -67,7 +61,6 @@ namespace WebSite.WebSiteControlPanal
             catch (System.ArgumentOutOfRangeException ex)
             {
                 return;
-
             }
             base.OnInit(e);
         }

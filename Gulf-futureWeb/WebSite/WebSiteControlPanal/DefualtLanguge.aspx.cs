@@ -14,7 +14,7 @@ namespace WebSite.WebSiteControlPanal
 
         protected void BtnSave_Click(object sender, EventArgs e)
         {
-            dbContext db = new dbContext();
+            var db = new dbContext();
             try
             {
                 var q = db.WebSiteInfoes.ToList()[0];
@@ -27,13 +27,10 @@ namespace WebSite.WebSiteControlPanal
                        "<button class='close' data-dismiss='alert'>&times;</button>" +
                        "<strong>Success!</strong> You Data Has been Saved" +
                        "</div>";
-
                 }
-
             }
             catch (Exception)
             {
-
                 var x = new WebSiteInfo()
                 {
                     ArWebSiteName = "[New-Arabic]",
@@ -51,7 +48,6 @@ namespace WebSite.WebSiteControlPanal
                          "<strong>Success!</strong> You Data Has been Saved" +
                          "</div>";
             }
- 
         }
     }
 }

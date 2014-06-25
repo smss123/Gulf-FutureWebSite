@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace WebSite.WebSiteControlPanal
@@ -11,12 +9,11 @@ namespace WebSite.WebSiteControlPanal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void EntityDataSource1_Inserted(object sender, EntityDataSourceChangedEventArgs e)
         {
-          lblmsg.Text=  "<div class='alert alert-success'> " +
+            lblmsg.Text =  "<div class='alert alert-success'> " +
                        "<button class='close' data-dismiss='alert'>&times;</button>" +
                        "<strong>Success!</strong> You Data Has been Saved" +
                        "</div>";

@@ -288,7 +288,7 @@
                         </div>
                         <div class="k-form-text-row">
                             Description-Arabic<br />
-                            <asp:TextBox ID="txtArDescription" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtArDescription" runat="server" Rows="5" TextMode="MultiLine"></asp:TextBox>
                         </div>
                         <div class="k-form-text-row">
                             Title-English<br />
@@ -296,18 +296,52 @@
                         </div>
                         <div class="k-form-text-row">
                             Description-English<br />
-                            <asp:TextBox ID="txtEnDescription" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtEnDescription" runat="server" Rows="5" TextMode="MultiLine"></asp:TextBox>
                         </div>
                         <div class="k-form-text-row">
                             Price<br />
                             <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
                         </div>
                         <div class="k-form-text-row">
+                             Estate Type<br />
+                            <asp:DropDownList runat="server" ID="txtEstatType">
+                                <asp:ListItem Text="Empty land" />
+                                <asp:ListItem Text="Buildings" />
+                                <asp:ListItem Text="Buildings" />
+                                <asp:ListItem Text="Villas" />
+                                <asp:ListItem Text="Offices" />
+                            </asp:DropDownList>
+                        </div>
+                         <div class="k-form-text-row">
+                             investment Type<br />
+                            <asp:DropDownList runat="server">
+                                <asp:ListItem Text="Rent" />
+                                <asp:ListItem Text="Sale" />
+                            </asp:DropDownList>
+                        </div>
+                        <div class="k-form-text-row">
+                             Status <br />
+                            <asp:DropDownList runat="server" ID="txtStatus">
+                                <asp:ListItem Text="Distinctive" />
+                                <asp:ListItem Text="Sale" />
+                                <asp:ListItem Text="Rent" />
+                            </asp:DropDownList>
+                        </div>
+
+                        <div class="k-form-text-row">
                             Location<br />
                             <asp:DropDownList ID="txtLocation" runat="server" DataSourceID="LocationSource" DataTextField="EnLocationName" DataValueField="Id"></asp:DropDownList>
                             <asp:EntityDataSource ID="LocationSource" runat="server" ConnectionString="name=dbContext" DefaultContainerName="dbContext" EnableFlattening="False" EntitySetName="Locations" EntityTypeFilter="Location" Select="it.[EnLocationName], it.[Id]">
                             </asp:EntityDataSource>
                         </div>
+                           <div class="k-form-text-row">
+                                make in Master Page
+                               <br />
+                               <asp:CheckBox runat="server" CssClass="checkbox" ID="txtisInMasterPage" />
+                           
+                           </div>
+
+
                         <div class="k-form-text-row">
                             Image 1<br />
                             <asp:FileUpload runat="server" ID="img1" />
@@ -328,7 +362,76 @@
                             <asp:Button ID="BtnSaveLocaltion" runat="server" Text="Save" CssClass="btn btn-primary" OnClick="BtnSaveLocaltion_Click" />
                         </div>
 
-                        <asp:GridView ID="GridView2" runat="server"></asp:GridView>
+                        <asp:GridView ID="GridViewRealState" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="RealStateDataSource">
+                            <Columns>
+                                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                                <asp:BoundField DataField="ArTitle" HeaderText="Title-Arabic" SortExpression="ArTitle" />
+                                <asp:BoundField DataField="ArDescription" HeaderText="Description-Arabic" SortExpression="ArDescription" />
+                                <asp:BoundField DataField="EnTitle" HeaderText="Title-English" SortExpression="EnTitle" />
+                                <asp:BoundField DataField="EnDescription" HeaderText="Description-English" SortExpression="EnDescription" />
+                                <asp:BoundField DataField="price" HeaderText="price" SortExpression="price" />
+                                <asp:TemplateField HeaderText="image1" SortExpression="image1">
+                                     <EditItemTemplate>
+                                           <asp:Image ID="Image1" runat="server" Height="89px" ImageUrl='<%# Bind("image2") %>' Width="110px" />
+                                       
+                                      </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <asp:Image ID="Image1" runat="server" Height="89px" ImageUrl='<%# Bind("image1") %>' Width="110px" />
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="image2" SortExpression="image2">
+                                      <EditItemTemplate>
+                                           <asp:Image ID="Image2" runat="server" Height="89px" ImageUrl='<%# Bind("image2") %>' Width="110px" />
+                                       
+                                      </EditItemTemplate>
+                                    <ItemTemplate>
+                                         <asp:Image ID="Image2" runat="server" Height="89px" ImageUrl='<%# Bind("image2") %>' Width="110px" />
+                                       
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="image3" SortExpression="image3">
+                                        <EditItemTemplate>
+                                           <asp:Image ID="Image3" runat="server" Height="89px" ImageUrl='<%# Bind("image2") %>' Width="110px" />
+                                       
+                                      </EditItemTemplate>
+                                    <ItemTemplate>
+                                         <asp:Image ID="Image3" runat="server" Height="89px" ImageUrl='<%# Bind("image3") %>' Width="110px" />
+                         
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Image4" SortExpression="Image4">
+                                    <EditItemTemplate>
+                                           <asp:Image ID="Image4" runat="server" Height="89px" ImageUrl='<%# Bind("image2") %>' Width="110px" />
+                                       
+                                      </EditItemTemplate>
+                                    <ItemTemplate>
+                                         <asp:Image ID="Image4" runat="server" Height="89px" ImageUrl='<%# Bind("image4") %>' Width="110px" />
+                                       
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:BoundField DataField="LocationId" HeaderText="LocationId" SortExpression="LocationId" />
+                                <asp:BoundField DataField="EstatType" HeaderText="EstatType" SortExpression="EstatType" />
+                                <asp:TemplateField HeaderText="status" SortExpression="status">
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="TextBox1" runat="server" Text='<%#Bind("status")%>'></asp:TextBox>
+                                    </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <asp:Label ID="Label1" runat="server" Text='<%# Bind("status") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="isInMasterPage" SortExpression="isInMasterPage">
+                                    <EditItemTemplate>
+                                        <asp:CheckBox ID="che" runat="server" ClientIDMode="Static"  ></asp:CheckBox>
+                                        <asp:TextBox ID="txtChecked" runat="server" ClientIDMode="Static" Text='<%#Bind("isInMasterPage")%>' />
+                                    </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <asp:CheckBox ID="Label2" runat="server"  Checked='<%#Eval("isInMasterPage").ToString()=="true"?true:false%>'></asp:CheckBox>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+                        <asp:EntityDataSource ID="RealStateDataSource" runat="server" ConnectionString="name=dbContext" DefaultContainerName="dbContext" EnableDelete="True" EnableFlattening="False" EnableInsert="True" EnableUpdate="True" EntitySetName="RealStatProfiles" EntityTypeFilter="RealStatProfile">
+                        </asp:EntityDataSource>
                     </div>
                 </div>
             </div>
@@ -336,13 +439,25 @@
 
         </div>
     </div>
-
+ 
 
     <link href="../styles/kendo.common.min.css" rel="stylesheet" />
     <link href="../styles/kendo.metro.min.css" rel="stylesheet" />
     <script src="../Scripts/jquery-2.1.0.min.js"></script>
     <script src="../Scripts/js/kendo.web.min.js"></script>
+    <script>
 
+        $(document).ready(function () {
+            $("#che").click(function () {
+                if($(this).is(':checked')) {
+                    $("#txtChecked").val("true");
+                } else {
+                    $("#txtChecked").val("false");
+                }
+            });
+
+        });
+    </script>
 
 
 

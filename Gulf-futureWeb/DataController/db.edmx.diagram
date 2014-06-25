@@ -10,7 +10,7 @@
         <EntityTypeShape EntityType="Model.Contury" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" FillColor="192, 192, 0" />
         <EntityTypeShape EntityType="Model.Location" Width="1.5" PointX="5.625" PointY="1.25" IsExpanded="true" FillColor="192, 192, 0" />
         <EntityTypeShape EntityType="Model.OurService" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.RealStatProfile" Width="1.5" PointX="10.375" PointY="1" IsExpanded="true" FillColor="192, 192, 0" />
+        <EntityTypeShape EntityType="Model.RealStatProfile" Width="1.5" PointX="8.75" PointY="0.5" IsExpanded="true" FillColor="192, 192, 0" />
         <EntityTypeShape EntityType="Model.SlideConfig" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.WebSiteInfo" Width="1.5" PointX="9.125" PointY="4.5" IsExpanded="true" />

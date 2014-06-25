@@ -14,10 +14,9 @@ namespace WebSite.WebSiteControlPanal
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            dbContext db = new dbContext();
+            var db = new dbContext();
             try
             {
-                
                 var q = (db.WebSiteInfoes.ToList()[0]);
                 if (q != null)
                 {
@@ -49,11 +48,9 @@ namespace WebSite.WebSiteControlPanal
                         "<strong>Success!</strong> You Data Has been Saved" +
                         "</div>";
                 }
- 
             }
             catch (ArgumentOutOfRangeException)
             {
-
                 var x = new WebSiteInfo()
                 {
                     ArWebSiteName = txtArName.Text,
@@ -71,25 +68,22 @@ namespace WebSite.WebSiteControlPanal
                     "<strong>Success!</strong> You Data Has been Saved" +
                     "</div>";
             }
-           
         }
         protected override void OnInit(EventArgs e)
         {
-           
             try
             {
-                 dbContext db  = new dbContext();
-            var q = db.WebSiteInfoes.ToList()[0];
-                     if (q != null)
-                      {
-                txtArName.Text = q.ArWebSiteName;
-                txtEnName.Text = q.EnWebSiteName;
-                      }
+                var db  = new dbContext();
+                var q = db.WebSiteInfoes.ToList()[0];
+                if (q != null)
+                {
+                    txtArName.Text = q.ArWebSiteName;
+                    txtEnName.Text = q.EnWebSiteName;
+                }
             }
             catch ( System.ArgumentOutOfRangeException ex)
             {
-                return; 
-               
+                return;
             }
             base.OnInit(e);
         }
