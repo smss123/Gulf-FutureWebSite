@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebSite {
+namespace WebSite.EN {
     
     
     public partial class EnAbout_Us {

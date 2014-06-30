@@ -7,19 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebSite.EN {
-    
-    
-    public partial class EnNews {
-        
-        /// <summary>
-        /// EnUcNews control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::WebSite.UserControls.EnUcNews EnUcNews;
+namespace WebSite {
+
+
+    public partial class NewsDetails
+    {
         
         /// <summary>
         /// txtcountry control.

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EnAdd_a_Listing.aspx.cs" Inherits="WebSite.Add_a_Listing" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EnAdd_a_Listing.aspx.cs" Inherits="WebSite.EN.EnAdd_a_Listing" %>
 
 
 <!doctype html>
@@ -21,7 +21,7 @@
     <LINK href="../fonts.googleapis.com/css975a.css?family=Raleway:400,700" rel="stylesheet" type="text/css">
     <LINK rel="stylesheet" type="text/css" href="DroidKufi/style.css">
 
-    <TITLE>About Us</TITLE>
+    <TITLE>Send Property</TITLE>
 </HEAD>
 
 
@@ -52,8 +52,8 @@
                         <DIV class="container">
                             <DIV class="row">
                                  <UL class="header-nav nav nav-pills">
-                                    <LI><A href="Default.aspx">Home</A>  </LI>
-                                    <LI><A href="About Us.aspx">About Us </A></LI>
+                                    <LI><A href="EnDefault.aspx">Home</A>  </LI>
+                                    <LI><A href="EnAbout Us.aspx">About Us </A></LI>
                                     <LI class="menuparent">
                                         <A href="#">Services </A>
                                         <UL class="sub-menu">
@@ -62,18 +62,18 @@
                                                 //--------our service here 
                                                 foreach (var item in this.Ourservice)
                                                 {
-                                                    ser = "<li><a href='OurSerivcesX.aspx?SID=" + item.Id + "'>" + item.EnOurService + " </a></li>";
+                                                    ser = "<li><a href='EnOurSerivcesX.aspx?SID=" + item.Id + "'>" + item.EnOurService + " </a></li>";
                                                     Response.Write(ser);
                                                 }  
                                                     
                                             %>
                                         </UL>
                                     </LI>
-                                    <LI><A href="Photo Gallery.aspx">Photo Gallery </A></LI>
-                                    <LI><A href="News.aspx">New News </A></LI>
-                                    <LI><A href="Add a Listing.aspx">Add real estate </A></LI>
-                                    <LI><A href="Contact Us.aspx">Contact Us </A></LI>
-                                    <LI><A href="../Default.aspx">عربي  </A></LI>
+                                    <LI><A href="EnPhoto Gallery.aspx">Photo Gallery </A></LI>
+                                    <LI><A href="EnNews.aspx">New News </A></LI>
+                                    <LI><A href="EnAdd a Listing.aspx">Add real estate </A></LI>
+                                    <LI><A href="EnContact Us.aspx">Contact Us </A></LI>
+                                    <LI><A href="../Add a Listing.aspx">عربي  </A></LI>
                                      </UL>
                                 <!-- /.header-nav -->
                             </DIV>
@@ -121,7 +121,7 @@
                                 </DIV>
                                 <!-- /.form-group -->
 
-                                <H2>تفاصيل العقار :   </H2>
+                                <H2>Property Details •:   </H2>
 
                                 <DIV class="form-group">
                                     <LABEL>Property Type </LABEL>
@@ -129,11 +129,11 @@
                                     <DIV class="select-wrapper">
                                         <asp:DropDownList ID="txtEstatType" runat="server" class="form-control">
 
-                                            <asp:ListItem Text="أراضي" Value="0" />
-                                            <asp:ListItem Text="فلل" Value="1" />
-                                            <asp:ListItem Text="مكاتب" Value="2" />
-                                            <asp:ListItem Text="شقق" Value="3" />
-                                            <asp:ListItem Text="بنايات سكنيه" Value="4" />
+                                            <asp:ListItem Text="Lands" Value="0" />
+                                            <asp:ListItem Text="Villas" Value="1" />
+                                            <asp:ListItem Text="Offices" Value="2" />
+                                            <asp:ListItem Text="Flats" Value="3" />
+                                            <asp:ListItem Text="Residential buildings" Value="4" />
                                         </asp:DropDownList>
                                     </DIV>
                                 </DIV>
@@ -144,8 +144,8 @@
                                     <DIV class="select-wrapper">
 
                                         <asp:DropDownList ID="txtinvsementType" runat="server" class="form-control">
-                                            <asp:ListItem Text="بيع" Value="0" />
-                                            <asp:ListItem Text="ايجار" Value="1" />
+                                            <asp:ListItem Text="Sale" Value="0" />
+                                            <asp:ListItem Text="Rent" Value="1" />
                                         </asp:DropDownList>
 
 
@@ -166,12 +166,12 @@
                                 <DIV class="form-group">
                                     <LABEL>Country   </LABEL>
                                     <DIV class="select-wrapper">
-                                        <asp:DropDownList runat="server" ID="txtCountry" class="form-control">
-                                            <asp:ListItem Text="text1" />
-                                            <asp:ListItem Text="text2" />
+                                        <asp:DropDownList runat="server" ID="txtCountry" class="form-control" DataSourceID="CountryDataSource" DataTextField="EnContryName" DataValueField="Id" AutoPostBack="true">
+                                           
                                         </asp:DropDownList>
 
 
+                                        <asp:EntityDataSource runat="server" ID="CountryDataSource" DefaultContainerName="dbContext" ConnectionString="name=dbContext" EnableFlattening="False" EntitySetName="Conturies" EntityTypeFilter="Contury"></asp:EntityDataSource>
                                     </DIV>
                                 </DIV>
 
@@ -179,10 +179,15 @@
                                 <DIV class="form-group">
                                     <LABEL>City   </LABEL>
                                     <DIV class="select-wrapper">
-                                        <asp:DropDownList runat="server" ID="txtCity" class="form-control">
-                                            <asp:ListItem Text="text1" />
-                                            <asp:ListItem Text="text2" />
+                                        <asp:DropDownList runat="server" ID="txtCity" class="form-control" DataSourceID="CityDataSource" DataTextField="EnCityName" DataValueField="Id" AutoPostBack="true">
                                         </asp:DropDownList>
+
+                                        <asp:EntityDataSource runat="server" ID="CityDataSource" DefaultContainerName="dbContext" ConnectionString="name=dbContext" EnableFlattening="false" EntitySetName="Cities" EntityTypeFilter="City" AutoGenerateWhereClause="true" Select="" Where="">
+
+                                            <WhereParameters>
+                                                <asp:ControlParameter ControlID="txtCountry" DefaultValue="-1" Name="ConturyId" Type="Int32" />
+                                            </WhereParameters>
+                                        </asp:EntityDataSource>
                                     </DIV>
                                 </DIV>
 
@@ -190,10 +195,15 @@
                                     <LABEL>Neighborhood     </LABEL>
                                     <DIV class="select-wrapper">
                                         <DIV class="select-wrapper">
-                                            <asp:DropDownList runat="server" ID="txtLocation" class="form-control">
-                                                <asp:ListItem Text="text1" />
-                                                <asp:ListItem Text="text2" />
+                                            <asp:DropDownList runat="server" ID="txtLocation" class="form-control" DataSourceID="LocationDataSource" DataTextField="EnLocationName" DataValueField="Id" AutoPostBack="true">
+                                             
                                             </asp:DropDownList>
+
+                                            <asp:EntityDataSource runat="server" ID="LocationDataSource" DefaultContainerName="dbContext" ConnectionString="name=dbContext" EnableFlattening="False" EntitySetName="Locations" EntityTypeFilter="Location" Select="" Where="" AutoGenerateWhereClause="true">
+                                                <WhereParameters>
+                                                    <asp:ControlParameter ControlID="txtCity" DefaultValue="-1" Name="CityId" Type="Int32" />
+                                                </WhereParameters>
+                                            </asp:EntityDataSource>
                                         </DIV>
                                     </DIV>
                                 </DIV>

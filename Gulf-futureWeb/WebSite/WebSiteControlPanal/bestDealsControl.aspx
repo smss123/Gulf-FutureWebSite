@@ -115,8 +115,6 @@
                     <asp:BoundField DataField="EnDescription" HeaderText="Country Description-English" SortExpression="EnDescription" />
                     <asp:BoundField DataField="ArContryName" HeaderText=" Country Name-Arabic" SortExpression="ArContryName" />
                     <asp:BoundField DataField="ArDecription" HeaderText="Country Description-Arabic" SortExpression="ArDecription" />
-
-
                 </Columns>
             </asp:GridView>
             <asp:EntityDataSource ID="CountryDataSource" runat="server" ConnectionString="name=dbContext" DefaultContainerName="dbContext" EnableDelete="True" EnableFlattening="False" EnableInsert="True" EnableUpdate="True" EntitySetName="Conturies" EntityTypeFilter="Contury">

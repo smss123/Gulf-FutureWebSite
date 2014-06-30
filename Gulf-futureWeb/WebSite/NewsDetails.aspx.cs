@@ -5,12 +5,13 @@ using DataController;
 
 namespace WebSite
 {
-    public partial class Property_Specifications : System.Web.UI.Page
+    public partial class NewsDetails : System.Web.UI.Page
     {
         private dbContext db = new dbContext();
         public List<OurService> Ourservice = new List<OurService>();
         public RealStatProfile realStatProfile = new RealStatProfile();
         public List<RealStatProfile> RealStatProfileList = new List<RealStatProfile>();
+        public OurNews news = new OurNews();
         public void btnSearch_Click(object sender, EventArgs e)
         {
             //from=1000&to=3000&locID=1&statusX=Sale&type=Buildings
@@ -39,9 +40,8 @@ namespace WebSite
                 {
                     int id;
                     id = int.Parse(realstate);
-                    realStatProfile = (from i in db.RealStatProfiles
-                                        where i.Id == id
-                                        select i).SingleOrDefault();
+                    news = db.OurNews.Where(p => p.Id == id).SingleOrDefault();
+                
                 }
             }
             catch (Exception ex)

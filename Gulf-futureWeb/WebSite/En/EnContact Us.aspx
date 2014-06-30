@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EnContact_Us.aspx.cs" Inherits="WebSite.Contact_Us" EnableEventValidation="false" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EnContact_Us.aspx.cs" Inherits="WebSite.EN.EnContact_Us" EnableEventValidation="false" %>
 
 
 <!doctype html>
@@ -46,8 +46,8 @@
                         <DIV class="container">
                             <DIV class="row">
                                 <UL class="header-nav nav nav-pills">
-                                    <LI><A href="Default.aspx">Home</A>  </LI>
-                                    <LI><A href="About Us.aspx">About Us </A></LI>
+                                    <LI><A href="EnDefault.aspx">Home</A>  </LI>
+                                    <LI><A href="EnAbout Us.aspx">About Us </A></LI>
                                     <LI class="menuparent">
                                         <A href="#">Services </A>
                                         <UL class="sub-menu">
@@ -56,18 +56,18 @@
                                                 //--------our service here 
                                                 foreach (var item in this.Ourservice)
                                                 {
-                                                    ser = "<li><a href='OurSerivcesX.aspx?SID=" + item.Id + "'>" + item.EnOurService + " </a></li>";
+                                                    ser = "<li><a href='EnOurSerivcesX.aspx?SID=" + item.Id + "'>" + item.EnOurService + " </a></li>";
                                                     Response.Write(ser);
                                                 }  
                                                     
                                             %>
                                         </UL>
                                     </LI>
-                                    <LI><A href="Photo Gallery.aspx">Photo Gallery </A></LI>
-                                    <LI><A href="News.aspx">New News </A></LI>
-                                    <LI><A href="Add a Listing.aspx">Add real estate </A></LI>
-                                    <LI><A href="Contact Us.aspx">Contact Us </A></LI>
-                                    <LI><A href="../Default.aspx">عربي  </A></LI>
+                                    <LI><A href="EnPhoto Gallery.aspx">Photo Gallery </A></LI>
+                                    <LI><A href="EnNews.aspx">New News </A></LI>
+                                    <LI><A href="EnAdd a Listing.aspx">Add real estate </A></LI>
+                                    <LI><A href="EnContact Us.aspx">Contact Us </A></LI>
+                                    <LI><A href="../Contact Us.aspx">عربي  </A></LI>
                                 </UL>
                                 <!-- /.header-nav -->
                             </DIV>

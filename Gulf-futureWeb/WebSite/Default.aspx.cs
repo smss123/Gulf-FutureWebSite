@@ -13,13 +13,42 @@ namespace WebSite
         public string AdminWork;
         public List<OurService> Ourservice = new List<OurService>();
         public List<RealStatProfile> realstate = new List<RealStatProfile>();
+        string lang;
         protected void Page_Load(object sender, EventArgs e)
         {
+           
         }
 
         private void Page_Init(object sender, EventArgs e)
         {
+
+            //if (!IsPostBack)
+            //{
+            //    try
+            //    {
+            //        string la = db.WebSiteInfoes.ToList()[0].DefaultLanguge;
+            //        if (la != "arabic")
+            //        {
+            //            Response.AddHeader("samer", "Default.aspx?lan=en");
+            //            Response.Redirect("Default.aspx?lan=en");
+            //            return;
+            //        }
+            //        else
+            //        {
+            //            Response.Redirect("Default.aspx?lan=ar");
+            //            return;
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+
+
+            //    } 
+            
+
             db = new dbContext();
+            db.Configuration.LazyLoadingEnabled = false;
+            db.Configuration.ProxyCreationEnabled = false;
             Slides = db.SlideConfigs.ToList();
             Ournews = db.OurNews.ToList();
             Ourservice = db.OurServices.ToList();

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EnDefault.aspx.cs" Inherits="WebSite.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EnDefault.aspx.cs" Inherits="WebSite.EN.EnDefault" %>
 
 <!doctype html>
 
@@ -20,7 +20,7 @@
     <link href="../fonts.googleapis.com/css975a.css?family=Raleway:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="DroidKufi/style.css">
 
-    <title>index</title>
+    <title>Gulf Future</title>
 </head>
 <body>
 <div id="wrapper">
@@ -43,8 +43,8 @@
             <div class="container">
                 <div class="row">
                     <UL class="header-nav nav nav-pills">
-                        <LI><A href="Default.aspx">Home</A>  </LI>
-                        <LI><A href="About Us.aspx">About Us </A></LI>
+                        <LI><A href="EnDefault.aspx">Home</A>  </LI>
+                        <LI><A href="EnAbout Us.aspx">About Us </A></LI>
                         <LI class="menuparent">
                             <A href="#">Services </A>
                             <UL class="sub-menu">
@@ -53,17 +53,17 @@
                                     //--------our service here 
                                     foreach (var item in this.Ourservice)
                                     {
-                                        ser = "<li><a href='OurSerivcesX.aspx?SID=" + item.Id + "'>" + item.EnOurService + " </a></li>";
+                                        ser = "<li><a href='EnOurSerivcesX.aspx?SID=" + item.Id + "'>" + item.EnOurService + " </a></li>";
                                         Response.Write(ser);
                                     }  
                                                     
                                 %>
                             </UL>
                         </LI>
-                        <LI><A href="Photo Gallery.aspx">Photo Gallery </A></LI>
-                        <LI><A href="News.aspx">New News </A></LI>
-                        <LI><A href="Add a Listing.aspx">Add real estate </A></LI>
-                        <LI><A href="Contact Us.aspx">Contact Us </A></LI>
+                        <LI><A href="EnPhoto Gallery.aspx">Photo Gallery </A></LI>
+                        <LI><A href="EnNews.aspx">New News </A></LI>
+                        <LI><A href="EnAdd a Listing.aspx">Add real estate </A></LI>
+                        <LI><A href="EnContact Us.aspx">Contact Us </A></LI>
                         <LI><A href="../Default.aspx">عربي  </A></LI>
                     </UL>
                 </div>
@@ -84,8 +84,8 @@
                                     string slide;
                                     foreach (var item in Slides)
                                     {
-                                        slide = "<li data-thumb='" + item.ArSlide + "'>" +
-                                                "<img src='" + item.ArSlide + "'alt=''>" +
+                                        slide = "<li data-thumb='" + item.EnSlide + "'>" +
+                                                "<img src='" + item.EnSlide + "'alt=''>" +
                                                 "</li>";
                                     
                                         Response.Write(slide);  
@@ -112,7 +112,7 @@
                                                     <div class="form-group col-sm-12">
                                                        <label>  Country </label>
                                                         <div class="select-wrapper">
-                                                            <asp:DropDownList runat="server" ID="txtcountry" DataSourceID="countryDataSource" DataTextField="ArContryName" DataValueField="Id" AutoPostBack="True" class="form-control" >
+                                                            <asp:DropDownList runat="server" ID="txtcountry" DataSourceID="countryDataSource" DataTextField="EnContryName" DataValueField="Id" AutoPostBack="True" class="form-control">
                                                             </asp:DropDownList>
                                                             <asp:EntityDataSource runat="server" ID="countryDataSource" DefaultContainerName="dbContext" ConnectionString="name=dbContext" EnableFlattening="False" EntitySetName="Conturies" EntityTypeFilter="Contury"></asp:EntityDataSource>
 
@@ -125,7 +125,7 @@
                                                          <label> City </label>
 
                                                         <div class="select-wrapper">
-                                                            <asp:DropDownList runat="server" ID="txtCity" DataSourceID="CityDataSource" DataTextField="ArCityName" DataValueField="Id" class="form-control" AutoPostBack="true">
+                                                            <asp:DropDownList runat="server" ID="txtCity" DataSourceID="CityDataSource" DataTextField="EnCityName" DataValueField="Id" class="form-control" AutoPostBack="true">
                                                             </asp:DropDownList>
                                                             <asp:EntityDataSource runat="server" ID="CityDataSource" DefaultContainerName="dbContext" ConnectionString="name=dbContext" EnableFlattening="false" EntitySetName="Cities" EntityTypeFilter="City" AutoGenerateWhereClause="true" Select="" Where="">
                                                                 
@@ -141,7 +141,7 @@
 
                                                     <div class="form-group col-sm-12">
                                                         <label> Neighborhood </label>
-                                                        <asp:DropDownList runat="server" DataSourceID="LocationDataSource" DataTextField="ArLocationName" DataValueField="Id" class="form-control" AutoPostBack="true" ID="txtLoc">
+                                                        <asp:DropDownList runat="server" DataSourceID="LocationDataSource" DataTextField="EnLocationName" DataValueField="Id" class="form-control" AutoPostBack="true" ID="txtLoc">
                                                         </asp:DropDownList>
                                                         <asp:EntityDataSource runat="server" ID="LocationDataSource" DefaultContainerName="dbContext" ConnectionString="name=dbContext" EnableFlattening="False" EntitySetName="Locations" EntityTypeFilter="Location" Select="" Where="" AutoGenerateWhereClause=true>
                                                             <WhereParameters>

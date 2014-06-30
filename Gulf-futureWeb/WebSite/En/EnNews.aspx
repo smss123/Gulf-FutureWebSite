@@ -1,6 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EnNews.aspx.cs" Inherits="WebSite.News" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EnNews.aspx.cs" Inherits="WebSite.EN.EnNews" %>
 
-<%@ Register Src="~/UserControls/UcNews.ascx" TagPrefix="uc1" TagName="UcNews" %>
+<%@ Register Src="~/UserControls/EnUcNews.ascx" TagPrefix="uc1" TagName="EnUcNews" %>
 
 
 
@@ -53,8 +53,8 @@
                         <div class="container">
                             <div class="row">
                                 <UL class="header-nav nav nav-pills">
-                                    <LI><A href="Default.aspx">Home</A>  </LI>
-                                    <LI><A href="About Us.aspx">About Us </A></LI>
+                                    <LI><A href="EnDefault.aspx">Home</A>  </LI>
+                                    <LI><A href="EnAbout Us.aspx">About Us </A></LI>
                                     <LI class="menuparent">
                                         <A href="#">Services </A>
                                         <UL class="sub-menu">
@@ -63,17 +63,17 @@
                                                 //--------our service here 
                                                 foreach (var item in this.Ourservice)
                                                 {
-                                                    ser = "<li><a href='OurSerivcesX.aspx?SID=" + item.Id + "'>" + item.EnOurService + " </a></li>";
+                                                    ser = "<li><a href='EnOurSerivcesX.aspx?SID=" + item.Id + "'>" + item.EnOurService + " </a></li>";
                                                     Response.Write(ser);
                                                 }  
                                                     
                                             %>
                                         </UL>
                                     </LI>
-                                    <LI><A href="Photo Gallery.aspx">Photo Gallery </A></LI>
-                                    <LI><A href="News.aspx">New News </A></LI>
-                                    <LI><A href="Add a Listing.aspx">Add real estate </A></LI>
-                                    <LI><A href="Contact Us.aspx">Contact Us </A></LI>
+                                    <LI><A href="EnPhoto Gallery.aspx">Photo Gallery </A></LI>
+                                    <LI><A href="EnNews.aspx">New News </A></LI>
+                                    <LI><A href="EnAdd a Listing.aspx">Add real estate </A></LI>
+                                    <LI><A href="EnContact Us.aspx">Contact Us </A></LI>
                                     <LI><A href="../Default.aspx">عربي  </A></LI>
                                 </UL>
                                 <!-- /.header-nav -->
@@ -101,13 +101,13 @@
                                     <br>
                                     <div class="col-sm-9" style="background-color: #F5F5F5">
                                         <br>
-                                        <h2 class="h2center">جديد الأخبار </h2>
+                                        <h2 class="h2center"> New News </h2>
 
                                         <hr>
                                         <div class="posts">
 
 
-                                            <uc1:UcNews runat="server" ID="UcNews" />
+                                            <uc1:EnUcNews runat="server" ID="EnUcNews" />
                                             <!-- /.post -->
                                         </div>
                                         <!-- /.posts -->
@@ -123,7 +123,7 @@
                                                         <form runat="server" >
                                                             <div class="row">
                                                                 <div class="form-group col-sm-12">
-                                                                    <label>البلد </label>
+                                                                    <label>county </label>
                                                                     <DIV class="select-wrapper">
                                                                         <asp:DropDownList runat="server" ID="txtcountry" DataSourceID="countryDataSource" DataTextField="ArContryName" DataValueField="Id" AutoPostBack="True" class="form-control">
                                                                         </asp:DropDownList>
@@ -134,7 +134,7 @@
                                                                 <!-- /.form-group -->
 
                                                                 <div class="form-group col-sm-12">
-                                                                    <label>المدينة  </label>
+                                                                    <label>city  </label>
                                                                     <DIV class="select-wrapper">
                                                                         <asp:DropDownList runat="server" ID="txtCity" DataSourceID="CityDataSource" DataTextField="ArCityName" DataValueField="Id" class="form-control" AutoPostBack="true">
                                                                         </asp:DropDownList>
@@ -150,7 +150,7 @@
                                                                 <!-- /.form-group -->
 
                                                                 <div class="form-group col-sm-12">
-                                                                    <label>الحي </label>
+                                                                    <label>Neighborhood </label>
                                                                     <asp:DropDownList runat="server" DataSourceID="LocationDataSource" DataTextField="ArLocationName" DataValueField="Id" class="form-control" AutoPostBack="true" ID="txtLoc">
                                                                     </asp:DropDownList>
                                                                     <asp:EntityDataSource runat="server" ID="LocationDataSource" DefaultContainerName="dbContext" ConnectionString="name=dbContext" EnableFlattening="False" EntitySetName="Locations" EntityTypeFilter="Location" Select="" Where="" AutoGenerateWhereClause="true">
@@ -162,7 +162,7 @@
                                                                 <!-- /.form-group -->
 
                                                                 <div class="form-group col-sm-12">
-                                                                    <label>نوع العقار </label>
+                                                                    <label>Property Type </label>
                                                                     <DIV class="select-wrapper">
 
                                                                         <asp:DropDownList runat="server" ID="txtEstatType" class="form-control">
@@ -178,7 +178,7 @@
                                                                 <!-- /.form-group -->
                                                                 
                                                                 <div class="form-group col-sm-12">
-                                                                    <label>نوع الاستثمار</label>
+                                                                    <label>Type of investment</label>
                                                                     <DIV class="select-wrapper">
 
                                                                         <asp:DropDownList runat="server" ID="txtStatus" class="form-control">
@@ -192,21 +192,21 @@
                                                                 </div>
 
                                                                 <div class="form-group col-sm-6">
-                                                                    <label>السعر من </label>
-                                                                     <asp:TextBox runat="server" ID="txtfrom" class="form-control" placeholder="100 ر.ع " />
+                                                                    <label>price From </label>
+                                                                     <asp:TextBox runat="server" ID="txtfrom" class="form-control" placeholder="100 R.O " />
                                                                 </div>
                                                                 <!-- /.form-group -->
 
                                                                 <div class="form-group col-sm-6">
-                                                                    <label>السعر إلى </label>
-                                                                    <asp:TextBox runat="server" ID="txtTo" class="form-control" placeholder="90000 ر.ع " />
+                                                                    <label>Price To </label>
+                                                                    <asp:TextBox runat="server" ID="txtTo" class="form-control" placeholder="90000 R.O " />
                                                                 </div>
                                                                 <!-- /.form-group -->
                                                             </div>
                                                             <!-- /.row -->
 
                                                             <div class="form-group">
-                                                                  <asp:Button Text="بحث" runat="server"   class="btn btn-primary btn-inversed btn-block" id="btnSearch" OnClick="btnSearch_Click"/>
+                                                                  <asp:Button Text="Find" runat="server"   class="btn btn-primary btn-inversed btn-block" id="btnSearch" OnClick="btnSearch_Click"/>
                                                             </div>
                                                             <!-- /.form-group -->
                                                         </form>
@@ -219,7 +219,7 @@
                                                 <br>
                                                 <div class="widget">
 
-                                                    <h2 class="center">عروض مميزة </h2>
+                                                    <h2 class="center">Specials </h2>
 
                                                     <div class="properties-small-list">
 
@@ -239,7 +239,7 @@
                                                                                  " </div></div>"+
                                                                                  "<div class='property-small-content col-sm-12 col-md-8' dir='rtl'>"+
                                                                                  " <h3 class='property-small-title'><a href='Property Specifications.aspx?Rst=" + item.Id + "'>" + item.EnTitle + " </a></h3>" +
-                                                                                  "<div class='property-small-price'>"+item.price+" ر .ع <span class='property-small-price-suffix'>/  السعر </span></div>"+
+                                                                                  "<div class='property-small-price'>"+item.price+" R.O <span class='property-small-price-suffix'>/  Price </span></div>"+
                                                                                   " </div> </div>";
                                                                 Response.Write(realstateX);
                                                             }
@@ -249,135 +249,6 @@
                                                          %>
 
 
-<%--                                                        <div class="property-small clearfix">
-                                                            <div class="property-small-picture col-sm-12 col-md-4">
-                                                                <div class="property-small-picture-inner">
-                                                                    <a href="Property Specifications.html" class="property-small-picture-target">
-                                                                        <img src="assets/img/tmp/properties/medium/10.jpg" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <!-- /.property-small-picture -->
-                                                            </div>
-                                                            <!-- /.property-small-picture -->
-
-                                                            <div class="property-small-content col-sm-12 col-md-8" dir="rtl">
-                                                                <h3 class="property-small-title"><a href="Property Specifications.html">فيلا في الغبرة الشمالية </a></h3>
-                                                                <!-- /.property-small-title -->
-                                                                <div class="property-small-price">1500 ر .ع <span class="property-small-price-suffix">/  السعر </span></div>
-                                                                <!-- /.property-small-price -->
-                                                            </div>
-                                                            <!-- /.property-small-content -->
-                                                        </div>
-                                                        <!-- /.property-small -->
-
-
-                                                        <div class="property-small clearfix">
-                                                            <div class="property-small-picture col-sm-12 col-md-4">
-                                                                <div class="property-small-picture-inner">
-                                                                    <a href="Property Specifications.html" class="property-small-picture-target">
-                                                                        <img src="assets/img/tmp/properties/medium/10.jpg" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <!-- /.property-small-picture -->
-                                                            </div>
-                                                            <!-- /.property-small-picture -->
-
-                                                            <div class="property-small-content col-sm-12 col-md-8" dir="rtl">
-                                                                <h3 class="property-small-title"><a href="Property Specifications.html">فيلا في الغبرة الشمالية </a></h3>
-                                                                <!-- /.property-small-title -->
-                                                                <div class="property-small-price">1500 ر .ع <span class="property-small-price-suffix">/  السعر </span></div>
-                                                                <!-- /.property-small-price -->
-                                                            </div>
-                                                            <!-- /.property-small-content -->
-                                                        </div>
-                                                        <!-- /.property-small -->
-
-
-                                                        <div class="property-small clearfix">
-                                                            <div class="property-small-picture col-sm-12 col-md-4">
-                                                                <div class="property-small-picture-inner">
-                                                                    <a href="Property Specifications.html" class="property-small-picture-target">
-                                                                        <img src="assets/img/tmp/properties/medium/10.jpg" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <!-- /.property-small-picture -->
-                                                            </div>
-                                                            <!-- /.property-small-picture -->
-
-                                                            <div class="property-small-content col-sm-12 col-md-8" dir="rtl">
-                                                                <h3 class="property-small-title"><a href="Property Specifications.html">فيلا في الغبرة الشمالية </a></h3>
-                                                                <!-- /.property-small-title -->
-                                                                <div class="property-small-price">1500 ر .ع <span class="property-small-price-suffix">/  السعر </span></div>
-                                                                <!-- /.property-small-price -->
-                                                            </div>
-                                                            <!-- /.property-small-content -->
-                                                        </div>
-                                                        <!-- /.property-small -->
-
-
-                                                        <div class="property-small clearfix">
-                                                            <div class="property-small-picture col-sm-12 col-md-4">
-                                                                <div class="property-small-picture-inner">
-                                                                    <a href="Property Specifications.html" class="property-small-picture-target">
-                                                                        <img src="assets/img/tmp/properties/medium/10.jpg" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <!-- /.property-small-picture -->
-                                                            </div>
-                                                            <!-- /.property-small-picture -->
-
-                                                            <div class="property-small-content col-sm-12 col-md-8" dir="rtl">
-                                                                <h3 class="property-small-title"><a href="Property Specifications.html">فيلا في الغبرة الشمالية </a></h3>
-                                                                <!-- /.property-small-title -->
-                                                                <div class="property-small-price">1500 ر .ع <span class="property-small-price-suffix">/  السعر </span></div>
-                                                                <!-- /.property-small-price -->
-                                                            </div>
-                                                            <!-- /.property-small-content -->
-                                                        </div>
-                                                        <!-- /.property-small -->
-
-
-
-                                                        <div class="property-small clearfix">
-                                                            <div class="property-small-picture col-sm-12 col-md-4">
-                                                                <div class="property-small-picture-inner">
-                                                                    <a href="Property Specifications.html" class="property-small-picture-target">
-                                                                        <img src="assets/img/tmp/properties/medium/10.jpg" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <!-- /.property-small-picture -->
-                                                            </div>
-                                                            <!-- /.property-small-picture -->
-
-                                                            <div class="property-small-content col-sm-12 col-md-8" dir="rtl">
-                                                                <h3 class="property-small-title"><a href="Property Specifications.html">فيلا في الغبرة الشمالية </a></h3>
-                                                                <!-- /.property-small-title -->
-                                                                <div class="property-small-price">1500 ر .ع <span class="property-small-price-suffix">/  السعر </span></div>
-                                                                <!-- /.property-small-price -->
-                                                            </div>
-                                                            <!-- /.property-small-content -->
-                                                        </div>
-                                                        <!-- /.property-small -->
-
-                                                        <div class="property-small clearfix">
-                                                            <div class="property-small-picture col-sm-12 col-md-4">
-                                                                <div class="property-small-picture-inner">
-                                                                    <a href="Property Specifications.html" class="property-small-picture-target">
-                                                                        <img src="assets/img/tmp/properties/medium/10.jpg" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <!-- /.property-small-picture -->
-                                                            </div>
-                                                            <!-- /.property-small-picture -->
-
-                                                            <div class="property-small-content col-sm-12 col-md-8" dir="rtl">
-                                                                <h3 class="property-small-title"><a href="Property Specifications.html">فيلا في الغبرة الشمالية </a></h3>
-                                                                <!-- /.property-small-title -->
-                                                                <div class="property-small-price">1500 ر .ع <span class="property-small-price-suffix">/  السعر </span></div>
-                                                                <!-- /.property-small-price -->
-                                                            </div>
-                                                            <!-- /.property-small-content -->
-                                                        </div>--%>
                                                         <!-- /.property-small -->
                                                     </div>
                                                     <!-- /.properties-small-list -->
@@ -446,52 +317,54 @@
             <!-- container -->
 
         </div>
-        <div id="footer-wrapper" style="display: block;">
-            <div id="footer">
-                <div id="footer-inner">
-                    <div class="footer-bottom">
-                        <div class="container">
-                            <p class="center no-margin">
-                                مسقط - سلطنة عمان - الغبرة الشمالية - 
-                          هاتف :24615249 /24615303 - الفاكس :-24615250  
-                         
-                                <br>
-                                نقال : 00968 9667887 -   
-                        البريد الإلكتروني : info@gulf-future.com
-                            
-                                <div class="center">
-                                    <ul class="social">
-                                        <li><a href="https://www.facebook.com/gulffuture2014" target="_blank">
-                                            <img src="assets/img/flinkes/1398822022_46-facebook.png" />
-                                        </a></li>
-                                        <li><a href="https://twitter.com/gulffuture2014" target="_blank">
-                                            <img src="assets/img/flinkes/1398822034_43-twitter.png" />
-                                        </a></li>
-                                        <li><a href="https://plus.google.com/u/2/101857190209490041914/about" target="_blank">
-                                            <img src="assets/img/flinkes/1398821926_80-google-plus.png" />
-                                        </a></li>
-                                        <li><a href="http://www.linkedin.com/profile/view?id=342612625&trk=nav_responsive_tab_profile_pic" target="_blank">
-                                            <img src="assets/img/flinkes/1398822003_51-linkedin.png" />
-                                        </a></li>
-                                        <li><a href="http://instagram.com/gulffuture2014" target="_blank">
-                                            <img src="assets/img/flinkes/1398822458_instagram_circle_black.png" />
-                                        </a></li>
-                                        <li><a href="https://www.youtube.com/channel/UCi3yy_Q_UpK8JmUFadoXhIw" target="_blank">
-                                            <img src="assets/img/flinkes/1398822006_58-youtube.png" />
-                                        </a></li>
-                                    </ul>
-                                    <!-- /.social -->
-                                </div>
-                                <!-- /.center -->
-                        </div>
-                        <!-- /.container -->
-                    </div>
-                    <!-- /.footer-bottom -->
+        <div id="footer-wrapper" style="display:block;">
+                    <div id="footer" >
+                        <div id="footer-inner">
+                            <div class="footer-bottom">
+                                <div class="container" >
+                                    <p class="center no-margin">
+                                    MUSCAT - Oman - Ghubra North -
+                                    Phone : 24615249/24615303 - Fax : 24615250 <br> Mobile : 00968 9667887 -
+                                    E-mail : info@gulf-future.com
+                                    <div class="center">
+                                        <ul class="social">
+                                            <li>
+                                                <a href="https://www.facebook.com/gulffuture2014" target="_blank">
+                                                    <img src="assets/img/flinkes/1398822022_46-facebook.png" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://twitter.com/gulffuture2014" target="_blank">
+                                                    <img src="assets/img/flinkes/1398822034_43-twitter.png" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://plus.google.com/u/2/101857190209490041914/about" target="_blank">
+                                                    <img src="assets/img/flinkes/1398821926_80-google-plus.png" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="http://www.linkedin.com/profile/view?id=342612625&trk=nav_responsive_tab_profile_pic" target="_blank">
+                                                    <img src="assets/img/flinkes/1398822003_51-linkedin.png" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="http://instagram.com/gulffuture2014" target="_blank">
+                                                    <img src="assets/img/flinkes/1398822458_instagram_circle_black.png" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.youtube.com/channel/UCi3yy_Q_UpK8JmUFadoXhIw" target="_blank">
+                                                    <img src="assets/img/flinkes/1398822006_58-youtube.png" />
+                                                </a>
+                                            </li>
+                                        </ul><!-- /.social -->
+                                    </div><!-- /.center -->
+                                </div><!-- /.container -->
+                            </div><!-- /.footer-bottom -->
+                        </div><!-- /#footer-inner -->
+                    </div><!-- /#footer -->
                 </div>
-                <!-- /#footer-inner -->
-            </div>
-            <!-- /#footer -->
-        </div>
         <!-- /#footer-wrapper -->
 
     </div>

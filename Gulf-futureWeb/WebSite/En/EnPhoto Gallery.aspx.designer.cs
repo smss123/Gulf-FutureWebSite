@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebSite {
+namespace WebSite.EN {
     
     
     public partial class EnPhoto_Gallery {

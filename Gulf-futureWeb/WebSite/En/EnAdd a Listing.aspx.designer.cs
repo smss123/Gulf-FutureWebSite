@@ -8,10 +8,9 @@
 //------------------------------------------------------------------------------
 
 namespace WebSite.EN {
-
-
-    public partial class EnAdd_a_Listing
-    {
+    
+    
+    public partial class EnAdd_a_Listing {
         
         /// <summary>
         /// txtFullname control.
@@ -77,6 +76,15 @@ namespace WebSite.EN {
         protected global::System.Web.UI.WebControls.DropDownList txtCountry;
         
         /// <summary>
+        /// CountryDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.EntityDataSource CountryDataSource;
+        
+        /// <summary>
         /// txtCity control.
         /// </summary>
         /// <remarks>
@@ -86,6 +94,15 @@ namespace WebSite.EN {
         protected global::System.Web.UI.WebControls.DropDownList txtCity;
         
         /// <summary>
+        /// CityDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.EntityDataSource CityDataSource;
+        
+        /// <summary>
         /// txtLocation control.
         /// </summary>
         /// <remarks>
@@ -93,6 +110,15 @@ namespace WebSite.EN {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList txtLocation;
+        
+        /// <summary>
+        /// LocationDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.EntityDataSource LocationDataSource;
         
         /// <summary>
         /// txtDecription control.

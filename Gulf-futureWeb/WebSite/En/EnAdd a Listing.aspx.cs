@@ -19,15 +19,15 @@ namespace WebSite.EN
         {
             Ourservice = db.OurServices.ToList();
 
-            txtCountry.DataSource = db.Conturies.ToList();
-            txtCountry.DataTextField = "ArContryName";
-            txtCountry.DataValueField = "Id";
-            txtCountry.DataBind();
+            //txtCountry.DataSource = db.Conturies.ToList();
+            //txtCountry.DataTextField = "EnContryName";
+            //txtCountry.DataValueField = "Id";
+            //txtCountry.DataBind();
 
-            txtCity.DataSource = db.Cities.ToList();
-            txtCity.DataTextField = "ArCityName";
-            txtCity.DataValueField = "Id";
-            txtCity.DataBind();
+            //txtCity.DataSource = db.Cities.ToList();
+            //txtCity.DataTextField = "EnCityName";
+            //txtCity.DataValueField = "Id";
+            //txtCity.DataBind();
         }
 
         protected void btnSave_Click(object sender, EventArgs e)

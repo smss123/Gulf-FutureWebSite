@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/realocation.css" media="screen, projection" id="css-main">
     <link href="../fonts.googleapis.com/css975a.css?family=Raleway:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="DroidKufi/style.css">
-    <title>Contact Us</title>
+    <title>اتصل بنا</title>
 </head>
 <body>
 
@@ -63,7 +63,7 @@
                                         <li><a href="News.aspx">جديد الاخبار </a></li>
                                         <li><a href="Add a Listing.aspx">أصف عقارك  </a></li>
                                         <li><a href="Contact Us.aspx">اتصل بنا  </a></li>
-                                        <li><a href="English/index.aspx">English  </a></li>
+                                        <li><a href="En/ENContact Us.aspx">English  </a></li>
                                     </ul>
                                     <!-- /.header-nav -->
                                 </div>
@@ -181,11 +181,21 @@
                             <div class="footer-bottom">
                                 <div class="container">
                                     <p class="center no-margin">
+                                       <p class="center no-margin">
+                                    <span style="direction:rtl">
                                         مسقط - سلطنة عمان - الغبرة الشمالية -
-                                    هاتف :24615249 /24615303 - الفاكس :-24615250
-                                    <br>
-                                        نقال : 00968 9667887 -
-                                    البريد الإلكتروني : info@gulf-future.com
+                                        هاتف :24615249 /24615303 - الفاكس :-24615250 <br>
+                                      :نقال : 
+                                         -9667887 -   00968
+                                        -
+                                       البريد الإلكتروني
+                                        :
+                                          info@gulf-future.com 
+                                    </span>
+
+                                   
+                                        </p>
+
                                     <div class="center">
                                         <ul class="social">
                                             <li><a href="https://www.facebook.com/gulffuture2014" target="_blank">

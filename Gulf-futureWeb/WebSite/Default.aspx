@@ -79,7 +79,7 @@
                                             <a href="Contact Us.aspx">اتصل بنا </a>
                                         </li>
                                         <li>
-                                            <a href="English/index.aspx">English </a>
+                                            <a href="En/EnDefault.aspx">English </a>
                                         </li>
                                     </ul>
                                     <!-- /.header-nav -->
@@ -115,21 +115,7 @@
                                     }
                                     
                                     %>
-                                    <%--<li data-thumb="assets/img/tmp/properties/large/5xxl.jpg">
-                                    <img src="assets/img/tmp/properties/large/5xxl.jpg" alt="">
-                                    </li>
-                                    
-                                    <li data-thumb="assets/img/tmp/properties/large/5xxl.jpg">
-                                    <img src="assets/img/tmp/properties/large/5xxl.jpg" alt="">
-                                    </li>
-                                    
-                                    <li data-thumb="assets/img/tmp/properties/large/5xxl.jpg">
-                                    <img src="assets/img/tmp/properties/large/5xxl.jpg" alt="">
-                                    </li>
-                                    
-                                    <li data-thumb="assets/img/tmp/properties/large/5xxl.jpg">
-                                    <img src="assets/img/tmp/properties/large/5xxl.jpg" alt="">
-                                    </li>--%>
+                                  
                                     </ul>
                                     <!-- /.slides -->
                                 </div>
@@ -686,10 +672,22 @@
                         <div class="footer-bottom">
                             <div class="container">
                                 <p class="center no-margin">
-                                مسقط - سلطنة عمان - الغبرة الشمالية -
-                                هاتف :24615249 /24615303 - الفاكس :-24615250 <br>
-                                نقال : 00968 9667887 -
-                                البريد الإلكتروني : info@gulf-future.com
+                                <span style="direction:rtl">
+                               <p class="center no-margin">
+                                    <span style="direction:rtl">
+                                        مسقط - سلطنة عمان - الغبرة الشمالية -
+                                        هاتف :24615249 /24615303 - الفاكس :-24615250 <br>
+                                      :نقال : 
+                                         -9667887 -   00968
+                                        -
+                                       البريد الإلكتروني
+                                        :
+                                          info@gulf-future.com 
+                                    </span>
+
+                               
+                                        </p>
+
 
                                 <div class="center">
                                     <ul class="social">

@@ -12,7 +12,7 @@
 
                 <div class="post-picture col-sm-3">
                     <div class="post-picture-inner">
-                        <a href="Property Specifications.html" class="post-picture-target">
+                        <a href="NewsDetails.aspx?Rst=<%#Eval("ID") %>" class="post-picture-target">
                             <img src='<%#Eval("photo") %>' alt="" class="img-responsive">
                         </a>
                         &nbsp;&nbsp;<!-- /.post-picture-target --></div>
@@ -21,11 +21,11 @@
                 <!-- /.post-picture -->
 
                 <div class="post-content col-sm-8">
-                    <h3 class="post-title"><a href="Property Specifications.html"><%#Eval("ArCaption") %> </a></h3>
+                    <h3 class="post-title"><a href="NewsDetails.aspx?Rst=<%#Eval("ID") %>"><%#Eval("ArCaption") %> </a></h3>
                     <p>
                        <%#Eval("ArSummary") %>                        
                     </p>
-                    <a href="#" class="Property Specifications.html">المزيد </a>
+                    <a href="NewsDetails.aspx?Rst=<%#Eval("ID") %>" >المزيد </a>
                 </div>
                 <!-- /.post-content-->
             </div>

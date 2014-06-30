@@ -55,7 +55,7 @@
                                     <li> <a href="News.html">  جديد الاخبار </a>  </li>
                                     <li> <a href="Add a Listing.html">   أصف عقارك  </a>  </li>
                                     <li> <a href="Contact Us.html">  اتصل بنا  </a>  </li>
-                                    <li> <a href="English/index.html">  English  </a>  </li>
+                                    <li> <a href="En/EnDefault.aspx">  English  </a>  </li>
                                 </ul><!-- /.header-nav -->
                             </div>
                         </div><!-- /.container -->
@@ -211,7 +211,7 @@
         </div>
 
         <hr>
-        <div class="btn-group" align="center">
+        <%--<div class="btn-group" align="center">
             <a href="#"> <button type="button" class="btn btn-default">1</button> </a>
             <a href="#"> <button type="button" class="btn btn-default">2</button> </a>
             <a href="#"> <button type="button" class="btn btn-default">3</button> </a>
@@ -222,7 +222,7 @@
             <a href="#"> <button type="button" class="btn btn-default">8</button> </a>
             <a href="#"> <button type="button" class="btn btn-default">9</button> </a>
             <a href="#"> <button type="button" class="btn btn-default">10</button> </a>
-        </div>
+        </div>--%>
         <br><br>
         <div id="main-wrapper">
             <div class="container">
@@ -234,10 +234,21 @@
                         <div class="footer-bottom">
                             <div class="container">
                                 <p class="center no-margin">
-                                    مسقط - سلطنة عمان - الغبرة الشمالية -
-                                    هاتف :24615249 /24615303 - الفاكس :-24615250
-                                    <br> نقال : 00968 9667887 -
-                                    البريد الإلكتروني : info@gulf-future.com
+                                <p class="center no-margin">
+                                    <span style="direction:rtl">
+                                        مسقط - سلطنة عمان - الغبرة الشمالية -
+                                        هاتف :24615249 /24615303 - الفاكس :-24615250 <br>
+                                      :نقال : 
+                                         -9667887 -   00968
+                                        -
+                                       البريد الإلكتروني
+                                        :
+                                          info@gulf-future.com 
+                                    </span>
+
+                                    <!-- /.center -->
+                                        </p>
+
                                     <div class="center">
                                         <ul class="social">
                                             <li><a href="https://www.facebook.com/gulffuture2014" target="_blank">  <img src="assets/img/flinkes/1398822022_46-facebook.png" /> </a> </li>

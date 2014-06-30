@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Property Specifications.aspx.cs" Inherits="WebSite.Property_Specifications" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NewsDetails.aspx.cs" Inherits="WebSite.NewsDetails" %>
 
 
 <!doctype html>
@@ -106,26 +106,14 @@
 
                                     <div class="col-sm-9">
 
-                                        <h2 class="h2center"><% Response.Write(realStatProfile.ArTitle); %> </h2>
+                                        <h2 class="h2center"><% Response.Write(news.ArCaption); %> </h2>
                                         <hr>
 
                                         <div class="flexslider">
                                             <ul class="slides">
                                                
-                                                <li data-thumb="<% Response.Write(realStatProfile.image1); %>">
-                                                    <img src="<%Response.Write(realStatProfile.image1); %>" alt="">
-                                                </li>
-
-                                                <li data-thumb="<% Response.Write(realStatProfile.image2); %>">
-                                                    <img src="<% Response.Write(realStatProfile.image2); %>" alt="">
-                                                </li>
-
-                                                <li data-thumb="<% Response.Write(realStatProfile.image3); %>">
-                                                    <img src="<% Response.Write(realStatProfile.image3); %>" alt="">
-                                                </li>
-
-                                                <li data-thumb="<% Response.Write(realStatProfile.Image4); %>">
-                                                    <img src="<% Response.Write(realStatProfile.Image4); %>" alt="">
+                                                <li data-thumb="<% Response.Write(news.Photo); %>">
+                                                    <img src="<%Response.Write(news.Photo); %>" alt="">
                                                 </li>
                                             </ul>
                                             <!-- /.slides -->
@@ -138,15 +126,13 @@
 
                                         <p>
                                            
-                                            <%
-                                                Response.Write(string.Format(" السعر : {0} ر . ع ",realStatProfile.price));  
-                                             %>
+                                           
                                 <br>
 
 
                                               <%
                  
-                                                  Response.Write(realStatProfile.ArDescription);
+                                                  Response.Write(news.ArDetails);
                  
                                                %>
                                         </p>

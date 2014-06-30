@@ -1,2 +1,0 @@
-background-color: rgba(0, 48, 255, 0.9);
-

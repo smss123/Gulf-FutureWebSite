@@ -350,7 +350,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="dbContext" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="dbContext" annotation:LazyLoadingEnabled="false">
           <EntitySet Name="AboutUs" EntityType="Self.AboutU" />
           <EntitySet Name="Cities" EntityType="Self.City" />
           <EntitySet Name="Conturies" EntityType="Self.Contury" />

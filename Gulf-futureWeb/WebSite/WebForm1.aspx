@@ -60,7 +60,6 @@
 
     </div>
         <div id="x">samer abd ulla</div>
-    </form>
 
       <div id="dialog"></div>
     <script>
@@ -69,5 +68,9 @@
             , content: "/details"
         });
     </script>
-</body>
+        <asp:EntityDataSource ID="EntityDataSource1" runat="server">
+        </asp:EntityDataSource>
+    </form>
+
+      </body>
 </html>

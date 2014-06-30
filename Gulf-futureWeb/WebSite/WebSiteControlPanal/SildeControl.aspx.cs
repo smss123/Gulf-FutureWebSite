@@ -16,10 +16,11 @@ namespace WebSite.WebSiteControlPanal
         {
             try
             {
-                var t1 = Task.Factory.StartNew(() => UpldArImage.PostedFile.SaveAs(Server.MapPath("../Resources/Uploads/Images/" + UpldArImage.PostedFile.FileName)));
-                t1.Wait();
-                var t = Task.Factory.StartNew(() => UpldEnImage.PostedFile.SaveAs(Server.MapPath("../Resources/Uploads/Images/" + UpldEnImage.PostedFile.FileName)));
-                t.Wait();
+               
+                UpldArImage.PostedFile.SaveAs(Server.MapPath("~/Resources/Uploads/Images/" + UpldArImage.PostedFile.FileName));
+               
+               
+                UpldEnImage.PostedFile.SaveAs(Server.MapPath("~/Resources/Uploads/Images/" + UpldEnImage.PostedFile.FileName));
                 var db = new dbContext();
                 var sld = new SlideConfig() { ArSlide = "../Resources/Uploads/Images/" + UpldArImage.PostedFile.FileName, EnSlide = "../Resources/Uploads/Images/" + UpldEnImage.PostedFile.FileName };
                 db.SlideConfigs.Add(sld);
@@ -33,9 +34,10 @@ namespace WebSite.WebSiteControlPanal
             }
             catch (Exception ex)
             {
+               
                 lblmsg.Text = "<div class='alert alert-error'>" +
                                    "<button class='close data-dismiss=alert'>&times;</button>" +
-                                   "<strong>Error!</strong> " + ex.Message +
+                                   "<strong>Error!</strong> " + ex.ToString() +
                                    "</div>";
             }
         }

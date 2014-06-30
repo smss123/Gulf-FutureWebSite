@@ -1,31 +1,31 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EnAbout Us.aspx.cs" Inherits="WebSite.About_Us" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EnAbout_Us.aspx.cs" Inherits="WebSite.EN.EnAbout_Us" %>
 
 
 
 <!doctype html>
 
-<HTML>
+<html>
 
 <!-- Mirrored from html.realocation.byaviators.com/ by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 02 Apr 2014 09:18:48 GMT -->
-<HEAD>
-    <META charset="utf-8">
-    <META name="description" content="">
-    <META name="keywords" content="">
-    <META name="author" content="">
-    <META name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <LINK rel="shortcut icon" href="#">
-    <LINK rel="stylesheet" type="text/css" href="assets/libraries/font-awesome/css/font-awesome.css" media="screen, projection">
-    <LINK rel="stylesheet" type="text/css" href="assets/libraries/jquery-bxslider/jquery.bxslider.css" media="screen, projection">
-    <LINK rel="stylesheet" type="text/css" href="assets/libraries/flexslider/flexslider.css" media="screen, projection">
-    <LINK rel="stylesheet" type="text/css" href="assets/css/realocation.css" media="screen, projection" id="css-main">
-    <LINK href="../fonts.googleapis.com/css975a.css?family=Raleway:400,700" rel="stylesheet" type="text/css">
-    <LINK rel="stylesheet" type="text/css" href="DroidKufi/style.css">
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" type="text/css" href="assets/libraries/font-awesome/css/font-awesome.css" media="screen, projection">
+    <link rel="stylesheet" type="text/css" href="assets/libraries/jquery-bxslider/jquery.bxslider.css" media="screen, projection">
+    <link rel="stylesheet" type="text/css" href="assets/libraries/flexslider/flexslider.css" media="screen, projection">
+    <link rel="stylesheet" type="text/css" href="assets/css/realocation.css" media="screen, projection" id="css-main">
+    <link href="../fonts.googleapis.com/css975a.css?family=Raleway:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="DroidKufi/style.css">
 
-    <TITLE>About Us</TITLE>
-</HEAD>
+    <title>About Us</title>
+</head>
 
-<BODY>
+<body>
 
 
 
@@ -51,8 +51,8 @@
                         <DIV class="container">
                             <DIV class="row">
                                 <UL class="header-nav nav nav-pills">
-                                    <LI><A href="Default.aspx">Home</A>  </LI>
-                                    <LI><A href="About Us.aspx">About Us </A></LI>
+                                    <LI><A href="EnDefault.aspx">Home</A>  </LI>
+                                    <LI><A href="EnAbout Us.aspx">About Us </A></LI>
                                     <LI class="menuparent">
                                         <A href="#">Services </A>
                                         <UL class="sub-menu">
@@ -61,18 +61,18 @@
                                                 //--------our service here 
                                                 foreach (var item in this.Ourservice)
                                                 {
-                                                    ser = "<li><a href='OurSerivcesX.aspx?SID=" + item.Id + "'>" + item.EnOurService + " </a></li>";
+                                                    ser = "<li><a href='EnOurSerivcesX.aspx?SID=" + item.Id + "'>" + item.EnOurService + " </a></li>";
                                                     Response.Write(ser);
                                                 }  
                                                     
                                             %>
                                         </UL>
                                     </LI>
-                                    <LI><A href="Photo Gallery.aspx">Photo Gallery </A></LI>
-                                    <LI><A href="News.aspx">New News </A></LI>
-                                    <LI><A href="Add a Listing.aspx">Add real estate </A></LI>
-                                    <LI><A href="Contact Us.aspx">Contact Us </A></LI>
-                                    <LI><A href="../Default.aspx">عربي  </A></LI>
+                                    <LI><A href="EnPhoto Gallery.aspx">Photo Gallery </A></LI>
+                                    <LI><A href="EnNews.aspx">New News </A></LI>
+                                    <LI><A href="EnAdd a Listing.aspx">Add real estate </A></LI>
+                                    <LI><A href="EnContact Us.aspx">Contact Us </A></LI>
+                                    <LI><A href="../About Us.aspx">عربي  </A></LI>
                                 </UL>
                                 <!-- /.header-nav -->
                             </DIV>
@@ -91,12 +91,14 @@
 
         <DIV id="main-wrapper">
             <DIV class="container">
-                <%
+                <DIV class="block-content-inner">
+                    <%
               
-                    Response.Write(DbAboutUs);  
+                        Response.Write(DbAboutUs);  
                 
-                %>
-            </DIV>
+                    %>
+                </DIV>
+                </DIV>
             <!-- container -->
 
             <DIV id="footer-wrapper" style="display: block;">

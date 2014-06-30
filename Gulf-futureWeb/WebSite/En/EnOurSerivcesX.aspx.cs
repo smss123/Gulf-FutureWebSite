@@ -27,8 +27,8 @@ namespace WebSite.EN
                 var q = db.OurServices.Where(p => p.Id == sid).SingleOrDefault();
                 if (q != null)
                 {
-                    ServiceName = q.ArOurService;
-                    ServiceDescription = q.ArDescription;
+                    ServiceName = q.EnOurService;
+                    ServiceDescription = q.EnDescription;
                 }
                 else
                 {

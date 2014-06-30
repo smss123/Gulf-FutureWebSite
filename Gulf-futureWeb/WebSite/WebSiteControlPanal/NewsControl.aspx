@@ -118,7 +118,7 @@
              <hr />
              <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="NewsSource" CssClass="table table-hover">
                  <Columns>
-                     <asp:CommandField ShowEditButton="True" />
+                     <asp:CommandField ShowEditButton="True" ShowDeleteButton="True" />
                      <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
                      <asp:BoundField DataField="DateOf" HeaderText="Date" SortExpression="DateOf" />
                      <asp:BoundField DataField="ArCaption" HeaderText="Caption-Arabic" SortExpression="ArCaption" />
