@@ -21,7 +21,12 @@
     <link href="../fonts.googleapis.com/css975a.css?family=Raleway:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="DroidKufi/style.css">
 
-    <title>About Us</title>
+    <title>
+
+         <%
+                Response.Write(db.WebSiteInfoes.ToList()[0].ArWebSiteName+"-من نحن");        
+             %>
+    </title>
 </head>
 
 <body>

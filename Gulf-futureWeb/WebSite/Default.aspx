@@ -20,7 +20,13 @@
         <link href="../fonts.googleapis.com/css975a.css?family=Raleway:400,700" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="DroidKufi/style.css">
 
-        <title>شركه مستقبل الخليج</title>
+        <title>
+            <%
+                Response.Write(db.WebSiteInfoes.ToList()[0].ArWebSiteName);        
+             %>
+
+
+        </title>
     </head>
     <body>
         <div id="wrapper">
@@ -182,11 +188,10 @@
                                                         <div class="select-wrapper">
                                                            
                                                             <asp:DropDownList runat="server" ID="txtEstatType" class="form-control">
-                                                                <asp:ListItem Text="Empty land" />
-                                                                <asp:ListItem Text="Buildings" />
-                                                                <asp:ListItem Text="Buildings" />
-                                                                <asp:ListItem Text="Villas" />
-                                                                <asp:ListItem Text="Offices" />
+                                                                <asp:ListItem Text="قطعة ارض" />
+                                                                <asp:ListItem Text="مبنى" />
+                                                                <asp:ListItem Text="فيلا" />
+                                                                <asp:ListItem Text="مكاتب" />
                                                             </asp:DropDownList>
                                                         </div>
                                                         <!-- /.select-wrapper -->
@@ -198,9 +203,9 @@
                                                         <div class="select-wrapper">
                                                             
                                                             <asp:DropDownList runat="server" ID="txtStatus" class="form-control">
-                                                                <asp:ListItem Text="Distinctive" />
-                                                                <asp:ListItem Text="Sale" />
-                                                                <asp:ListItem Text="Rent" />
+                                                                <asp:ListItem Text="عروض مميزة" />
+                                                                <asp:ListItem Text="للبيع" />
+                                                                <asp:ListItem Text="للايجار" />
                                                             </asp:DropDownList>
                                                            
                                                         </div>
@@ -209,15 +214,18 @@
                                                     <!-- /.form-group -->
 
                                                     <div class="form-group col-sm-6">
-                                                        <label>السعر من </label>
-                                                        
-                                                        <asp:TextBox runat="server" ID="txtfrom" class="form-control" placeholder="100 ر.ع " />
+
+                                                         <label>السعر إلى </label>
+                                                       <asp:TextBox runat="server" ID="txtTo" class="form-control" placeholder="90000 ر.ع " />
+
+                                                       
                                                     </div>
                                                     <!-- /.form-group -->
 
                                                     <div class="form-group col-sm-6">
-                                                        <label>السعر إلى </label>
-                                                       <asp:TextBox runat="server" ID="txtTo" class="form-control" placeholder="90000 ر.ع " />
+                                                         <label>السعر من </label>
+                                                        
+                                                        <asp:TextBox runat="server" ID="txtfrom" class="form-control" placeholder="100 ر.ع " />
                                                     </div>
                                                     <!-- /.form-group -->
 
@@ -282,31 +290,15 @@
 
                     <DIV class="block-content block-content-small-padding">
                         <DIV class="block-content-inner">
-                            <H2 class="center">أفضل العروض </H2>
+                  <h2 class="center"> أفضل العروض  </h2>
 
-                            <UL class="properties-filter">
-                                <LI class="selected">
-                                    <A href="#" data-filter="*">
-                                        <SPAN>الكل </SPAN>
-                                    </A>
-                                </LI>
-                                <LI>
-                                    <A href="#" data-filter=".property-featured">
-                                        <SPAN>المميز </SPAN>
-                                    </A>
-                                </LI>
-                                <LI>
-                                    <A href="#" data-filter=".property-rent">
-                                        <SPAN>إيجــــار </SPAN>
-                                    </A>
-                                </LI>
-                                <LI>
-                                    <A href="#" data-filter=".property-sale">
-                                        <SPAN>بيــــع </SPAN>
-                                    </A>
-                                </LI>
-                            </UL>
-                            <!-- /.property-filter -->
+<ul class="properties-filter">
+    <li class="selected"><a href="#" data-filter="*"><span> الكل </span></a></li>
+    <li><a href="#" data-filter=".property-featured"><span> المميز </span></a></li>
+    <li><a href="#" data-filter=".property-rent"><span> إيجــــار </span></a></li>
+    <li><a href="#" data-filter=".property-sale"><span> بيــــع </span></a></li>
+</ul>
+<!-- /.property-filter -->
                         </DIV>
                         <DIV class="properties-items">
                             <DIV class="row">
@@ -324,10 +316,10 @@
                                                 feat = "<DIV class='property-item property-featured col-sm-6 col-md-3'>" +
                                                        " <DIV class='property-box'> " +
                                                        "<DIV class='property-box-inner'>" +
-                                                       "<H3 class='property-box-title'><A href='Property Specifications.html'>" + Fitem.ArTitle + "</A></H3> " +
-                                                       "<H4 class='property-box-subtitle'><A href='Property Specifications.html'>" + Fitem.Location.ArLocationName + " </A></H4> " +
+                                                       "<H3 class='property-box-title'><A href='#'>" + Fitem.ArTitle + "</A></H3> " +
+                                                       "<H4 class='property-box-subtitle'><A href='#'>" + db.Locations.Where(p => p.Id == Fitem.LocationId).SingleOrDefault().ArLocationName + " </A></H4> " +
 
-                                                       " <DIV class='property-box-label property-box-label-primary'>" + Fitem.status + " </DIV> " +
+                                                       " <DIV class='property-box-label property-box-label-primary'>عرض مميز </DIV> " +
                                                        " <!-- /.property-box-label -->" +
 
                                                        "<DIV class='property-box-picture'> " +
@@ -342,7 +334,6 @@
                                                        "<!-- /.property-picture-inner -->" +
                                                        "</DIV>" +
                                                        "<!-- /.property-picture -->" +
-
                                                        "</DIV>" +
                                                        "<!-- /.property-box-inner -->" +
                                                        "</DIV>" +
@@ -399,8 +390,9 @@
                                                 feat = "<div class='property-item property-rent col-sm-6 col-md-3'>" +
                                         "<div class='property-box'>" +
                                         "<div class='property-box-inner'>" +
-                                        "<h3 class='property-box-title'><a href='Property Specifications.html'> "+Fitem.ArTitle+" </a></h3>" +
-                                        "<h4 class='property-box-subtitle'><a href='Property Specifications.html'> "+Fitem.Location.ArLocationName+" </a></h4>" +
+                                        "<h3 class='property-box-title'><a href='#'> "+Fitem.ArTitle+" </a></h3>" +
+                                        "<h4 class='property-box-subtitle'><a href='#'> " + db.Locations.Where(p => p.Id == Fitem.LocationId).SingleOrDefault().ArLocationName + " </a></h4>" +
+                                         "<div class='property-box-label property-box-label-primary'> ايجار </div>" +
                                         "<div class='property-box-picture'>" +
                                         "<div class='property-box-price'>"+Fitem.price+" ر.ع </div>" +
                                         "<!-- /.property-box-price -->" +
@@ -459,15 +451,15 @@
                                                 feat = "<DIV class='property-item property-sale col-sm-6 col-md-3'>" +
                                                       " <DIV class='property-box'> " +
                                                       "<DIV class='property-box-inner'>" +
-                                                      "<H3 class='property-box-title'><A href='Property Specifications.html'>" + Fitem.ArTitle + "</A></H3> " +
-                                                      "<H4 class='property-box-subtitle'><A href='Property Specifications.html'>"+Fitem.Location.ArLocationName+" </A></H4> " +
-                                                      " <DIV class='property-box-label property-box-label-primary'>إيجار </DIV> " +
+                                                      "<H3 class='property-box-title'><A href='Property Specifications.aspx?Rst="+Fitem.Id.ToString()+"'>" + Fitem.ArTitle + "</A></H3> " +
+                                                      "<H4 class='property-box-subtitle'><A href='Property Specifications.aspx?Rst=" + Fitem.Id.ToString() + "'>" + db.Locations.Where(p => p.Id == Fitem.LocationId).SingleOrDefault().ArLocationName + " </A></H4> " +
+                                                      " <DIV class='property-box-label property-box-label-primary'>بيع </DIV> " +
                                                       " <!-- /.property-box-label -->" +
                                                       "<DIV class='property-box-picture'> " +
                                                       " <DIV class='property-box-price'>300 ر.ع</DIV>" +
                                                       "<!-- /.property-box-price -->" +
                                                       "<DIV class='property-box-picture-inner'>" +
-                                                      " <A href='Property Specifications.html' class='property-box-picture-target'> " +
+                                                      " <A href='Property Specifications.aspx?Rst="+Fitem.Id.ToString()+"' class='property-box-picture-target'> " +
                                                       " <IMG src='assets/img/tmp/properties/medium/12.jpg' alt=''> " +
                                                       " </A>" +
                                                       "<!-- /.property-box-picture-target -->" +

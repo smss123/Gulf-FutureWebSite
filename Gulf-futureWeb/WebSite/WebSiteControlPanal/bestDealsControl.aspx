@@ -397,11 +397,7 @@
                          
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Image4" SortExpression="Image4">
-                                    <EditItemTemplate>
-                                           <asp:Image ID="Image4" runat="server" Height="89px" ImageUrl='<%# Bind("image2") %>' Width="110px" />
-                                       
-                                      </EditItemTemplate>
+                                <asp:TemplateField HeaderText="Image 4" SortExpression="image4">
                                     <ItemTemplate>
                                          <asp:Image ID="Image4" runat="server" Height="89px" ImageUrl='<%# Bind("image4") %>' Width="110px" />
                                        
@@ -448,7 +444,7 @@
         $(document).ready(function () {
             $("#che").click(function () {
                 if($(this).is(':checked')) {
-                    $("#txtChecked").val("true");
+                    $("#txtChecked").val("True");
                 } else {
                     $("#txtChecked").val("false");
                 }

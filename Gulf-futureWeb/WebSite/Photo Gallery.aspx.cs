@@ -7,7 +7,7 @@ namespace WebSite
 {
     public partial class Photo_Gallery : System.Web.UI.Page
     {
-        private dbContext db = new dbContext();
+        public dbContext db = new dbContext();
         public List<OurService> Ourservice = new List<OurService>();
         protected void Page_Load(object sender, EventArgs e)
         {

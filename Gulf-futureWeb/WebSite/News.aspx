@@ -24,7 +24,12 @@
     <link href="../fonts.googleapis.com/css975a.css?family=Raleway:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="DroidKufi/style.css">
 
-    <title>News</title>
+    <title>
+         <%
+                Response.Write(db.WebSiteInfoes.ToList()[0].ArWebSiteName + "- الاخبار");        
+         %>
+        
+        </title>
 </head>
 
 <body>
@@ -120,7 +125,7 @@
 
 
                                                     <div class="widget-content" dir="rtl">
-                                                        <form runat="server" >
+                                                       <%-- <form runat="server" >
                                                             <div class="row">
                                                                 <div class="form-group col-sm-12">
                                                                     <label>البلد </label>
@@ -209,7 +214,105 @@
                                                                   <asp:Button Text="بحث" runat="server"   class="btn btn-primary btn-inversed btn-block" id="btnSearch" OnClick="btnSearch_Click"/>
                                                             </div>
                                                             <!-- /.form-group -->
-                                                        </form>
+                                                        </form>--%>
+                                                        <form runat="server" class="clearfix">
+                                                    <div class="form-group col-sm-12">
+                                                        <label>الدولة </label>
+                                                        <div class="select-wrapper">
+                                                            <asp:DropDownList runat="server" ID="txtcountry" DataSourceID="countryDataSource" DataTextField="ArContryName" DataValueField="Id" AutoPostBack="True" class="form-control" >
+                                                            </asp:DropDownList>
+                                                            <asp:EntityDataSource runat="server" ID="countryDataSource" DefaultContainerName="dbContext" ConnectionString="name=dbContext" EnableFlattening="False" EntitySetName="Conturies" EntityTypeFilter="Contury"></asp:EntityDataSource>
+
+                                                        </div>
+                                                        <!-- /.select-wrapper -->
+                                                    </div>
+                                                    <!-- /.form-group -->
+
+                                                    <div class="form-group col-sm-12">
+                                                        <label>المدينة </label>
+
+                                                        <div class="select-wrapper">
+                                                            <asp:DropDownList runat="server" ID="txtCity" DataSourceID="CityDataSource" DataTextField="ArCityName" DataValueField="Id" class="form-control" AutoPostBack="true">
+                                                            </asp:DropDownList>
+                                                            <asp:EntityDataSource runat="server" ID="CityDataSource" DefaultContainerName="dbContext" ConnectionString="name=dbContext" EnableFlattening="false" EntitySetName="Cities" EntityTypeFilter="City" AutoGenerateWhereClause="true" Select="" Where="">
+                                                                
+                                                                 <WhereParameters>
+                                                                    <asp:ControlParameter ControlID="txtcountry" DefaultValue="-1" Name="ConturyId" Type="Int32"  />
+                                                                </WhereParameters>
+                                                            </asp:EntityDataSource>
+                                                            
+                                                        </div>
+                                                        <!-- /.select-wrapper -->
+                                                    </div>
+                                                    <!-- /.form-group -->
+
+                                                    <div class="form-group col-sm-12">
+                                                        <label>الحي </label>
+                                                        <asp:DropDownList runat="server" DataSourceID="LocationDataSource" DataTextField="ArLocationName" DataValueField="Id" class="form-control" AutoPostBack="true" ID="txtLoc">
+                                                        </asp:DropDownList>
+                                                        <asp:EntityDataSource runat="server" ID="LocationDataSource" DefaultContainerName="dbContext" ConnectionString="name=dbContext" EnableFlattening="False" EntitySetName="Locations" EntityTypeFilter="Location" Select="" Where="" AutoGenerateWhereClause=true>
+                                                            <WhereParameters>
+                                                                <asp:ControlParameter ControlID="txtCity" DefaultValue="-1" Name="CityId" Type="Int32" />
+                                                            </WhereParameters>
+                                                        </asp:EntityDataSource>
+                                                        
+                                                        <!-- /.select-wrapper -->
+                                                    </div>
+                                                    <!-- /.form-group -->
+
+                                                    <div class="form-group col-sm-12">
+                                                        <label>نوع العقار </label>
+
+                                                        <div class="select-wrapper">
+                                                           
+                                                            <asp:DropDownList runat="server" ID="txtEstatType" class="form-control">
+                                                                <asp:ListItem Text="قطعة ارض" />
+                                                                <asp:ListItem Text="مبنى" />
+                                                                <asp:ListItem Text="فيلا" />
+                                                                <asp:ListItem Text="مكاتب" />
+                                                            </asp:DropDownList>
+                                                        </div>
+                                                        <!-- /.select-wrapper -->
+                                                    </div>
+
+                                                    <div class="form-group col-sm-12">
+                                                        <label>نوع الاستثمار </label>
+
+                                                        <div class="select-wrapper">
+                                                            
+                                                            <asp:DropDownList runat="server" ID="txtStatus" class="form-control">
+                                                                <asp:ListItem Text="عروض مميزة" />
+                                                                <asp:ListItem Text="للبيع" />
+                                                                <asp:ListItem Text="للايجار" />
+                                                            </asp:DropDownList>
+                                                           
+                                                        </div>
+                                                        <!-- /.select-wrapper -->
+                                                    </div>
+                                                    <!-- /.form-group -->
+
+                                                    <div class="form-group col-sm-6">
+
+                                                         <label>السعر إلى </label>
+                                                       <asp:TextBox runat="server" ID="txtTo" class="form-control" placeholder="90000 ر.ع " />
+
+                                                       
+                                                    </div>
+                                                    <!-- /.form-group -->
+
+                                                    <div class="form-group col-sm-6">
+                                                         <label>السعر من </label>
+                                                        
+                                                        <asp:TextBox runat="server" ID="txtfrom" class="form-control" placeholder="100 ر.ع " />
+                                                    </div>
+                                                    <!-- /.form-group -->
+
+                                                    <div class="form-group col-sm-12">
+                                                        
+                                                        <asp:Button Text="بحث" runat="server"   class="btn btn-primary btn-inversed btn-block" id="btnSearch" OnClick="btnSearch_Click"/>
+                                                    </div>
+                                                    <!-- /.form-group -->
+                                                </form>
                                                     </div>
                                                     <!-- /.widget-content -->
                                                 </div>

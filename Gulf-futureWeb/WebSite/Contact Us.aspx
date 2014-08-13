@@ -17,7 +17,12 @@
     <link rel="stylesheet" type="text/css" href="assets/css/realocation.css" media="screen, projection" id="css-main">
     <link href="../fonts.googleapis.com/css975a.css?family=Raleway:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="DroidKufi/style.css">
-    <title>اتصل بنا</title>
+    <title>
+            <%
+                Response.Write(db.WebSiteInfoes.ToList()[0].ArWebSiteName + "- اتصل بنا");        
+         %>
+        
+       </title>
 </head>
 <body>
 

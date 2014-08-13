@@ -9,7 +9,7 @@ namespace WebSite
 {
     public partial class Add_a_Listing : System.Web.UI.Page
     {
-        private dbContext db = new dbContext();
+        public dbContext db = new dbContext();
         public List<OurService> Ourservice = new List<OurService>();
         protected void Page_Load(object sender, EventArgs e)
         {

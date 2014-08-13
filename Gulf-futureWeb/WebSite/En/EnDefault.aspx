@@ -103,7 +103,7 @@
 
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-sm-4 col-sm-offset-8 col-md-3 col-md-offset-9 map-navigation-positioning">
+                                    <div class="col-sm-4 col-md-3  map-navigation-positioning">
                                         <div class="map-navigation-wrapper">
 
                                             <div class="map-navigation">
@@ -161,7 +161,7 @@
                                                             <asp:DropDownList runat="server" ID="txtEstatType" class="form-control">
                                                                 <asp:ListItem Text="Empty land" />
                                                                 <asp:ListItem Text="Buildings" />
-                                                                <asp:ListItem Text="Buildings" />
+                                                               
                                                                 <asp:ListItem Text="Villas" />
                                                                 <asp:ListItem Text="Offices" />
                                                             </asp:DropDownList>
@@ -259,35 +259,19 @@
 
                     <DIV class="block-content block-content-small-padding">
                         <DIV class="block-content-inner">
-                            <H2 class="center"> Best deals </H2>
+                            <h2 class="center">Best deals  </h2>
 
-                            <UL class="properties-filter">
-                                <LI class="selected">
-                                    <A href="#" data-filter="*">
-                                        <SPAN>All </SPAN>
-                                    </A>
-                                </LI>
-                                <LI>
-                                    <A href="#" data-filter=".property-featured">
-                                        <SPAN>distinctive </SPAN>
-                                    </A>
-                                </LI>
-                                <LI>
-                                    <A href="#" data-filter=".property-rent">
-                                        <SPAN>Rent </SPAN>
-                                    </A>
-                                </LI>
-                                <LI>
-                                    <A href="#" data-filter=".property-sale">
-                                        <SPAN>selling </SPAN>
-                                    </A>
-                                </LI>
-                            </UL>
+                            <ul class="properties-filter">
+                                <li class="selected"><a href="#" data-filter="*"><span>All</span></a></li>
+                                <li><a href="#" data-filter=".property-featured"><span>distinctive </span></a></li>
+                                <li><a href="#" data-filter=".property-rent"><span>Rent </span></a></li>
+                                <li><a href="#" data-filter=".property-sale"><span>selling </span></a></li>
+                            </ul>
                             <!-- /.property-filter -->
                         </DIV>
                         <DIV class="properties-items">
                             <DIV class="row">
-
+                                 " <%--<DIV class='property-box-label property-box-label-primary'>" + Fitem.status + " </DIV> "--%>
 
                                 <%
                                     int counterFeature = 0;
@@ -296,22 +280,22 @@
                                         string feat;
                                         foreach (var Fitem in realstate)
                                         {
-                                            if (Fitem.isInMasterPage == "True" && Fitem.status == "Distinctive")
+                                            if (Fitem.isInMasterPage == "True" || Fitem.isInMasterPage == "true" && Fitem.status == "Distinctive")
                                             {
                                                 feat = "<DIV class='property-item property-featured col-sm-6 col-md-3'>" +
                                                        " <DIV class='property-box'> " +
                                                        "<DIV class='property-box-inner'>" +
-                                                       "<H3 class='property-box-title'><A href='Property Specifications.html'>" + Fitem.EnTitle + "</A></H3> " +
-                                                       "<H4 class='property-box-subtitle'><A href='Property Specifications.html'>" + Fitem.Location.EnLocationName + " </A></H4> " +
-
-                                                       " <DIV class='property-box-label property-box-label-primary'>" + Fitem.status + " </DIV> " +
+                                                       "<H3 class='property-box-title'><A href='Property Specifications.aspx?Rst=" + Fitem.Id.ToString() + "'>" + Fitem.EnTitle + "</A></H3> " +
+                                                       "<H4 class='property-box-subtitle'><A href='Property Specifications.aspx?Rst=" + Fitem.Id.ToString() + "'>" + db.Locations.Where(p => p.Id == Fitem.LocationId).SingleOrDefault().EnLocationName + " </A></H4> " +
+                                                         "<div class='property-box-label property-box-label-primary'> Distinctive </div>" +
+                                                       
                                                        " <!-- /.property-box-label -->" +
 
                                                        "<DIV class='property-box-picture'> " +
                                                        " <DIV class='property-box-price'>" + Fitem.price + " ر.ع</DIV>" +
                                                        "<!-- /.property-box-price -->" +
                                                        "<DIV class='property-box-picture-inner'>" +
-                                                       " <A href='Property Specifications.html' class='property-box-picture-target'> " +
+                                                       " <A href='Property Specifications.aspx?Rst="+Fitem.Id.ToString()+"' class='property-box-picture-target'> " +
                                                        " <IMG src='" + Fitem.image1 + "' alt=''> " +
                                                        " </A>" +
                                                        "<!-- /.property-box-picture-target -->" +
@@ -325,7 +309,6 @@
                                                        "</DIV>" +
                                                        "<!-- /.property-box -->" +
                                                        "</DIV>";
-
 
                                                 Response.Write(feat);
                                                 if (counterFeature == 3)
@@ -349,18 +332,17 @@
                                 %>
 
 
-                                <!-- /.property-box -->
-
-                                <!-- /.property-item -->
                             </DIV>
 
+
+                            
 
 
                             <DIV class="row">
 
 
                                 <%       //--------------------------Rent
-                                    int counterSale = 0;
+                                     int counterSale = 0;
                                     try
                                     {
                                         string feat;
@@ -371,18 +353,19 @@
 
                                         foreach (var Fitem in realstate)
                                         {
-                                            if (Fitem.isInMasterPage == "True" && Fitem.status == "Rent")
+                                            if (Fitem.isInMasterPage == "True" || Fitem.isInMasterPage == "true" && Fitem.status == "Rent")
                                             {
                                                 feat = "<div class='property-item property-rent col-sm-6 col-md-3'>" +
                                         "<div class='property-box'>" +
                                         "<div class='property-box-inner'>" +
-                                        "<h3 class='property-box-title'><a href='Property Specifications.html'> "+Fitem.EnTitle+" </a></h3>" +
-                                        "<h4 class='property-box-subtitle'><a href='Property Specifications.html'> "+Fitem.Location.EnLocationName+" </a></h4>" +
+                                        "<h3 class='property-box-title'><a href='Property Specifications.aspx?Rst="+Fitem.Id.ToString()+"'>" +Fitem.EnTitle+" </a></h3>" +
+                                        "<h4 class='property-box-subtitle'><a href='Property Specifications.aspx?Rst="+Fitem.Id.ToString()+"'>" + db.Locations.Where(p => p.Id == Fitem.LocationId).SingleOrDefault().EnLocationName + " </a></h4>" +
+                                         "<div class='property-box-label property-box-label-primary'> Rent </div>"  +
                                         "<div class='property-box-picture'>" +
                                         "<div class='property-box-price'>"+Fitem.price+" ر.ع </div>" +
                                         "<!-- /.property-box-price -->" +
                                         "<div class='property-box-picture-inner'>" +
-                                        "<a href='Property Specifications.html' class='property-box-picture-target'>" +
+                                        "<a href='Property Specifications.aspx?Rst="+Fitem.Id.ToString()+"' class='property-box-picture-target'>" +
                                         "<img src='"+Fitem.image1+"' alt=''>" +
                                         "</a><!-- /.property-box-picture-target --> " +
                                         "</div>" +
@@ -431,14 +414,14 @@
                                         foreach (var Fitem in realstate)
                                         {
 
-                                            if (Fitem.isInMasterPage == "True" && Fitem.status == "Sale")
+                                            if (Fitem.isInMasterPage == "True" || Fitem.isInMasterPage == "true" && Fitem.status == "Sale")
                                             {
                                                 feat = "<DIV class='property-item property-sale col-sm-6 col-md-3'>" +
                                                       " <DIV class='property-box'> " +
                                                       "<DIV class='property-box-inner'>" +
-                                                      "<H3 class='property-box-title'><A href='Property Specifications.html'>" + Fitem.EnTitle + "</A></H3> " +
-                                                      "<H4 class='property-box-subtitle'><A href='Property Specifications.html'>"+Fitem.Location.EnLocationName+" </A></H4> " +
-                                                      " <DIV class='property-box-label property-box-label-primary'>"+Fitem.status+" </DIV> " +
+                                                      "<H3 class='property-box-title'><A href='Property Specifications.aspx?Rst="+Fitem.Id.ToString()+"'>" + Fitem.EnTitle + "</A></H3> " +
+                                                      "<H4 class='property-box-subtitle'><A href='Property Specifications.aspx?Rst="+Fitem.Id.ToString()+"'>"+Fitem.LocationId.ToString()+" </A></H4> " +
+                                                      " <DIV class='property-box-label property-box-label-primary'> Sale </DIV> " +
                                                       " <!-- /.property-box-label -->" +
                                                       "<DIV class='property-box-picture'> " +
                                                       " <DIV class='property-box-price'>"+Fitem.price+"R.O</DIV>" +

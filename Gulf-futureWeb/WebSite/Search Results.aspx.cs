@@ -11,16 +11,65 @@ namespace WebSite
     public partial class Search_Results : System.Web.UI.Page
     {
         public List<RealStatProfile> RealStatProfileList = new List<RealStatProfile>();
-        private dbContext db = new dbContext();
+        public dbContext db = new dbContext();
         public void btnSearch_Click(object sender, EventArgs e)
         {
-            //from=1000&to=3000&locID=1&statusX=Sale&type=Buildings
+            string CompType = "";
+            string CompStatus = "";
+
+            switch (txtStatus.Text)
+            {
+                case "عروض مميزة":
+                    {
+                        CompStatus = "Distinctive";
+                        break;
+                    }
+                case "للبيع":
+                    {
+                        CompStatus = "Sale";
+                        break;
+                    }
+                case "للايجار":
+                    {
+                        CompStatus = "Rent";
+                        break;
+                    }
+
+                default:
+                    break;
+            }
+
+            switch (txtEstatType.Text)
+            {
+                case "مبنى":
+                    {
+                        CompType = "Buildings";
+                        break;
+                    }
+                case "فيلا":
+                    {
+                        CompType = "Villas";
+                        break;
+                    }
+                case "مكاتب":
+                    {
+                        CompType = "Offices";
+                        break;
+                    }
+                case "قطعة ارض":
+                    {
+                        CompType = "Empty land";
+                        break;
+                    }
+                default:
+                    break;
+            }
             string from, to, locid, statusx, type;
             from = txtfrom.Text;
             to = txtTo.Text;
             locid = txtLoc.SelectedValue;
-            type = txtEstatType.Text;
-            statusx = txtStatus.Text;
+            type = CompType;
+            statusx = CompStatus;
             Response.Redirect("Search Results.aspx?from=" + from + "&to=" + to + "&locID=" + locid + "&statusX=" + statusx + "&type=" + type);
         }
 

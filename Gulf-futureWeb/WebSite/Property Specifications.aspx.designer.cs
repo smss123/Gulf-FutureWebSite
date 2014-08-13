@@ -85,15 +85,6 @@ namespace WebSite {
         protected global::System.Web.UI.WebControls.DropDownList txtStatus;
         
         /// <summary>
-        /// txtfrom control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtfrom;
-        
-        /// <summary>
         /// txtTo control.
         /// </summary>
         /// <remarks>
@@ -101,6 +92,15 @@ namespace WebSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTo;
+        
+        /// <summary>
+        /// txtfrom control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtfrom;
         
         /// <summary>
         /// btnSearch control.

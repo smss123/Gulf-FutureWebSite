@@ -24,7 +24,12 @@
     <link href="../fonts.googleapis.com/css975a.css?family=Raleway:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="DroidKufi/style.css">
 
-    <title>Photo Gallery</title>
+    <title>
+
+         <%
+                Response.Write(db.WebSiteInfoes.ToList()[0].ArWebSiteName + "- معرض الصور");        
+         %>
+    </title>
 </head>
 
 <body>

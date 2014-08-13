@@ -7,7 +7,7 @@ namespace WebSite.EN
 {
     public partial class EnDefault : System.Web.UI.Page
     {
-        private dbContext db = new dbContext();
+        public dbContext db = new dbContext();
         public List<SlideConfig> Slides = new List<SlideConfig>();
         public List<OurNews> Ournews = new List<OurNews>();
         public string AdminWork;

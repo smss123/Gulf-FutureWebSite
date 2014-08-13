@@ -7,7 +7,7 @@ namespace WebSite
 {
     public partial class About_Us : System.Web.UI.Page
     {
-        private dbContext db = new dbContext();
+        public dbContext db = new dbContext();
         public List<OurService> Ourservice = new List<OurService>();
         public   string DbAboutUs;
         protected void Page_Load(object sender, EventArgs e)

@@ -7,7 +7,7 @@ namespace WebSite
 {
     public partial class Default : System.Web.UI.Page
     {
-        private dbContext db = new dbContext();
+        public dbContext db = new dbContext();
         public List<SlideConfig> Slides = new List<SlideConfig>();
         public List<OurNews> Ournews = new List<OurNews>();
         public string AdminWork;
@@ -21,30 +21,6 @@ namespace WebSite
 
         private void Page_Init(object sender, EventArgs e)
         {
-
-            //if (!IsPostBack)
-            //{
-            //    try
-            //    {
-            //        string la = db.WebSiteInfoes.ToList()[0].DefaultLanguge;
-            //        if (la != "arabic")
-            //        {
-            //            Response.AddHeader("samer", "Default.aspx?lan=en");
-            //            Response.Redirect("Default.aspx?lan=en");
-            //            return;
-            //        }
-            //        else
-            //        {
-            //            Response.Redirect("Default.aspx?lan=ar");
-            //            return;
-            //        }
-            //    }
-            //    catch (Exception ex)
-            //    {
-
-
-            //    } 
-            
 
             db = new dbContext();
             db.Configuration.LazyLoadingEnabled = false;
@@ -68,13 +44,66 @@ namespace WebSite
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            //from=1000&to=3000&locID=1&statusX=Sale&type=Buildings
+            // Distinctive  - عروض مميزة
+            //Sale- للبيع
+            //Rent - للايجار
+
+            string CompType = "";
+            string CompStatus = "";
+
+            switch (txtStatus.Text)
+            {
+                case "عروض مميزة":
+                    {
+                        CompStatus = "Distinctive";
+                        break;
+                    }
+                case "للبيع":
+                    {
+                        CompStatus = "Sale";
+                        break;
+                    }
+                case "للايجار":
+                    {
+                        CompStatus = "Rent";
+                        break;
+                    }
+
+                default:
+                    break;
+            }
+            
+            switch (txtEstatType.Text)
+            {
+                case "مبنى" :
+                    {
+                        CompType = "Buildings";
+                        break;
+                    }
+                case "فيلا":
+                    {
+                        CompType = "Villas";
+                        break;
+                    }
+                case "مكاتب":
+                    {
+                        CompType = "Offices";
+                        break;
+                    }
+                case "قطعة ارض":
+                    {
+                        CompType = "Empty land";
+                        break;
+                    }
+                default:
+                    break;
+            }
             string from,to, locid, statusx, type;
             from = txtfrom.Text;
             to = txtTo.Text;
             locid = txtLoc.SelectedValue;
-            type = txtEstatType.Text;
-            statusx = txtStatus.Text;
+            type = CompType;
+            statusx = CompStatus;
             Response.Redirect("Search Results.aspx?from="+from+"&to="+to +"&locID="+locid+"&statusX="+statusx+"&type="+type);
 
         }
