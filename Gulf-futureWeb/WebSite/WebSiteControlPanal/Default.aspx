@@ -19,10 +19,16 @@
       <form class="form-signin" runat ="server">
         <h2 class="form-signin-heading">Please sign in</h2>
       
+          <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtUserName" CssClass="error" ErrorMessage="Enter User Name" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
+          
+      
           <asp:TextBox runat ="server" ID="txtUserName" CssClass="input-block-level" placeholder="User Name"></asp:TextBox>
+          <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Enter Password" ControlToValidate="txtPassword" CssClass="error" ForeColor="Red"></asp:RequiredFieldValidator>
           <asp:TextBox runat="server" ID="txtPassword" TextMode="Password" CssClass="input-block-level" placeholder="Password"></asp:TextBox>
-         <asp:Button runat ="server" ID="btnLogin" Text="Sign in" CssClass="btn btn-large btn-primary" />
-        
+          
+         <asp:Button runat ="server" ID="btnLogin" Text="Sign in" CssClass="btn btn-large btn-primary" OnClick="btnLogin_Click" />
+          <br />
+          <asp:Label ID="lblmsg" Text="" runat="server" />
       </form> <!-- End Form-->
 
     </div> <!-- /container -->
