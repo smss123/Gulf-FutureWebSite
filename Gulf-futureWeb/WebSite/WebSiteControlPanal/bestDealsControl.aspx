@@ -171,7 +171,8 @@
                 </div>
                 <asp:EntityDataSource runat="server" ID="EntityDataSource1" DefaultContainerName="dbContext" ConnectionString="name=dbContext" EnableFlattening="False" EntitySetName="Conturies" EntityTypeFilter="Contury" Select="it.[Id], it.[EnContryName]"></asp:EntityDataSource>
                 <hr />
-                <asp:GridView ID="GrdCities" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="CityDataSource" CssClass="table table-hover" AllowPaging="True" AllowSorting="True">
+                <asp:SqlDataSource ID="SqlDataSource4" runat="server"></asp:SqlDataSource>
+                <asp:GridView ID="GrdCities" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource5" CssClass="table table-hover" AllowPaging="True" AllowSorting="True">
                     <Columns>
                         <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                         <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
@@ -183,7 +184,7 @@
                                 <asp:DropDownList runat="server" ID="CountryDropdown" DataSourceID="CountrySourceForDropDownlist" DataTextField="EnContryName" DataValueField="Id" SelectedValue='<%# Bind("ConturyId") %>'></asp:DropDownList>
                             </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="Label1" runat="server" Text='<%# Bind("Contury.EnContryName") %>'></asp:Label>
+                                <asp:Label ID="Label1" runat="server" Text='<%# Bind("EnContryName") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:BoundField DataField="EnCityName" HeaderText="City Name-English" SortExpression="EnCityName" />
@@ -192,6 +193,26 @@
                 </asp:GridView>
                 <asp:EntityDataSource ID="CityDataSource" runat="server" ConnectionString="name=dbContext" DefaultContainerName="dbContext" EnableDelete="True" EnableFlattening="False" EnableInsert="True" EnableUpdate="True" EntitySetName="Cities" EntityTypeFilter="City" Include="Contury">
                 </asp:EntityDataSource>
+                <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:Web_Gulf-FutureConnectionString %>" DeleteCommand="DELETE FROM [Cities] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Cities] ([ArCityName], [ArDecription], [ConturyId], [EnCityName], [EnDescription]) VALUES (@ArCityName, @ArDecription, @ConturyId, @EnCityName, @EnDescription)" SelectCommand="SELECT dbo.Cities.Id, dbo.Cities.ArCityName, dbo.Cities.ArDecription, dbo.Cities.ConturyId, dbo.Cities.EnCityName, dbo.Cities.EnDescription, dbo.Conturies.Id AS Expr1, dbo.Conturies.EnContryName FROM dbo.Cities INNER JOIN dbo.Conturies ON dbo.Cities.ConturyId = dbo.Conturies.Id" UpdateCommand="UPDATE [Cities] SET [ArCityName] = @ArCityName, [ArDecription] = @ArDecription, [ConturyId] = @ConturyId, [EnCityName] = @EnCityName, [EnDescription] = @EnDescription WHERE [Id] = @Id">
+                    <DeleteParameters>
+                        <asp:Parameter Name="Id" Type="Int32" />
+                    </DeleteParameters>
+                    <InsertParameters>
+                        <asp:Parameter Name="ArCityName" Type="String" />
+                        <asp:Parameter Name="ArDecription" Type="String" />
+                        <asp:Parameter Name="ConturyId" Type="Int32" />
+                        <asp:Parameter Name="EnCityName" Type="String" />
+                        <asp:Parameter Name="EnDescription" Type="String" />
+                    </InsertParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="ArCityName" Type="String" />
+                        <asp:Parameter Name="ArDecription" Type="String" />
+                        <asp:Parameter Name="ConturyId" Type="Int32" />
+                        <asp:Parameter Name="EnCityName" Type="String" />
+                        <asp:Parameter Name="EnDescription" Type="String" />
+                        <asp:Parameter Name="Id" Type="Int32" />
+                    </UpdateParameters>
+                </asp:SqlDataSource>
             </div>
 
         </div>
@@ -249,7 +270,7 @@
                     </asp:EntityDataSource>
                 </div>
                 <div class="controls-row">
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="LocalizeDataSource" CssClass="table table-hover">
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource3" CssClass="table table-hover">
                         <Columns>
                             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                             <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
@@ -268,6 +289,28 @@
 
         <!------DataSources Area---->
         <asp:EntityDataSource runat="server" ID="CountrySourceForDropDownlist" DefaultContainerName="dbContext" ConnectionString="name=dbContext" EnableFlattening="False" EntitySetName="Conturies" EntityTypeFilter="Contury"></asp:EntityDataSource>
+
+
+        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:Web_Gulf-FutureConnectionString %>" DeleteCommand="DELETE FROM [Locations] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Locations] ([ArLocationName], [ArLocationDescrition], [CityId], [EnLocationName], [EnDescription]) VALUES (@ArLocationName, @ArLocationDescrition, @CityId, @EnLocationName, @EnDescription)" SelectCommand="SELECT * FROM [Locations]" UpdateCommand="UPDATE [Locations] SET [ArLocationName] = @ArLocationName, [ArLocationDescrition] = @ArLocationDescrition, [CityId] = @CityId, [EnLocationName] = @EnLocationName, [EnDescription] = @EnDescription WHERE [Id] = @Id">
+            <DeleteParameters>
+                <asp:Parameter Name="Id" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="ArLocationName" Type="String" />
+                <asp:Parameter Name="ArLocationDescrition" Type="String" />
+                <asp:Parameter Name="CityId" Type="Int32" />
+                <asp:Parameter Name="EnLocationName" Type="String" />
+                <asp:Parameter Name="EnDescription" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="ArLocationName" Type="String" />
+                <asp:Parameter Name="ArLocationDescrition" Type="String" />
+                <asp:Parameter Name="CityId" Type="Int32" />
+                <asp:Parameter Name="EnLocationName" Type="String" />
+                <asp:Parameter Name="EnDescription" Type="String" />
+                <asp:Parameter Name="Id" Type="Int32" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
 
 
         <!--------------------------->
@@ -360,7 +403,7 @@
                             <asp:Button ID="BtnSaveLocaltion" runat="server" Text="Save" CssClass="btn btn-primary" OnClick="BtnSaveLocaltion_Click" />
                         </div>
 
-                        <asp:GridView ID="GridViewRealState" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="RealStateDataSource">
+                        <asp:GridView ID="GridViewRealState" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource2">
                             <Columns>
                                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                                 <asp:BoundField DataField="ArTitle" HeaderText="Title-Arabic" SortExpression="ArTitle" />
@@ -426,6 +469,42 @@
                         </asp:GridView>
                         <asp:EntityDataSource ID="RealStateDataSource" runat="server" ConnectionString="name=dbContext" DefaultContainerName="dbContext" EnableDelete="True" EnableFlattening="False" EnableInsert="True" EnableUpdate="True" EntitySetName="RealStatProfiles" EntityTypeFilter="RealStatProfile">
                         </asp:EntityDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Web_Gulf-FutureConnectionString %>" DeleteCommand="DELETE FROM [RealStatProfiles] WHERE [Id] = @Id" InsertCommand="INSERT INTO [RealStatProfiles] ([ArTitle], [ArDescription], [price], [image1], [image2], [image3], [LocationId], [EnTitle], [EnDescription], [Image4], [EstatType], [status], [isInMasterPage]) VALUES (@ArTitle, @ArDescription, @price, @image1, @image2, @image3, @LocationId, @EnTitle, @EnDescription, @Image4, @EstatType, @status, @isInMasterPage)" SelectCommand="SELECT * FROM [RealStatProfiles]" UpdateCommand="UPDATE [RealStatProfiles] SET [ArTitle] = @ArTitle, [ArDescription] = @ArDescription, [price] = @price, [image1] = @image1, [image2] = @image2, [image3] = @image3, [LocationId] = @LocationId, [EnTitle] = @EnTitle, [EnDescription] = @EnDescription, [Image4] = @Image4, [EstatType] = @EstatType, [status] = @status, [isInMasterPage] = @isInMasterPage WHERE [Id] = @Id">
+                            <DeleteParameters>
+                                <asp:Parameter Name="Id" Type="Int32" />
+                            </DeleteParameters>
+                            <InsertParameters>
+                                <asp:Parameter Name="ArTitle" Type="String" />
+                                <asp:Parameter Name="ArDescription" Type="String" />
+                                <asp:Parameter Name="price" Type="String" />
+                                <asp:Parameter Name="image1" Type="String" />
+                                <asp:Parameter Name="image2" Type="String" />
+                                <asp:Parameter Name="image3" Type="String" />
+                                <asp:Parameter Name="LocationId" Type="Int32" />
+                                <asp:Parameter Name="EnTitle" Type="String" />
+                                <asp:Parameter Name="EnDescription" Type="String" />
+                                <asp:Parameter Name="Image4" Type="String" />
+                                <asp:Parameter Name="EstatType" Type="String" />
+                                <asp:Parameter Name="status" Type="String" />
+                                <asp:Parameter Name="isInMasterPage" Type="String" />
+                            </InsertParameters>
+                            <UpdateParameters>
+                                <asp:Parameter Name="ArTitle" Type="String" />
+                                <asp:Parameter Name="ArDescription" Type="String" />
+                                <asp:Parameter Name="price" Type="String" />
+                                <asp:Parameter Name="image1" Type="String" />
+                                <asp:Parameter Name="image2" Type="String" />
+                                <asp:Parameter Name="image3" Type="String" />
+                                <asp:Parameter Name="LocationId" Type="Int32" />
+                                <asp:Parameter Name="EnTitle" Type="String" />
+                                <asp:Parameter Name="EnDescription" Type="String" />
+                                <asp:Parameter Name="Image4" Type="String" />
+                                <asp:Parameter Name="EstatType" Type="String" />
+                                <asp:Parameter Name="status" Type="String" />
+                                <asp:Parameter Name="isInMasterPage" Type="String" />
+                                <asp:Parameter Name="Id" Type="Int32" />
+                            </UpdateParameters>
+                        </asp:SqlDataSource>
                     </div>
                 </div>
             </div>
