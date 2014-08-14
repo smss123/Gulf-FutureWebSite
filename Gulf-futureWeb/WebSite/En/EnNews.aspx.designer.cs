@@ -19,7 +19,7 @@ namespace WebSite.EN {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::WebSite.UserControls.UcNews EnUcNews;
+        protected global::WebSite.UserControls.EnUcNews EnUcNews;
         
         /// <summary>
         /// txtcountry control.
